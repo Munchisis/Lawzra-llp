@@ -1,13 +1,28 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import sitemap from "vite-plugin-sitemap";
-import { visualizer } from 'rollup-plugin-visualizer';
+import { visualizer } from "rollup-plugin-visualizer";
+import fs from "node:fs";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), sitemap({
-    hostname: "https://lawzra.netlify.app",
+  plugins: [
+    react(),
+    tailwindcss(),
+
+    // 1. Force the output folder to exist before the sitemap plugin looks for it
+    {
+      name: "ensure-dist-exists",
+      closeBundle() {
+        if (!fs.existsSync("dist")) {
+          fs.mkdirSync("dist", { recursive: true });
+        }
+      },
+    },
+
+    sitemap({
+      hostname: "https://lawzra.netlify.app",
       dynamicRoutes: [
         "/",
         "/about-us",
@@ -30,15 +45,18 @@ export default defineConfig({
         "/terms-of-service",
         "/cookie-policy",
       ],
-  }),
-    visualizer({
-      open: true, // Automatically opens the report in your browser after build
-      filename: 'stats.html', // Name of the generated file
-      gzipSize: true, // Show gzipped size (what users actually download)
-      brotliSize: true,
- }) ],
+    }),
 
- build: {
+    // 2. Disable 'open: true' so it doesn't crash on Vercel's headless servers
+    visualizer({
+      open: false,
+      filename: "stats.html",
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
+
+  build: {
     rollupOptions: {
       output: {
         manualChunks: {
@@ -48,4 +66,4 @@ export default defineConfig({
       },
     },
   },
-})
+});
