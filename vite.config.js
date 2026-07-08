@@ -11,10 +11,10 @@ export default defineConfig({
     react(),
     tailwindcss(),
 
-    // 1. Force the output folder to exist before the sitemap plugin looks for it
+    // Create 'dist' folder at the very beginning of the build process
     {
       name: "ensure-dist-exists",
-      closeBundle() {
+      buildStart() {
         if (!fs.existsSync("dist")) {
           fs.mkdirSync("dist", { recursive: true });
         }
@@ -47,7 +47,6 @@ export default defineConfig({
       ],
     }),
 
-    // 2. Disable 'open: true' so it doesn't crash on Vercel's headless servers
     visualizer({
       open: false,
       filename: "stats.html",
