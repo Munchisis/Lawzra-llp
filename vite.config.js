@@ -11,16 +11,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
 
-    // Create 'dist' folder at the very beginning of the build process
-    {
-      name: "ensure-dist-exists",
-      buildStart() {
-        if (!fs.existsSync("dist")) {
-          fs.mkdirSync("dist", { recursive: true });
-        }
-      },
-    },
-
     sitemap({
       hostname: "https://lawzra.netlify.app",
       dynamicRoutes: [
@@ -46,6 +36,20 @@ export default defineConfig({
         "/cookie-policy",
       ],
     }),
+
+    // Placing this right AFTER sitemap forces Vite to guarantee 'dist'
+    // exists the exact millisecond the sitemap plugin looks for it.
+    {
+      name: "ensure-dist-exists",
+      closeBundle: {
+        sequential: true,
+        handler() {
+          if (!fs.existsSync("dist")) {
+            fs.mkdirSync("dist", { recursive: true });
+          }
+        },
+      },
+    },
 
     visualizer({
       open: false,
