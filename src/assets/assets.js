@@ -93,7 +93,7 @@ export const gallery = [
   },
   {
     src: assets.office5,
-    alt: "Team Networking Dinner",
+    alt: "Teams Networking Dinner",
     size: "col-span-2 row-span-1",
   },
 ];
