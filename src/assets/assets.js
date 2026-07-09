@@ -4,7 +4,7 @@ import lawyer2 from "./img/Lawyer2.png";
 import lawyer3 from "./img/lawyer3.png";
 import aboutUs4 from "./img/about-us-4.png";
 import aboutUs2 from "./img/aboutus2.png";
-import aboutUs from "./img/aboutUs.png";
+import aboutUs from "./img/aboutus.png";
 import logo from "../../public/logo.png";
 import logoW from "../../public/logoW.png";
 import banking from "./img/banking.png";
