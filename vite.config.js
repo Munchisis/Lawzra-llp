@@ -8,9 +8,20 @@ import fs from "node:fs";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    // 1. Force ensure the directory exists at the very beginning of the build cycle
+    {
+      name: "ensure-dist-exists",
+      buildStart() {
+        if (!fs.existsSync("dist")) {
+          fs.mkdirSync("dist", { recursive: true });
+        }
+      },
+    },
+
     react(),
     tailwindcss(),
 
+    // 2. Safe to run now that 'dist' is guaranteed to exist
     sitemap({
       hostname: "https://lawzra.netlify.app",
       dynamicRoutes: [
@@ -36,20 +47,6 @@ export default defineConfig({
         "/cookie-policy",
       ],
     }),
-
-    // Placing this right AFTER sitemap forces Vite to guarantee 'dist'
-    // exists the exact millisecond the sitemap plugin looks for it.
-    {
-      name: "ensure-dist-exists",
-      closeBundle: {
-        sequential: true,
-        handler() {
-          if (!fs.existsSync("dist")) {
-            fs.mkdirSync("dist", { recursive: true });
-          }
-        },
-      },
-    },
 
     visualizer({
       open: false,
