@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, MapPin, Briefcase, Clock } from "lucide-react";
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 
 const openings = [
   {
@@ -72,7 +72,7 @@ const JobOpenings = () => {
               </button>
 
               {/* Expandable Content */}
-              <AnimatePresence>
+              <>
                 {activeId === job.id && (
                   <m.div
                     initial={{ height: 0, opacity: 0 }}
@@ -92,7 +92,7 @@ const JobOpenings = () => {
                     </div>
                   </m.div>
                 )}
-              </AnimatePresence>
+              </>
             </div>
           ))}
         </div>

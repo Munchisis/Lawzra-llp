@@ -1,7 +1,7 @@
 import { MailIcon, MapPin, MenuIcon, PhoneCallIcon, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { m, AnimatePresence } from "motion/react";
+import { m } from "motion/react";
 import { assets } from "../../assets/assets.js";
 import ThemeToggleBtn from "./theme-toggle-btn.jsx";
 import MagneticButton from "../MagneticButton.jsx";
@@ -19,7 +19,6 @@ const Nav = ({ theme, setTheme }) => {
     { name: "Insights", path: "/insights" },
     { name: "Careers", path: "/careers" },
     { name: "Contact Us", path: "/contact-us" },
-    { name: "pro bono", path: "/probono" },
   ];
 
   useEffect(() => {
@@ -161,7 +160,7 @@ const Nav = ({ theme, setTheme }) => {
         </div>
 
         {/* Mobile Menu Dropdown */}
-        <AnimatePresence>
+        <>
           {open && (
             <m.div
               variants={menuVariants}
@@ -199,7 +198,7 @@ const Nav = ({ theme, setTheme }) => {
               </m.button>
             </m.div>
           )}
-        </AnimatePresence>
+        </>
       </m.nav>
 
       {/* Spacer */}

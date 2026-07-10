@@ -23,7 +23,7 @@ export default defineConfig({
 
     // 2. Safe to run now that 'dist' is guaranteed to exist
     sitemap({
-      hostname: "https://lawzra.netlify.app",
+      hostname: "https://lawzra.com",
       dynamicRoutes: [
         "/",
         "/about-us",

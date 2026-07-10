@@ -1,4 +1,4 @@
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 import { MessageCircle, Info, Moon, Sun, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -67,7 +67,7 @@ const WhatsAppButton = () => {
     >
       {/* Tooltips */}
       <div className="hidden sm:flex items-center">
-        <AnimatePresence mode="wait">
+        <>
           <m.div 
             key={tipIndex}
             initial={{ opacity: 0, x: 20 }}
@@ -77,7 +77,7 @@ const WhatsAppButton = () => {
           >
             {tipIndex === 0 ? <>{status.icon} {status.label}</> : <><Info size={12} /> Consultation Fees Apply</>}
           </m.div>
-        </AnimatePresence>
+        </>
       </div>
 
       {/* Main WhatsApp Button */}

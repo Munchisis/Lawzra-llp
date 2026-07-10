@@ -1,9 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { useState, useEffect, Suspense, lazy } from "react";
-import { AnimatePresence } from "framer-motion";
 
-// 1. Keep small, global components as standard imports
 import Nav from "./component/home/Nav";
 import Footer from "./component/home/Footer";
 import LoadingBar from "./component/LoadingBar";
@@ -14,7 +12,7 @@ import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 
-// 2. lazy load all Pages and heavy Practice Area components
+// lazy load all Pages and heavy Practice Area components
 const Home = lazy(() => import("./Pages/home"));
 const AboutUs = lazy(() => import("./Pages/about-us"));
 const ContactUs = lazy(() => import("./Pages/contactUs"));
@@ -37,13 +35,13 @@ const SuccessPage = lazy(() => import("./component/SuccessPage"));
 const PrivacyPolicy = lazy(() => import("./Pages/privacyPolicy"));
 const TermsOfService = lazy(() => import("./Pages/termsOfService"));
 const CookiePolicy = lazy(() => import("./Pages/cookiePolicy"));
-const ProBono = lazy(() => import("./Pages/proBono"));
+
 
 const NotFound = lazy(() => import("./component/not-found"));
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  const location = useLocation(); // Required for AnimatePresence to track page changes
+  const location = useLocation();
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -64,7 +62,7 @@ const App = () => {
           <Nav theme={theme} setTheme={setTheme} />
 
           {/* mode="wait" ensures the old page finishes leaving before the new one starts entering */}
-          <AnimatePresence mode="wait">
+          
             <Suspense
               fallback={
                 <div className="h-screen flex items-center justify-center">
@@ -81,7 +79,7 @@ const App = () => {
                 <Route path="/insight" element={<Insight />} />
                 <Route path="/careers" element={<Careers />} />
                 <Route path="/energy" element={<Energy />} />
-                <Route path="/probono" element={<ProBono />} />
+              
 
                 {/* Full-page Practice Area Routes */}
                 <Route path="/practice-areas" element={<PracticeAreas />} />
@@ -113,7 +111,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-          </AnimatePresence>
+      
           <Footer />
           <CookieConsent />
 

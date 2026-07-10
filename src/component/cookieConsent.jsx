@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Cookie, X } from "lucide-react"; // Optional: npm install lucide-react
-import { m, AnimatePresence } from "framer-motion"; // Optional: npm install framer-motion
+import { Cookie, X } from "lucide-react"; //
+import { m } from "framer-motion"; //
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -21,9 +21,9 @@ const CookieConsent = () => {
   };
 
   return (
-    <AnimatePresence>
+    <>
       {showBanner && (
-        <m.div 
+        <m.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -33,14 +33,23 @@ const CookieConsent = () => {
             <div className="bg-green-100 dark:bg-green-900/30 p-2 rounded-lg text-green-600 shrink-0">
               <Cookie size={20} />
             </div>
-            
+
             <div className="flex-1">
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">Cookie Preferences</h4>
+              <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-1">
+                Cookie Preferences
+              </h4>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                We use cookies to enhance your experience and analyze our traffic. 
-                Read our <Link to="/cookie-policy" className="text-green-600 hover:underline font-medium">Cookie Policy</Link> for details.
+                We use cookies to enhance your experience and analyze our
+                traffic. Read our{" "}
+                <Link
+                  to="/cookie-policy"
+                  className="text-green-600 hover:underline font-medium"
+                >
+                  Cookie Policy
+                </Link>{" "}
+                for details.
               </p>
-              
+
               <div className="flex items-center gap-3 mt-4">
                 <button
                   onClick={acceptCookies}
@@ -57,7 +66,7 @@ const CookieConsent = () => {
               </div>
             </div>
 
-            <button 
+            <button
               onClick={() => setShowBanner(false)}
               className="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors"
             >
@@ -66,7 +75,7 @@ const CookieConsent = () => {
           </div>
         </m.div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 

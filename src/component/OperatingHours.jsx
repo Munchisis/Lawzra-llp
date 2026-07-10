@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Clock, CalendarX, MapPin, MessageSquare, Phone } from "lucide-react";
-import { m, AnimatePresence } from "framer-motion";
+import { m } from "framer-motion";
 
 const OperatingHours = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,7 @@ const OperatingHours = () => {
         <h3 className="text-xl font-serif font-bold text-slate-900 dark:text-white">
           Office Hours
         </h3>
-        <AnimatePresence mode="wait">
+        <>
           {isOpen ? (
             <m.span
               key="open"
@@ -69,7 +69,7 @@ const OperatingHours = () => {
               Closed
             </m.span>
           )}
-        </AnimatePresence>
+        </>
       </div>
 
       <div className="space-y-6">
@@ -109,7 +109,7 @@ const OperatingHours = () => {
 
       {/* Interactive Action Area */}
       <div className="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
-        <AnimatePresence>
+        <>
           {isOpen ? (
             <m.div
               initial={{ opacity: 0, y: 10 }}
@@ -138,7 +138,7 @@ const OperatingHours = () => {
               </p>
             </m.div>
           )}
-        </AnimatePresence>
+        </>
       </div>
     </m.div>
   );
