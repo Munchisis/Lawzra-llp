@@ -104,18 +104,20 @@ const OurTeam = () => {
                 Macsunny Ezikpe Nwoke
               </h2>
               <p className="border-r-4 lg:border-r-0 lg:border-l-4 border-green-600 pr-6 lg:pr-0 lg:pl-6 mb-6 italic text-right lg:text-left">
-                Family Law & Litigation Consultant
+                Tax Law & Property Law
               </p>
               <p>
-                Macsunny is distinguished by his analytical depth and six years
-                of practical experience in Tax Law and Property transactions. He
-                served as a prosecutor with the ASIRS, bringing unique public
-                sector insight to private consultancy.
+                Macsunny is distinguished by his analytical depth and over a
+                decade of practical experience in Tax Law, complemented by more
+                than a decade of experience in Property Law and property
+                transactions. His experience as a prosecutor in both Tax and
+                Criminal Law affords him a rare blend of litigation expertise
+                and strategic legal insight.
               </p>
               <p className="mt-4">
-                His practice further encompasses Wills and Estate Law, providing
-                structured legal support in probate applications and estate
-                planning with unwavering precision.
+                He also maintains a strong practice in Wills and Estate Law,
+                providing meticulous legal support in estate planning, probate,
+                and succession matters.
               </p>
             </m.div>
 
