@@ -32,11 +32,6 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-[#101826] text-white">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap');
-        .font-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
-        .font-docket { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-      `}</style>
 
       {/* Subtle vignette instead of a purple gradient */}
       <div
@@ -141,7 +136,7 @@ const Hero = () => {
         >
           <div className="border border-[#C9A876]/30 bg-[#16223a] p-2.5">
             <img
-              className="aspect-[4/5] w-full rounded-sm object-cover sm:aspect-[5/4] lg:aspect-[4/5]"
+              className="aspect-4/5 w-full rounded-sm object-cover sm:aspect-5/4 lg:aspect-4/5"
               src="https://assets.prebuiltui.com/images/components/hero-section/hero-meeting-image.png"
               alt="Legal Consultation"
             />

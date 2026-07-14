@@ -5,20 +5,6 @@ import { m } from "motion/react";
 import { assets } from "../../assets/assets.js";
 import ThemeToggleBtn from "./theme-toggle-btn.jsx";
 
-/**
- * Nav mounts on every page, so the shared font-face declarations live here
- * instead of being duplicated in Hero.jsx / AboutUs.jsx / Partners.jsx.
- * If you'd rather keep this out of a component entirely, move the @import
- * into index.html <head> and delete this <style> block — either works,
- * just don't keep both.
- */
-const FontFaces = () => (
-  <style>{`
-    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap');
-    .font-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
-    .font-docket { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
-  `}</style>
-);
 
 const Nav = ({ theme, setTheme }) => {
   const navigate = useNavigate();
@@ -62,11 +48,10 @@ const Nav = ({ theme, setTheme }) => {
 
   return (
     <div className="w-full">
-      <FontFaces />
 
       {/* Top Banner */}
       <div className="font-docket bg-[#0C1420] py-2 text-white">
-        <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-[0.1em] md:text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-widest md:text-xs">
           <p className="text-[#C9A876]">Free Consultation Available</p>
           <a
             href="tel:+2348037333930"
@@ -113,7 +98,7 @@ const Nav = ({ theme, setTheme }) => {
               alt="Lawzra Logo"
               className="h-10 w-auto object-contain md:h-12"
             />
-            <h1 className="font-display text-lg tracking-wide dark:text-white/90">
+            <h1 className="font-display text-lg tracking-wide  dark:text-white/90">
               Lawzra <span className="text-[#C9A876]">LLP</span>
             </h1>
           </Link>
