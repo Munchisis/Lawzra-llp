@@ -75,26 +75,36 @@ export const gallery = [
     src: assets.office1,
     alt: "Modern Lagos Workspace",
     size: "col-span-2 row-span-2",
+    width: 800,
+    height: 600,
   },
   {
     src: assets.office2,
     alt: "Collaborative Strategy Session",
     size: "col-span-1 row-span-1",
+    width: 400,
+    height: 300,
   },
   {
     src: assets.office3,
     alt: "Annual Legal Symposium",
     size: "col-span-1 row-span-1",
+    width: 800,
+    height: 600,
   },
   {
     src: assets.office4,
     alt: "Employee Relax Area",
     size: "col-span-1 row-span-2",
+    width: 800,
+    height: 600,
   },
   {
     src: assets.office5,
     alt: "Teams Networking Dinner",
     size: "col-span-2 row-span-1",
+    width: 800,
+    height: 600,
   },
 ];
 
@@ -106,6 +116,8 @@ export const partnerInfo = [
     desc: "Specializing in protecting and enforcing intellectual property rights including patents, trademarks, and copyrights.",
     linkedin: "https://www.linkedin.com",
     email: "lawyer@gmail.com",
+    width: 400,
+    height: 400,
   },
   {
     id: 2,
@@ -114,6 +126,8 @@ export const partnerInfo = [
     desc: "Specializing in Tax law matters.",
     linkedin: "https://www.linkedin.com",
     email: "lawyer@gmail.com",
+    width: 400,
+    height: 400,
   },
   {
     id: 3,
@@ -122,6 +136,8 @@ export const partnerInfo = [
     desc: "Specializing in IT law matters including data privacy, cybersecurity, and digital contracts.",
     linkedin: "https://www.linkedin.com",
     email: "lawyer@gmail.com",
+    width: 400,
+    height: 400,
   },
 ];
 

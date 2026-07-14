@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { practiceAreasData } from "../../data/practiceAreas"; // Ensure your data structure matches { title, description, expertise: [], image, path }
+import { practiceAreasData } from "../../data/practiceAreas"; // 
 import { assets } from "../../assets/assets";
 import { MoveLeft, CheckCircle2, Calendar } from "lucide-react";
 import { m } from "framer-motion";

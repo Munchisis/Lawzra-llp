@@ -3,15 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { m } from "framer-motion";
 import { assets } from "../../assets/assets";
 
-/**
- * Fonts used below: Fraunces (display serif) + IBM Plex Mono (docket/eyebrow caps).
- * Body text uses the site's existing sans stack.
- *
- * For production, move this @import into index.html <head> (or your global CSS)
- * instead of loading it per-component:
- *   <link rel="preconnect" href="https://fonts.googleapis.com">
- *   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
- */
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -137,7 +128,8 @@ const Hero = () => {
           <div className="border border-[#C9A876]/30 bg-[#16223a] p-2.5">
             <img
               className="aspect-4/5 w-full rounded-sm object-cover sm:aspect-5/4 lg:aspect-4/5"
-              src="https://assets.prebuiltui.com/images/components/hero-section/hero-meeting-image.png"
+              src={assets.hero}
+              // src="https://assets.prebuiltui.com/images/components/hero-section/hero-meeting-image.png"
               alt="Legal Consultation"
             />
           </div>

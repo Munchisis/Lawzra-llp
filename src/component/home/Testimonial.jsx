@@ -1,42 +1,6 @@
 import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-
-// 1. Ensure these paths match your file structure exactly
-import profile from "../../assets/img/profile.avif";
-import profile1 from "../../assets/img/profile1.avif";
-import profile2 from "../../assets/img/profile2.avif";
-import profile3 from "../../assets/img/profile3.avif";
-
-const cardsData = [
-  {
-    image: profile,
-    name: "Kelechi Imo",
-    handle: "@meetImo",
-    testimonial:
-      "Lawzra's legal expertise and personalized service helped us navigate complex challenges with confidence.",
-  },
-  {
-    image: profile1,
-    name: "Ochulo Okoro",
-    handle: "@OkoroTalks",
-    testimonial:
-      "The team at Lawzra provided exceptional legal support, guiding us through every step of our case with care.",
-  },
-  {
-    image: profile2,
-    name: "Olawale Adeyemi",
-    handle: "@OlawaleWrites",
-    testimonial:
-      "Their strategic approach and attention to detail made all the difference in achieving a favorable outcome.",
-  },
-  {
-    image: profile3,
-    name: "Avery Enigwe",
-    handle: "@AveryEnigwe",
-    testimonial:
-      "Professionalism and excellence define Lawzra. I highly recommend them for corporate litigation.",
-  },
-];
+import { cardsData } from "../../data/testimonials";
 
 const CreateCard = ({ card }) => (
   <div className="mx-4 flex w-80 shrink-0 flex-col justify-between rounded-sm border border-[#C9A876]/20 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#16223a]">
@@ -46,6 +10,10 @@ const CreateCard = ({ card }) => (
           className="size-12 rounded-full object-cover ring-2 ring-[#C9A876]/25"
           src={card.image}
           alt={card.name}
+          width={48}
+          height={48}
+          loading="lazy"
+          decoding="async"
         />
         <div className="flex flex-col">
           <div className="flex items-center gap-1">
@@ -117,20 +85,6 @@ const Testimonial = () => {
           ))}
         </div>
       </m.div>
-
-      {/* Marquee Keyframes */}
-      <style>{`
-            @keyframes marqueeScroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-33.33%); }
-            }
-
-            .animate-marquee-scroll {
-                animation: marqueeScroll 45s linear infinite;
-                display: flex;
-                width: max-content;
-            }
-        `}</style>
     </section>
   );
 };

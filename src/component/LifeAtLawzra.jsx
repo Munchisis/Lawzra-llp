@@ -14,8 +14,8 @@ const LifeAtLawzra = () => {
               Life at Lawzra
             </h2>
             <p className="leading-relaxed text-[#4B5262] dark:text-white/60">
-              We believe in more than just legal excellence. We foster a
-              culture of growth, well-being, and genuine connection. From our
+              We believe in more than just legal excellence. We foster a culture
+              of growth, well-being, and genuine connection. From our
               state-of-the-art office in Lagos to our community outreach in
               Abuja, this is how we work.
             </p>
@@ -42,7 +42,7 @@ const LifeAtLawzra = () => {
         </div>
 
         {/* Staggered Photo Grid */}
-        <div className="grid h-[600px] grid-cols-2 grid-rows-3 gap-4 md:h-[800px] md:grid-cols-4">
+        <div className="grid h-150 grid-cols-2 grid-rows-3 gap-4 md:h-200 md:grid-cols-4">
           {gallery.map((img, index) => (
             <div
               key={index}
@@ -51,9 +51,12 @@ const LifeAtLawzra = () => {
               <img
                 src={img.src}
                 alt={img.alt}
+                width={img.width || 600}
+                height={img.height || 400}
+                loading="lazy"
                 className="h-full w-full scale-105 object-cover grayscale transition-all duration-700 group-hover:scale-100 group-hover:grayscale-0"
               />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#0A0F18]/85 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-end bg-linear-to-t from-[#0A0F18]/85 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <p className="text-xs font-medium tracking-wide text-white">
                   {img.alt}
                 </p>

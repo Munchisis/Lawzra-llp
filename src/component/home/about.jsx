@@ -2,13 +2,6 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { m } from "motion/react";
 
-/**
- * Uses the same 'font-display' (Fraunces) and 'font-docket' (IBM Plex Mono)
- * utility classes defined globally alongside Hero.jsx. If those classes
- * aren't yet global, keep the <style> block from Hero.jsx in a shared layout
- * component rather than duplicating it here.
- */
-
 const AboutUs = () => {
   return (
     <section className="relative flex flex-col items-center justify-center gap-14 overflow-hidden bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826] md:flex-row md:gap-16">
