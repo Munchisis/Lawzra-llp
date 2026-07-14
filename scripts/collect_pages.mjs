@@ -31,7 +31,7 @@ const pages = [
     const title = await page.title();
     console.log(`[info][${p.name}] title: ${title}`);
 
-    const screenshotPath = `screenshots/${p.name}.AVIF`;
+    const screenshotPath = `screenshots/${p.name}.avif`;
     await page.screenshot({ path: screenshotPath, fullPage: true });
     console.log(`[info][${p.name}] screenshot saved: ${screenshotPath}`);
 

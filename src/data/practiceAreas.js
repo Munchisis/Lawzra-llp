@@ -1,4 +1,4 @@
-import banking from "../assets/img/banking.AVIF";
+import banking from "../assets/img/banking.avif";
 
 export const practiceAreasData = [
   {

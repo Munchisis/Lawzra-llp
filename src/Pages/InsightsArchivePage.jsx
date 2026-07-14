@@ -1,5 +1,5 @@
 import { insightsData } from "../assets/assets";
-import aboutUs4 from "../assets/img/about-us-4.AVIF";
+import aboutUs4 from "../assets/img/about-us-4.avif";
 
 const InsightsArchivePage = () => {
   return (

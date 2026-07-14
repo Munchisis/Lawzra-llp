@@ -2,10 +2,10 @@ import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 // 1. Ensure these paths match your file structure exactly
-import profile from "../../assets/img/profile.AVIF";
-import profile1 from "../../assets/img/profile1.AVIF";
-import profile2 from "../../assets/img/profile2.AVIF";
-import profile3 from "../../assets/img/profile3.AVIF";
+import profile from "../../assets/img/profile.avif";
+import profile1 from "../../assets/img/profile1.avif";
+import profile2 from "../../assets/img/profile2.avif";
+import profile3 from "../../assets/img/profile3.avif";
 
 const cardsData = [
   {
