@@ -9,7 +9,8 @@ const openings = [
     location: "Lagos, NG",
     type: "Full-time",
     experience: "5-7 Years",
-    description: "We are seeking a highly experienced Senior Associate to lead corporate transactions, mergers, and acquisitions. You will be responsible for advising high-net-worth clients and managing junior associates.",
+    description:
+      "We are seeking a highly experienced Senior Associate to lead corporate transactions, mergers, and acquisitions. You will be responsible for advising high-net-worth clients and managing junior associates.",
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ const openings = [
     location: "Abuja / Remote",
     type: "Internship",
     experience: "Entry Level",
-    description: "Perfect for recent LL.B graduates. You will assist in legal research, drafting court processes, and attending client meetings under the supervision of our Partners.",
+    description:
+      "Perfect for recent LL.B graduates. You will assist in legal research, drafting court processes, and attending client meetings under the supervision of our Partners.",
   },
   {
     id: 3,
@@ -25,49 +27,72 @@ const openings = [
     location: "Umuahia, NG",
     type: "Contract",
     experience: "3+ Years",
-    description: "Focusing on civil and commercial litigation. The ideal candidate must have a proven track record in Nigerian courts and exceptional advocacy skills.",
-  }
+    description:
+      "Focusing on civil and commercial litigation. The ideal candidate must have a proven track record in Nigerian courts and exceptional advocacy skills.",
+  },
 ];
 
 const JobOpenings = () => {
   const [activeId, setActiveId] = useState(null);
 
   const toggleAccordion = (id) => {
-  setActiveId(prev => prev === id ? null : id);
-};
+    setActiveId((prev) => (prev === id ? null : id));
+  };
 
   return (
-    <section className="dark:bg-primary py-20 px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold dark:text-white text-slate-700 mb-4">Current Openings</h2>
-          <p className="text-slate-500 dark:text-slate-400">Select a role to view requirements. If you don't see a fit, use the form above for a general application.</p>
+    <section className="bg-[#FAF8F3] px-6 m-8 py-20 dark:bg-[#101826]">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-12 text-center">
+          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
+            <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+            Now Hiring
+            <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          </div>
+          <h2 className="font-display mb-4 text-3xl text-[#101826] dark:text-white md:text-4xl">
+            Current Openings
+          </h2>
+          <p className="text-[#4B5262] dark:text-white/50">
+            Select a role to view requirements. If you don't see a fit, use
+            the form above for a general application.
+          </p>
         </div>
 
         <div className="space-y-4">
           {openings.map((job) => (
-            <div 
-              key={job.id} 
-              className={`border border-dark-text dark:border-white/10 rounded-2xl overflow-hidden transition-all duration-300 ${activeId === job.id ? 'dark:bg-white/5 dark:border-green-500/50 border-highlight/50  dark:shadow-[0_0_20px_rgba(34,197,94,0.1)]' : 'bg-transparent dark:hover:bg-white/5 hover:bg-gray-100 hover:border-0 shadow-indigo-800'}`}
+            <div
+              key={job.id}
+              className={`overflow-hidden rounded-sm border transition-all duration-300 ${
+                activeId === job.id
+                  ? "border-[#C9A876] bg-white shadow-[0_0_20px_rgba(201,168,118,0.15)] dark:bg-white/5"
+                  : "border-[#C9A876]/20 bg-white hover:bg-[#FAF8F3] dark:border-white/10 dark:bg-transparent dark:hover:bg-white/5"
+              }`}
             >
               {/* Header */}
-              <button 
+              <button
                 onClick={() => toggleAccordion(job.id)}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                className="flex w-full items-center justify-between p-6 text-left focus:outline-none"
               >
                 <div className="flex-1">
-                  <h3 className="{text-xl font-semibold dark:text-white text-slate-600 mb-2}">{job.title}</h3>
-                  <div className="flex flex-wrap gap-4 text-xs text-slate-400">
-                    <span className="flex items-center gap-1"><MapPin size={14} className="dark:text-green-500"/> {job.location}</span>
-                    <span className="flex items-center gap-1"><Briefcase size={14} className="dark:text-green-500"/> {job.type}</span>
-                    <span className="flex items-center gap-1"><Clock size={14} className="dark:text-green-500"/> {job.experience}</span>
+                  <h3 className="font-display mb-2 text-xl text-[#101826] dark:text-white">
+                    {job.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-4 text-xs text-[#4B5262] dark:text-white/40">
+                    <span className="flex items-center gap-1">
+                      <MapPin size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.location}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Briefcase size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.type}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Clock size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.experience}
+                    </span>
                   </div>
                 </div>
                 <m.div
                   animate={{ rotate: activeId === job.id ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="text-slate-400" />
+                  <ChevronDown className="text-[#4B5262] dark:text-white/40" />
                 </m.div>
               </button>
 
@@ -81,11 +106,11 @@ const JobOpenings = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-8 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    <div className="border-t border-[#C9A876]/15 px-6 pb-8 pt-4 text-sm leading-relaxed text-[#4B5262] dark:border-white/10 dark:text-white/60">
                       <p className="mb-6">{job.description}</p>
-                      <button 
-                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className="text-slate-500 dark:text-green-400 font-semibold hover:text-green-300 transition-colors flex items-center gap-2"
+                      <button
+                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                        className="font-docket flex items-center gap-2 text-xs uppercase tracking-wide text-[#B08D57] transition-colors hover:text-[#8A6A38] dark:text-[#C9A876] dark:hover:text-[#dbbb8c]"
                       >
                         Apply for this position ↑
                       </button>

@@ -14,13 +14,13 @@ import { Toaster } from "react-hot-toast";
 
 // lazy load all Pages and heavy Practice Area components
 const Home = lazy(() => import("./Pages/home"));
-const AboutUs = lazy(() => import("./Pages/about-us"));
-const ContactUs = lazy(() => import("./Pages/contactUs"));
-const OurTeam = lazy(() => import("./Pages/our-team"));
-const Insights = lazy(() => import("./Pages/Insight"));
+const AboutUs = lazy(() => import("./Pages/AboutUsPage"));
+const ContactUs = lazy(() => import("./Pages/ContactUsPage"));
+const OurTeam = lazy(() => import("./Pages/OurTeamPage"));
+const Insights = lazy(() => import("./Pages/InsightsArchivePage"));
 const Insight = lazy(() => import("./component/home/insight"));
-const Careers = lazy(() => import("./Pages/careers"));
-const PracticeAreas = lazy(() => import("./Pages/practice-areas"));
+const Careers = lazy(() => import("./Pages/CareersPage"));
+const PracticeAreas = lazy(() => import("./Pages/PracticeAreaPage"));
 const Banking = lazy(() => import("./component/Practice/Banking"));
 const Tax = lazy(() => import("./component/Practice/Tax"));
 const RealEstate = lazy(() => import("./component/Practice/real-estate"));

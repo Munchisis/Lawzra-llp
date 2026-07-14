@@ -2,31 +2,39 @@ import { gallery } from "../assets/assets";
 
 const LifeAtLawzra = () => {
   return (
-    <section className="dark:bg-primary py-24 px-6 border-t">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+    <section className="border-t border-[#C9A876]/15 bg-[#FAF8F3] px-6 py-24 dark:border-white/10 dark:bg-[#101826]">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <h2 className="text-4xl font-bold text-slate-700 dark:text-white mb-4 italic">
+            <div className="font-docket mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
+              <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+              Culture
+            </div>
+            <h2 className="font-display mb-4 text-4xl italic text-[#101826] dark:text-white">
               Life at Lawzra
             </h2>
-            <p className="text-slate-700 dark:text-slate-400 leading-relaxed">
-              We believe in more than just legal excellence. We foster a culture
-              of growth, well-being, and genuine connection. From our
+            <p className="leading-relaxed text-[#4B5262] dark:text-white/60">
+              We believe in more than just legal excellence. We foster a
+              culture of growth, well-being, and genuine connection. From our
               state-of-the-art office in Lagos to our community outreach in
               Abuja, this is how we work.
             </p>
           </div>
           <div className="flex gap-4">
-            <div className="text-center px-4">
-              <p className="text-2xl font-bold text-slate-700 dark:text-green-500">25+</p>
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest">
+            <div className="px-4 text-center">
+              <p className="font-display text-2xl text-[#B08D57] dark:text-[#C9A876]">
+                25+
+              </p>
+              <p className="font-docket text-[10px] uppercase tracking-widest text-[#4B5262] dark:text-white/40">
                 Associates
               </p>
             </div>
-            <div className="w-[1px] h-10 bg-black/30 dark:bg-white/10"></div>
-            <div className="text-center px-4">
-              <p className="text-2xl font-bold text-slate-700 dark:text-green-500">3</p>
-              <p className="text-[10px] text-slate-500 uppercase tracking-widest">
+            <div className="h-10 w-px bg-[#C9A876]/25" />
+            <div className="px-4 text-center">
+              <p className="font-display text-2xl text-[#B08D57] dark:text-[#C9A876]">
+                3
+              </p>
+              <p className="font-docket text-[10px] uppercase tracking-widest text-[#4B5262] dark:text-white/40">
                 Offices
               </p>
             </div>
@@ -34,19 +42,19 @@ const LifeAtLawzra = () => {
         </div>
 
         {/* Staggered Photo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-3 gap-4 h-[600px] md:h-[800px]">
+        <div className="grid h-[600px] grid-cols-2 grid-rows-3 gap-4 md:h-[800px] md:grid-cols-4">
           {gallery.map((img, index) => (
             <div
               key={index}
-              className={`${img.size} relative group overflow-hidden rounded-2xl bg-slate-900 border border-white/5`}
+              className={`${img.size} group relative overflow-hidden rounded-sm border border-[#C9A876]/15 bg-[#0C1420]`}
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                className="h-full w-full scale-105 object-cover grayscale transition-all duration-700 group-hover:scale-100 group-hover:grayscale-0"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                <p className="text-white text-xs font-medium tracking-wide">
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-[#0A0F18]/85 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <p className="text-xs font-medium tracking-wide text-white">
                   {img.alt}
                 </p>
               </div>

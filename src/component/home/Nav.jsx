@@ -4,7 +4,21 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { m } from "motion/react";
 import { assets } from "../../assets/assets.js";
 import ThemeToggleBtn from "./theme-toggle-btn.jsx";
-import MagneticButton from "../MagneticButton.jsx";
+
+/**
+ * Nav mounts on every page, so the shared font-face declarations live here
+ * instead of being duplicated in Hero.jsx / AboutUs.jsx / Partners.jsx.
+ * If you'd rather keep this out of a component entirely, move the @import
+ * into index.html <head> and delete this <style> block — either works,
+ * just don't keep both.
+ */
+const FontFaces = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap');
+    .font-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
+    .font-docket { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+  `}</style>
+);
 
 const Nav = ({ theme, setTheme }) => {
   const navigate = useNavigate();
@@ -48,24 +62,26 @@ const Nav = ({ theme, setTheme }) => {
 
   return (
     <div className="w-full">
+      <FontFaces />
+
       {/* Top Banner */}
-      <div className="font-medium py-2 bg-linear-to-r from-gray-900 via-[#3f3544] to-[#62bb9d] text-white">
-        <div className="flex flex-wrap gap-4 justify-center items-center text-[10px] md:text-xs">
-          <p>Free Consultation Available</p>
+      <div className="font-docket bg-[#0C1420] py-2 text-white">
+        <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-[0.1em] md:text-xs">
+          <p className="text-[#C9A876]">Free Consultation Available</p>
           <a
             href="tel:+2348037333930"
-            className="hover:underline flex items-center gap-1"
+            className="flex items-center gap-1 text-white/70 hover:text-white"
           >
-            <PhoneCallIcon size={14} /> +234 803 733 3930
+            <PhoneCallIcon size={13} /> +234 803 733 3930
           </a>
           <a
             href="mailto:info@lawzra.com"
-            className="hover:underline flex items-center gap-1"
+            className="flex items-center gap-1 text-white/70 hover:text-white"
           >
-            <MailIcon size={14} /> info@lawzra.com
+            <MailIcon size={13} /> info@lawzra.com
           </a>
-          <span className="hidden lg:flex items-center gap-1">
-            <MapPin size={14} /> Lekki Phase 1, Lagos
+          <span className="hidden items-center gap-1 text-white/70 lg:flex">
+            <MapPin size={13} /> Lekki Phase 1, Lagos
           </span>
         </div>
       </div>
@@ -76,18 +92,18 @@ const Nav = ({ theme, setTheme }) => {
         animate={{
           backgroundColor: isFixed
             ? theme === "dark"
-              ? "rgba(15, 23, 42, 0.95)"
-              : "rgba(255, 255, 255, 0.95)"
-            : "#111827",
-          boxShadow: isFixed ? "0 4px 6px -1px rgb(0 0 0 / 0.1)" : "none",
+              ? "rgba(16, 24, 38, 0.95)"
+              : "rgba(250, 248, 243, 0.95)"
+            : "#101826",
+          boxShadow: isFixed ? "0 4px 6px -1px rgb(0 0 0 / 0.15)" : "none",
         }}
         transition={{ duration: 0.3 }}
-        className={`h-20 flex items-center justify-between px-6 md:px-16 lg:px-24 z-50 
-        ${isFixed ? "fixed top-0 left-0 w-full backdrop-blur-sm" : "relative bg-gray-900 text-white"}`}
+        className={`flex h-20 items-center justify-between px-6 md:px-16 lg:px-24 z-50 
+        ${isFixed ? "fixed top-0 left-0 w-full backdrop-blur-sm" : "relative bg-[#101826] text-white"}`}
       >
-        {/* Logo with Crossfade */}
-        <div className="">
-          <Link to="/">
+        {/* Logo */}
+        <div>
+          <Link to="/" className="flex items-center gap-2">
             <m.img
               key={isFixed ? "fixed" : "static"}
               initial={{ opacity: 0 }}
@@ -95,14 +111,16 @@ const Nav = ({ theme, setTheme }) => {
               whileHover={{ rotate: 8, scale: 1.1 }}
               src={isFixed && theme !== "dark" ? assets.logo : assets.logoW}
               alt="Lawzra Logo"
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 w-auto object-contain md:h-12"
             />
-            <h1 className="dark:text-gray-300 font-bold tracking-widest uppercase ">Lawzra LLP</h1>
+            <h1 className="font-display text-lg tracking-wide dark:text-white/90">
+              Lawzra <span className="text-[#C9A876]">LLP</span>
+            </h1>
           </Link>
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+        <div className="hidden items-center gap-6 md:flex lg:gap-10">
           {navLinks.map((link, i) => (
             <NavLink
               key={i}
@@ -110,10 +128,10 @@ const Nav = ({ theme, setTheme }) => {
               className={({ isActive }) =>
                 `text-sm font-semibold transition-colors duration-300 ${
                   isActive
-                    ? "text-rose-500"
+                    ? "text-[#C9A876]"
                     : isFixed
-                      ? "text-gray-700 dark:text-gray-200 hover:text-rose-500"
-                      : "text-gray-300 hover:text-highlight"
+                      ? "text-[#4B5262] hover:text-[#B08D57] dark:text-white/70 dark:hover:text-[#C9A876]"
+                      : "text-white/70 hover:text-[#C9A876]"
                 }`
               }
             >
@@ -126,34 +144,24 @@ const Nav = ({ theme, setTheme }) => {
         <div className="flex items-center gap-4">
           <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
-          <MagneticButton strength={0.4}>
+        
             <button
               onClick={() => navigate("/contact-us")}
-              className="hidden relative overflow-hidden group md:block px-6 py-2 rounded-full text-xs font-bold border border-rose-500 text-rose-500 hover:bg-rose-500 hover:text-white transition-all active:scale-95"
+              className="group relative hidden overflow-hidden rounded-sm border border-[#C9A876] px-6 py-2 text-xs font-bold text-[#C9A876] transition-all active:scale-95 hover:bg-[#C9A876] hover:text-[#101826] md:block"
             >
               <span className="relative z-10">Get in touch</span>
-              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl -translate-x-full group-hover:translate-x-full duration-700 pointer-events-none" />
             </button>
-          </MagneticButton>
 
           {/* Mobile Toggle */}
-          <button className="md:hidden p-2" onClick={() => setOpen(!open)}>
+          <button className="p-2 md:hidden" onClick={() => setOpen(!open)}>
             <m.div
               animate={{ rotate: open ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
               {open ? (
-                <X
-                  className={
-                    isFixed ? "text-gray-800 dark:text-white" : "text-white"
-                  }
-                />
+                <X className={isFixed ? "text-[#101826] dark:text-white" : "text-white"} />
               ) : (
-                <MenuIcon
-                  className={
-                    isFixed ? "text-gray-800 dark:text-white" : "text-white"
-                  }
-                />
+                <MenuIcon className={isFixed ? "text-[#101826] dark:text-white" : "text-white"} />
               )}
             </m.div>
           </button>
@@ -167,7 +175,7 @@ const Nav = ({ theme, setTheme }) => {
               initial="closed"
               animate="opened"
               exit="closed"
-              className="absolute top-20 left-0 w-full flex flex-col bg-white dark:bg-slate-900 p-6 shadow-xl border-t dark:border-slate-800 md:hidden z-50 overflow-hidden"
+              className="absolute top-20 left-0 z-50 flex w-full flex-col overflow-hidden border-t border-[#C9A876]/20 bg-[#FAF8F3] p-6 shadow-xl dark:bg-[#101826] md:hidden"
             >
               {navLinks.map((link, i) => (
                 <m.div variants={itemVariants} key={i}>
@@ -175,10 +183,10 @@ const Nav = ({ theme, setTheme }) => {
                     to={link.path}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `block py-3 text-lg font-medium border-b border-gray-100 dark:border-slate-800 ${
+                      `block border-b border-[#C9A876]/15 py-3 text-lg font-medium ${
                         isActive
-                          ? "text-rose-600"
-                          : "text-gray-700 dark:text-gray-300 "
+                          ? "text-[#B08D57] dark:text-[#C9A876]"
+                          : "text-[#4B5262] dark:text-white/70"
                       }`
                     }
                   >
@@ -192,7 +200,7 @@ const Nav = ({ theme, setTheme }) => {
                   navigate("/contact-us");
                   setOpen(false);
                 }}
-                className="mt-6 w-full py-3 bg-rose-500 text-white rounded-full font-bold"
+                className="mt-6 w-full rounded-sm bg-[#C9A876] py-3 font-bold text-[#101826]"
               >
                 Get in touch
               </m.button>
@@ -202,7 +210,7 @@ const Nav = ({ theme, setTheme }) => {
       </m.nav>
 
       {/* Spacer */}
-      {isFixed && <div className="h-20"></div>}
+      {isFixed && <div className="h-20" />}
     </div>
   );
 };

@@ -5,24 +5,32 @@ import { partnerInfo } from "../../assets/assets";
 
 const Partners = () => {
   return (
-    <section className="py-20 overflow-hidden px-4 md:px-20">
+    <section className="overflow-hidden bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826] md:px-20">
       <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="text-center"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-center dark:text-white">
+        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          The Partners — Leadership
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        </div>
+
+        <h1 className="font-display mt-4 text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           Our Partners
         </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 text-center mt-4 max-w-lg mx-auto px-4">
+
+        <p className="mx-auto mt-4 max-w-lg px-4 text-sm text-[#4B5262] dark:text-white/60">
           Meet the leadership driving our commitment to legal excellence and
           strategic innovation.
         </p>
       </m.div>
 
       {/* Partners Accordion Container */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2 w-full max-w-7xl mt-12 mx-auto px-6 h-auto md:h-[550px]">
+      <div className="mx-auto mt-12 flex h-auto w-full max-w-7xl flex-col items-center justify-center gap-4 px-6 md:h-[550px] md:flex-row md:gap-3">
         {partnerInfo.map((partner, index) => (
           <m.div
             key={partner.id || index}
@@ -32,7 +40,7 @@ const Partners = () => {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             // Hover Expansion Logic
             whileHover={{ flex: 2 }}
-            className="relative group w-full md:flex-1 h-80 md:h-full overflow-hidden rounded-2xl cursor-pointer transition-all duration-500 ease-out"
+            className="group relative h-80 w-full cursor-pointer overflow-hidden rounded-sm border border-[#C9A876]/25 transition-all duration-500 ease-out md:h-full md:flex-1"
           >
             <m.img
               whileHover={{ scale: 1.05 }}
@@ -42,34 +50,37 @@ const Partners = () => {
               alt={partner.title}
             />
 
-            {/* Overlay Content */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 bg-gradient-to-t from-black/90 via-black/30 to-transparent text-white md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500">
+            {/* Overlay Content — ink navy tint instead of pure black */}
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#0A0F18]/95 via-[#0A0F18]/35 to-transparent p-6 text-white transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
               <m.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <h2 className="text-xl md:text-2xl font-bold leading-tight">
+                <span className="font-docket text-[10px] uppercase tracking-[0.15em] text-[#C9A876]">
+                  Partner
+                </span>
+                <h2 className="font-display mt-1 text-xl leading-tight md:text-2xl">
                   {partner.title}
                 </h2>
-                <p className="text-xs md:text-sm text-gray-300 mt-2 line-clamp-2 md:line-clamp-none">
+                <p className="mt-2 text-xs text-white/70 md:text-sm line-clamp-2 md:line-clamp-none">
                   {partner.desc}
                 </p>
 
-                <div className="flex gap-4 mt-6">
+                <div className="mt-6 flex gap-3">
                   <a
                     href={partner.linkedin}
                     target="_blank"
                     rel="noopener"
-                    className="p-2 bg-white/10 hover:bg-rose-500 rounded-full transition-colors"
+                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-[#C9A876] hover:text-[#101826]"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="h-5 w-5" />
                   </a>
                   <a
                     href={`mailto:${partner.email}`}
-                    className="p-2 bg-white/10 hover:bg-rose-500 rounded-full transition-colors"
+                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-[#C9A876] hover:text-[#101826]"
                   >
-                    <Mail className="w-5 h-5" />
+                    <Mail className="h-5 w-5" />
                   </a>
                 </div>
               </m.div>
@@ -82,14 +93,14 @@ const Partners = () => {
       <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="flex justify-center mt-16"
+        className="mt-16 flex justify-center"
       >
         <Link
           to="/our-team"
-          className="group flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-full font-semibold transition-transform active:scale-95 shadow-lg"
+          className="group flex items-center gap-2 rounded-sm bg-[#C9A876] px-8 py-3.5 font-semibold text-[#101826] shadow-lg transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
         >
           Meet the Full Team
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </Link>
       </m.div>
     </section>

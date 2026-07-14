@@ -26,59 +26,46 @@ const Footer = ({ theme }) => {
   };
 
   return (
-    <footer className="border-t border-slate-300 dark:border-slate-800 bg-slate-50 dark:bg-[#0f172a] transition-colors duration-300">
+    <footer className="border-t border-[#C9A876]/15 bg-[#FAF8F3] transition-colors duration-300 dark:border-white/10 dark:bg-[#0C1420]">
       <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-slate-500 pt-16 dark:text-slate-400"
+        className="w-full px-6 pt-16 text-sm text-[#4B5262] dark:text-white/50 md:px-16 lg:px-24 xl:px-32"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 mb-16">
+        <div className="mb-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3">
           {/* Column 1: Brand & Socials */}
           <m.div
             variants={itemVariants}
             className="sm:col-span-2 lg:col-span-1"
           >
-            <Link to="/" className="flex items-center gap-4 mb-6 group">
+            <Link to="/" className="group mb-6 flex items-center gap-4">
               <m.img
                 whileHover={{ rotate: 8, scale: 1.1 }}
-                src={theme === "dark" ? assets.logoW :assets.logo}
+                src={theme === "dark" ? assets.logoW : assets.logo}
                 alt="Lawzra Logo"
                 sizes="55px"
-                className="w-14 h-14 object-contain transition-transform"
+                className="h-14 w-14 object-contain transition-transform"
               />
-              <div className="font-medium text-lg tracking-tight text-slate-800 dark:text-white group-hover:text-indigo-600 transition-colors">
-                LAWZRA LLP
+              <div className="font-display text-lg tracking-tight text-[#101826] transition-colors group-hover:text-[#B08D57] dark:text-white dark:group-hover:text-[#C9A876]">
+                Lawzra <span className="text-[#C9A876]">LLP</span>
               </div>
             </Link>
-            <p className="leading-relaxed max-w-sm">
+            <p className="max-w-sm leading-relaxed">
               Leading the way in legal excellence, we are committed to providing
               unparalleled legal services with integrity, expertise, and
               personalized attention to every client.
             </p>
 
-            <div className="flex gap-5 mt-8">
+            <div className="mt-8 flex gap-4">
               {[
+                { icon: <XIcon size={17} />, href: "https://x.com" },
+                { icon: <Github size={17} />, href: "https://github.com" },
+                { icon: <Linkedin size={17} />, href: "https://linkedin.com" },
                 {
-                  icon: <XIcon size={18} />,
-                  href: "https://x.com",
-                  color: "hover:text-black dark:hover:text-white",
-                },
-                {
-                  icon: <Github size={18} />,
-                  href: "https://github.com",
-                  color: "hover:text-slate-900 dark:hover:text-white",
-                },
-                {
-                  icon: <Linkedin size={18} />,
-                  href: "https://linkedin.com",
-                  color: "hover:text-blue-700",
-                },
-                {
-                  icon: <Instagram size={18} />,
+                  icon: <Instagram size={17} />,
                   href: "https://instagram.com",
-                  color: "hover:text-pink-600",
                 },
               ].map((social, i) => (
                 <m.a
@@ -86,8 +73,8 @@ const Footer = ({ theme }) => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ y: -4, scale: 1.1 }}
-                  className={`p-2 rounded-full bg-slate-200/50 dark:bg-slate-800/50 transition-colors ${social.color}`}
+                  whileHover={{ y: -4 }}
+                  className="rounded-full border border-[#C9A876]/25 bg-white p-2 text-[#4B5262] transition-colors hover:border-[#C9A876] hover:text-[#B08D57] dark:border-white/10 dark:bg-[#16223a] dark:text-white/60 dark:hover:border-[#C9A876] dark:hover:text-[#C9A876]"
                 >
                   {social.icon}
                 </m.a>
@@ -101,7 +88,7 @@ const Footer = ({ theme }) => {
             className="flex flex-col lg:items-center"
           >
             <div className="flex flex-col space-y-4">
-              <h2 className="font-bold text-slate-900 dark:text-white uppercase tracking-widest text-xs mb-2">
+              <h2 className="font-docket mb-2 text-xs uppercase tracking-[0.2em] text-[#101826] dark:text-white">
                 Company
               </h2>
               <FooterLink to="/about-us">About us</FooterLink>
@@ -115,20 +102,20 @@ const Footer = ({ theme }) => {
 
           {/* Column 3: Newsletter */}
           <m.div variants={itemVariants}>
-            <h2 className="font-bold text-slate-900 dark:text-white uppercase tracking-widest text-xs mb-5">
+            <h2 className="font-docket mb-5 text-xs uppercase tracking-[0.2em] text-[#101826] dark:text-white">
               Subscribe to Insights
             </h2>
-            <div className="space-y-5 max-w-sm">
-              <p className="text-slate-500 dark:text-slate-400">
+            <div className="max-w-sm space-y-5">
+              <p className="text-[#4B5262] dark:text-white/50">
                 Stay updated with the latest legal developments and firm news.
               </p>
-              <div className="relative group">
+              <div className="group relative">
                 <input
-                  className="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl h-12 px-4 pr-12 outline-none focus:border-indigo-500 dark:focus:border-indigo-500 transition-all shadow-sm"
+                  className="h-12 w-full rounded-sm border border-[#C9A876]/30 bg-white px-4 pr-12 shadow-sm outline-none transition-all focus:border-[#C9A876] dark:border-white/10 dark:bg-[#16223a] dark:focus:border-[#C9A876]"
                   type="email"
                   placeholder="Your email address"
                 />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors cursor-pointer group-hover:scale-105 active:scale-95">
+                <button className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm bg-[#C9A876] p-2 text-[#101826] transition-colors hover:bg-[#dbbb8c] active:scale-95">
                   <Send size={18} />
                 </button>
               </div>
@@ -139,9 +126,9 @@ const Footer = ({ theme }) => {
         {/* Bottom Copyright */}
         <m.div
           variants={itemVariants}
-          className="border-t border-slate-200 dark:border-slate-800 py-10 flex flex-col md:flex-row justify-between items-center gap-4 text-center text-[11px] font-medium uppercase tracking-widest text-slate-400"
+          className="font-docket flex flex-col items-center justify-between gap-4 border-t border-[#C9A876]/15 py-10 text-center text-[11px] uppercase tracking-widest text-[#4B5262]/70 dark:border-white/10 dark:text-white/40 md:flex-row"
         >
-          <p>© {new Date().getFullYear()} Lawzra LP. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Lawzra LLP. All rights reserved.</p>
           <div className="flex gap-6">
             <span className="cursor-default">Lagos</span>
             <span className="cursor-default">Abuja</span>
@@ -157,7 +144,7 @@ const Footer = ({ theme }) => {
 const FooterLink = ({ to, children }) => (
   <Link
     to={to}
-    className="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-white transition-all hover:translate-x-1 inline-block"
+    className="inline-block text-[#4B5262] transition-all hover:translate-x-1 hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876]"
   >
     {children}
   </Link>

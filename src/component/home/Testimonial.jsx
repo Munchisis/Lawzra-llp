@@ -2,10 +2,10 @@ import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 // 1. Ensure these paths match your file structure exactly
-import profile from "../../assets/img/profile.png";
-import profile1 from "../../assets/img/profile1.png";
-import profile2 from "../../assets/img/profile2.png";
-import profile3 from "../../assets/img/profile3.png";
+import profile from "../../assets/img/profile.AVIF";
+import profile1 from "../../assets/img/profile1.AVIF";
+import profile2 from "../../assets/img/profile2.AVIF";
+import profile3 from "../../assets/img/profile3.AVIF";
 
 const cardsData = [
   {
@@ -39,34 +39,35 @@ const cardsData = [
 ];
 
 const CreateCard = ({ card }) => (
-  <div className="p-6 rounded-2xl mx-4 shadow-md bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all duration-300 w-80 shrink-0 flex flex-col justify-between">
+  <div className="mx-4 flex w-80 shrink-0 flex-col justify-between rounded-sm border border-[#C9A876]/20 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#16223a]">
     <div>
       <div className="flex gap-3">
         <img
-          className="size-12 rounded-full object-cover ring-2 ring-rose-500/20"
+          className="size-12 rounded-full object-cover ring-2 ring-[#C9A876]/25"
           src={card.image}
           alt={card.name}
         />
         <div className="flex flex-col">
           <div className="flex items-center gap-1">
-            <p className="font-bold text-slate-900 dark:text-white">
+            <p className="font-display font-semibold text-[#101826] dark:text-white">
               {card.name}
             </p>
-            <CheckCircle2 className="h-4 w-4 text-blue-500 fill-blue-500/10" />
+            {/* Kept blue — this signals "verified," a recognized meaning distinct from brand color */}
+            <CheckCircle2 className="h-4 w-4 fill-blue-500/10 text-blue-500" />
           </div>
-          <span className="text-xs text-slate-500 dark:text-slate-400">
+          <span className="font-docket text-[11px] text-[#4B5262] dark:text-white/40">
             {card.handle}
           </span>
         </div>
       </div>
-      <p className="text-sm mt-4 text-slate-600 dark:text-slate-300 italic leading-relaxed">
+      <p className="mt-4 text-sm italic leading-relaxed text-[#4B5262] dark:text-white/70">
         "{card.testimonial}"
       </p>
     </div>
 
-    <div className="flex gap-1 mt-4">
+    <div className="mt-4 flex gap-1">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-amber-400 text-lg">
+        <span key={i} className="text-lg text-[#C9A876]">
           ★
         </span>
       ))}
@@ -76,21 +77,27 @@ const CreateCard = ({ card }) => (
 
 const Testimonial = () => {
   return (
-    <section className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors overflow-hidden">
-      {/* Animated Header */}
+    <section className="overflow-hidden bg-[#FAF8F3] py-20 transition-colors dark:bg-[#101826]">
+      {/* Header */}
       <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="px-6 text-center mb-12"
+        className="mb-12 px-6 text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+        <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          Client Testimony
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        </div>
+
+        <h2 className="font-display text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           What Our Clients Say
         </h2>
-        <p className="text-slate-500 dark:text-slate-400 mt-4 max-w-2xl mx-auto">
+        <p className="mx-auto mt-4 max-w-2xl text-[#4B5262] dark:text-white/60">
           Hear from our satisfied clients who have experienced the difference
-          with Lawzra Lawfirm.
+          with Lawzra Law Firm.
         </p>
       </m.div>
 
@@ -101,12 +108,10 @@ const Testimonial = () => {
         transition={{ delay: 0.4, duration: 0.8 }}
         className="relative w-full overflow-hidden"
       >
-        {/* Tailwind v4 Linear Gradients for Side Blurs */}
-        <div className="absolute left-0 top-0 h-full w-20 md:w-40 z-20 pointer-events-none bg-linear-to-r from-slate-50 to-transparent dark:from-slate-900"></div>
-        <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-20 pointer-events-none bg-linear-to-l from-slate-50 to-transparent dark:from-slate-900"></div>
+        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-20 bg-linear-to-r from-[#FAF8F3] to-transparent dark:from-[#101826] md:w-40" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-20 bg-linear-to-l from-[#FAF8F3] to-transparent dark:from-[#101826] md:w-40" />
 
-        <div className="flex animate-marquee-scroll hover:[animation-play-state:paused] py-4">
-          {/* Triple the data for a perfect seamless loop on all screen sizes */}
+        <div className="animate-marquee-scroll flex py-4 hover:[animation-play-state:paused]">
           {[...cardsData, ...cardsData, ...cardsData].map((card, index) => (
             <CreateCard key={index} card={card} />
           ))}

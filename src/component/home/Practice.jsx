@@ -4,46 +4,57 @@ import { practiceAreas } from "../../assets/assets";
 
 const Practice = () => {
   return (
-    <section className="mt-20 mb-20 px-4 ">
-      {/* Header Animation */}
+    <section className="bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826]">
+      {/* Header */}
       <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="text-center"
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-center dark:text-slate-100">
+        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          Areas of Counsel
+          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        </div>
+
+        <h1 className="font-display mt-4 text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           Practice Areas
         </h1>
-        <p className="text-sm text-slate-500 text-center mt-4 max-w-lg mx-auto dark:text-slate-300 leading-relaxed">
-          We provide comprehensive legal services tailored to meet the needs of individuals, businesses, and institutions.
+
+        <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#4B5262] dark:text-white/60">
+          We provide comprehensive legal services tailored to meet the needs
+          of individuals, businesses, and institutions.
         </p>
       </m.div>
 
-      {/* Grid Animation */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
+      {/* Grid */}
+      <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {practiceAreas.map((area, index) => (
           <m.div
             key={area.id || index}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            // Staggered effect: cards appear one by one
             transition={{ delay: index * 0.1, duration: 0.4 }}
-            whileHover={{ y: -5 }} // Subtle lift on hover
+            whileHover={{ y: -5 }}
           >
             <Link
               to={`/practice-areas/${area.path}`}
-              className="group block p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-rose-500 dark:hover:border-rose-500 hover:shadow-xl transition-all duration-300 relative overflow-hidden h-full flex items-center justify-center"
+              className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white p-8 transition-all duration-300 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
             >
               {/* Decorative background element on hover */}
-              <div className="flex flex-col text-center gap-2">
-              <div className="absolute -right-4 -bottom-4 w-12 h-12 bg-rose-500/10 rounded-full group-hover:scale-[6] transition-transform duration-500" />
+              <div className="absolute -bottom-4 -right-4 h-12 w-12 rounded-full bg-[#C9A876]/10 transition-transform duration-500 group-hover:scale-[6]" />
 
-              <h3 className="relative z-10 text-lg font-bold text-slate-800 dark:text-slate-200 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors text-center">
-                {area.title}
-              </h3>
-              <p className=" dark:text-slate-300 text-sm ">{area.subtitle}</p>
+              <div className="relative z-10 flex flex-col items-center gap-2 text-center">
+                <span className="font-docket text-xs text-[#C9A876]">§</span>
+                <h3 className="font-display text-lg text-[#101826] transition-colors group-hover:text-[#8A6A38] dark:text-white dark:group-hover:text-[#C9A876]">
+                  {area.title}
+                </h3>
+                <p className="text-sm text-[#4B5262] dark:text-white/60">
+                  {area.subtitle}
+                </p>
               </div>
             </Link>
           </m.div>

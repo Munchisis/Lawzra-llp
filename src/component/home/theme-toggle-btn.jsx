@@ -17,7 +17,9 @@ const ThemeToggleBtn = ({ theme, setTheme }) => {
   // Set initial theme (ONLY once)
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const preferredTheme = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
 
     if (savedTheme) {
       setTheme(savedTheme);
@@ -42,10 +44,15 @@ const ThemeToggleBtn = ({ theme, setTheme }) => {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`p-2 rounded-full transition-all border duration-300 cursor-pointer
-        ${!isFixed 
-          ? "text-dark-text dark:hover:text-light-text hover:border-highlight hover:text-highlight" 
-          : "text-dark-text hover:text-primary-dark hover:border-primary-dark border border-gray-400 dark:border-gray-800 dark:hover:border-highlight dark:hover:text-gray-300"}
+      aria-label={
+        theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+      }
+      className={`cursor-pointer rounded-full border p-2 transition-all duration-300
+        ${
+          !isFixed
+            ? "border-transparent text-white/80 hover:border-[#C9A876] hover:text-[#C9A876]"
+            : "border-[#C9A876]/30 text-[#4B5262] hover:border-[#C9A876] hover:text-[#B08D57] dark:border-white/15 dark:text-white/70 dark:hover:border-[#C9A876] dark:hover:text-[#C9A876]"
+        }
         `}
     >
       {theme === "dark" ? <Moon size={18} /> : <SunIcon size={18} />}

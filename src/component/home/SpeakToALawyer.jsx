@@ -1,22 +1,24 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const SpeakToALawyer = () => {
   return (
-    <div className='mb-10 mt-10 text-gray-700'>
-      <h3 className='dark:text-gray-300 text-center tracking-widest italic text-gray-700 p-5'>Need Legal Assistance? Let’s Help You.</h3>
+    <div className="mb-10 mt-10">
+      <h3 className="font-display p-5 text-center text-lg italic tracking-wide text-[#101826] dark:text-white/80">
+        Need Legal Assistance? Let's Help You.
+      </h3>
 
       {/* CTA */}
-          <div className="text-center p-5">
-            <Link 
-              to="/appointment" 
-              className="text-white bg-rose-400 hover:bg-rose-500 inline-block dark:bg-green-600 dark:hover:bg-green-700 dark:text-white px-10 py-4 rounded-full font-bold transition-all active:scale-95 shadow-xl dark:shadow-green-600/20 uppercase tracking-widest text-sm duration-300"
-            >
-              Schedule a Consultation
-            </Link>
-          </div>
+      <div className="p-5 text-center">
+        <Link
+          to="/appointment"
+          className="inline-block rounded-sm bg-[#C9A876] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#101826] shadow-xl shadow-[#C9A876]/20 transition-all duration-300 hover:bg-[#dbbb8c] active:scale-95"
+        >
+          Schedule a Consultation
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SpeakToALawyer
+export default SpeakToALawyer;

@@ -1,32 +1,44 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    
-    <!-- Primary SEO -->
-    <title>Lawzra | Top Legal Services & Law Firm in Nigeria</title>
-    <meta name="description"
-      content="Lawzra is a leading Nigerian law firm offering expert legal services in corporate law, banking, tax, real estate, IP, energy, dispute resolution, and more." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://lawzra.com/" />
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Lawzra | Top Legal Services in Nigeria" />
-    <meta property="og:description"
-      content="Expert legal counsel in corporate, banking, tax, real estate, energy, IP, tech and dispute resolution." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://lawzra.com/" />
-    <meta property="og:locale" content="en_NG" />
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Lawzra | Top Legal Services in Nigeria" />
-    <meta name="twitter:description" content="Expert legal counsel across multiple practice areas in Nigeria." />
-    
-    <!-- Schema.org -->
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fixed: was declared as image/svg+xml but pointed at a .AVIF file -->
+  <link rel="icon" type="image/AVIF" href="/favicon.AVIF" />
+
+  <!-- Shared brand fonts: Fraunces (display serif) + IBM Plex Mono (docket/eyebrow caps).
+         Loading these once here means Hero.jsx / Nav.jsx no longer need their own
+         inline <style>@import font blocks — remove those if you haven't already. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Primary SEO -->
+  <title>Lawzra | Top Legal Services & Law Firm in Nigeria</title>
+  <meta name="description"
+    content="Lawzra is a leading Nigerian law firm offering expert legal services in corporate law, banking, tax, real estate, IP, energy, dispute resolution, and more." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lawzra.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Lawzra | Top Legal Services in Nigeria" />
+  <meta property="og:description"
+    content="Expert legal counsel in corporate, banking, tax, real estate, energy, IP, tech and dispute resolution." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lawzra.com/" />
+  <meta property="og:locale" content="en_NG" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lawzra | Top Legal Services in Nigeria" />
+  <meta name="twitter:description" content="Expert legal counsel across multiple practice areas in Nigeria." />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "LegalService",
@@ -39,10 +51,13 @@
         }
         </script>
 
-    <title>lawzra</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <!-- Removed a second, redundant <title>lawzra</title> tag that was here —
+         it silently overrode the SEO-optimized title above in every browser. -->
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>
