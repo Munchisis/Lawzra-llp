@@ -1,12 +1,12 @@
 import { insightsData } from "../assets/assets";
-import bannerImg from "../assets/img/about-us-4.AVIF";
+import aboutUs4 from "../assets/img/about-us-4.AVIF";
 
 const InsightsArchivePage = () => {
   return (
     <div className="bg-[#FAF8F3] dark:bg-[#101826]">
       {/* Hero Section */}
       <div
-        style={{ backgroundImage: `url(${bannerImg})` }}
+        style={{ backgroundImage: `url(${aboutUs4})` }}
         className="relative mb-10 flex h-64 flex-col items-center justify-center bg-cover bg-center"
       >
         {/* Ink-navy overlay for text legibility over the photo */}
