@@ -1,28 +1,25 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Scale } from "lucide-react";
-import { practiceAreasCard, assets } from "../assets/assets";
+import { practiceAreasCard, assets } from "../data/practiceData";
 import { useRef } from "react";
 import { m, useScroll, useTransform } from "framer-motion";
 import AnimatedPage from "../component/AnimatedPage";
 
 const PracticeAreaPage = () => {
-
   const containerRef = useRef(null);
-  
-    // Track scroll progress specifically for this hero section
-    const { scrollYProgress } = useScroll({
-      target: containerRef,
-      offset: ["start start", "end start"],
-    });
-  
-    // Map scroll progress (0 to 1) to a Y-axis movement (e.g., 0px to 200px)
-    // This makes the background move slower than the scroll, creating depth
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  
   const navigate = useNavigate();
 
-  // Animation variants
+  // Track scroll progress specifically for this hero section
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Map scroll progress (0 to 1) to a Y-axis movement (e.g., 0px to 40%/100%)
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  // Framer Motion Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -39,7 +36,7 @@ const PracticeAreaPage = () => {
   return (
     <AnimatedPage>
       <div className="min-h-screen bg-[#FAF8F3] pb-24 dark:bg-[#101826]">
-        {/* Hero Section */}
+        {/* Hero Section with Parallax */}
         <div
           ref={containerRef}
           className="relative isolate flex h-[60vh] flex-col items-center justify-center overflow-hidden px-4 text-white"
@@ -47,7 +44,7 @@ const PracticeAreaPage = () => {
           <m.div
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(${assets.aboutUs4})`,
+              backgroundImage: `url(${assets.corporate})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -55,10 +52,10 @@ const PracticeAreaPage = () => {
             }}
           />
 
-          {/* Overlay — was missing; needed for text legibility over the photo */}
+          {/* Dark Overlay for Text Legibility */}
           <div className="absolute inset-0 z-10 bg-linear-to-b from-[#0A0F18]/80 via-[#0A0F18]/55 to-[#0A0F18]/85" />
 
-          {/* Floating Text Content */}
+          {/* Parallax Floating Text Content */}
           <m.div style={{ y: textY }} className="relative z-20 text-center">
             <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
               <span className="h-px w-8 bg-[#C9A876]/60" />
@@ -75,7 +72,7 @@ const PracticeAreaPage = () => {
           </m.div>
         </div>
 
-        {/* Grid Cards with Staggered Animation */}
+        {/* Dynamic Card Grid Layout */}
         <div className="mx-auto mt-20 max-w-7xl px-6">
           <m.div
             variants={container}
@@ -88,16 +85,17 @@ const PracticeAreaPage = () => {
               <m.div
                 variants={item}
                 key={area.path}
-                onClick={() => navigate(`/practice-areas/${area.path}`)}
+                onClick={() => navigate(`/areas-of-practice/${area.path}`)}
                 className="group flex cursor-pointer flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
               >
-                {/* Image with Zoom */}
+                {/* Image Component Block with Hover Zoom */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     src={area.image}
                     alt={area.title}
                   />
+                  {/* Floating Scales Icon Badge */}
                   <div className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-[#101826]/90">
                     <Scale
                       size={16}
@@ -106,7 +104,7 @@ const PracticeAreaPage = () => {
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Card Text Content Block */}
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="mb-4 line-clamp-2 font-display text-lg text-[#101826] dark:text-white">
                     {area.title}
@@ -122,7 +120,7 @@ const PracticeAreaPage = () => {
           </m.div>
         </div>
 
-        {/* Call to Action Section */}
+        {/* Firm Call to Action Unit */}
         <section className="mx-auto mt-32 max-w-5xl rounded-sm border border-[#C9A876]/20 bg-[#0C1420] p-12 px-6 text-center text-white">
           <h2 className="font-display mb-4 text-3xl">
             Need Specialized Legal Counsel?

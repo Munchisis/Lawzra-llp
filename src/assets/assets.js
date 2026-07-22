@@ -5,8 +5,8 @@ import lawyer3 from "./img/lawyer3.avif";
 import aboutUs4 from "./img/about-us-4.avif";
 import aboutUs2 from "./img/aboutus2.avif";
 import aboutUs from "./img/aboutus.avif";
-import logo from "../../public/logo.avif";
-import logoW from "../../public/logoW.avif";
+import logo from "./img/logo.avif";
+import logoW from "./img/logoW.avif";
 import banking from "./img/banking.avif";
 import corporate from "./img/corporate.avif";
 import dispute from "./img/dispute.avif";
@@ -139,22 +139,6 @@ export const partnerInfo = [
     width: 400,
     height: 400,
   },
-];
-
-export const practiceAreasCard = [
-  { title: "Banking & Finance Law", image: banking, path: "banking" },
-  { title: "Corporate & Commercial", image: corporate, path: "corporate" },
-  { title: "Dispute Resolution", image: dispute, path: "dispute" },
-  { title: "Intellectual Property", image: ip, path: "ip" },
-  { title: "Privacy and Data Protection", image: privacy, path: "privacy" },
-  { title: "Real Estate", image: real_estate, path: "real-estate" },
-  { title: "Tax and Transfer Pricing", image: tax, path: "tax" },
-  {
-    title: "Technology, Media & Telecommunications",
-    image: tech,
-    path: "tech",
-  },
-  { title: "Energy Law", image: energy, path: "energy" },
 ];
 
 export const insightsData = [

@@ -11,6 +11,8 @@ import ScrollToTopOnNavigate from "./component/ScrollToTopOnNavigate";
 import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
+import InsightsArchivePage from "./Pages/InsightsArchivePage";
+import PracticeAreaPage from "./Pages/PracticeAreaPage";
 
 // lazy load all Pages and heavy Practice Area components
 const Home = lazy(() => import("./Pages/home"));
@@ -20,16 +22,21 @@ const OurTeam = lazy(() => import("./Pages/OurTeamPage"));
 const Insights = lazy(() => import("./Pages/InsightsArchivePage"));
 const Insight = lazy(() => import("./component/home/insight"));
 const Careers = lazy(() => import("./Pages/CareersPage"));
+
 const PracticeAreas = lazy(() => import("./Pages/PracticeAreaPage"));
-const Banking = lazy(() => import("./component/Practice/Banking"));
-const Tax = lazy(() => import("./component/Practice/Tax"));
-const RealEstate = lazy(() => import("./component/Practice/real-estate"));
-const IP = lazy(() => import("./component/Practice/IP"));
-const Energy = lazy(() => import("./component/Practice/Energy"));
-const Corporate = lazy(() => import("./component/Practice/Corporate"));
-const Privacy = lazy(() => import("./component/Practice/Privacy"));
-const Tech = lazy(() => import("./component/Practice/Tech"));
-const Dispute = lazy(() => import("./component/Practice/Dispute"));
+const PracticeDetails = lazy(() => import("./Pages/PracticeDetails"));
+
+
+// const Banking = lazy(() => import("./component/Practice/Banking"));
+// const Tax = lazy(() => import("./component/Practice/Tax"));
+// const RealEstate = lazy(() => import("./component/Practice/real-estate"));
+// const IP = lazy(() => import("./component/Practice/IP"));
+// const Energy = lazy(() => import("./component/Practice/Energy"));
+// const Corporate = lazy(() => import("./component/Practice/Corporate"));
+// const Privacy = lazy(() => import("./component/Practice/Privacy"));
+// const Tech = lazy(() => import("./component/Practice/Tech"));
+// const Dispute = lazy(() => import("./component/Practice/Dispute"));
+
 const Appointment = lazy(() => import("./component/home/appointment"));
 const SuccessPage = lazy(() => import("./component/SuccessPage"));
 const PrivacyPolicy = lazy(() => import("./Pages/privacyPolicy"));
@@ -37,7 +44,7 @@ const TermsOfService = lazy(() => import("./Pages/termsOfService"));
 const CookiePolicy = lazy(() => import("./Pages/cookiePolicy"));
 
 
-const NotFound = lazy(() => import("./component/not-found"));
+// const NotFound = lazy(() => import("./component/not-found"));
 
 const App = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -76,31 +83,15 @@ const App = () => {
                 <Route path="/contact-us" element={<ContactUs />} />
                 <Route path="/our-team" element={<OurTeam />} />
                 <Route path="/insights" element={<Insights />} />
-                <Route path="/insight" element={<Insight />} />
+                <Route path="/insight" element={<InsightsArchivePage />} />
                 <Route path="/careers" element={<Careers />} />
-                <Route path="/energy" element={<Energy />} />
+              
               
 
                 {/* Full-page Practice Area Routes */}
-                <Route path="/practice-areas" element={<PracticeAreas />} />
-
-                <Route path="/practice-areas/banking" element={<Banking />} />
-                <Route
-                  path="/practice-areas/corporate"
-                  element={<Corporate />}
-                />
-                <Route path="/practice-areas/dispute" element={<Dispute />} />
-                <Route path="/practice-areas/energy" element={<Energy />} />
-                <Route path="/practice-areas/ip" element={<IP />} />
-                <Route
-                  path="/practice-areas/real-estate"
-                  element={<RealEstate />}
-                />
-                <Route path="/practice-areas/privacy" element={<Privacy />} />
-                <Route path="/practice-areas/tax" element={<Tax />} />
-                <Route path="/practice/tax" element={<Tax />} />
-                <Route path="/practice-areas/tech" element={<Tech />} />
-
+              <Route path="/areas-of-practice" element={<PracticeAreaPage />} />
+              <Route path="/areas-of-practice/:slug" element={<PracticeDetails />} />
+              
                 <Route path="/appointment" element={<Appointment />} />
                 <Route path="/success-page" element={<SuccessPage />} />
 
@@ -108,7 +99,7 @@ const App = () => {
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/cookie-policy" element={<CookiePolicy />} />
 
-                <Route path="*" element={<NotFound />} />
+                {/* <Route path="*" element={<NotFound />} /> */}
               </Routes>
             </Suspense>
       

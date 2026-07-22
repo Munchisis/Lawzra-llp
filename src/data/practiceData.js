@@ -1,4 +1,49 @@
+
 import banking from "../assets/img/banking.avif";
+import corporate from "../assets/img/corporate.avif";
+import dispute from "../assets/img/dispute.avif";
+import energy from "../assets/img/energy.avif";
+import ip from "../assets/img/ip.avif";
+import ip2 from "../assets/img/ip2.avif";
+import media from "../assets/img/media.avif";
+import real_estate from "../assets/img/real_estate.avif";
+import tax from "../assets/img/tax.avif";
+import tax2 from "../assets/img/tax2.avif";
+import privacy from "../assets/img/privacy.avif";
+import tech from "../assets/img/tech.avif";
+
+
+export const assets = {
+  banking,
+  corporate,
+  dispute,
+  energy,
+  ip,
+  privacy,
+  real_estate,
+  tax,
+  tech,
+  ip2,
+  media,
+  tax2,
+};
+
+export const practiceAreasCard = [
+  { title: "Banking & Finance Law", image: banking, path: "banking" },
+  { title: "Corporate & Commercial", image: corporate, path: "corporate" },
+  { title: "Dispute Resolution", image: dispute, path: "dispute" },
+  { title: "Intellectual Property", image: ip, path: "ip" },
+  { title: "Privacy and Data Protection", image: privacy, path: "privacy" },
+  { title: "Real Estate", image: real_estate, path: "real-estate" },
+  { title: "Tax and Transfer Pricing", image: tax, path: "tax" },
+  {
+    title: "Technology, Media & Telecommunications",
+    image: tech,
+    path: "tech",
+  },
+  { title: "Energy Law", image: energy, path: "energy" },
+];
+
 
 export const practiceAreasData = [
   {
@@ -29,6 +74,7 @@ export const practiceAreasData = [
   {
     id: 2,
     slug: "corporate",
+    image: corporate,
     title: "Corporate and Commercial Law",
     description:
       "Our corporate law practice provides comprehensive legal services to businesses and individuals in all aspects of corporate governance formation and operations.",
@@ -55,6 +101,7 @@ export const practiceAreasData = [
   {
     id: 3,
     slug: "dispute",
+    image: dispute,
     title: "Dispute Resolution",
     description:
       "Our dispute resolution practice provides comprehensive legal services to clients in resolving disputes through negotiation, mediation, arbitration, and litigation.",
@@ -81,6 +128,7 @@ export const practiceAreasData = [
   {
     id: 4,
     slug: "ip",
+    image: ip,
     title: "Intellectual Property",
     description:
       "Our intellectual property law practice provides comprehensive legal services to clients in protecting and enforcing their intellectual property rights.",
@@ -113,6 +161,7 @@ export const practiceAreasData = [
   {
     id: 5,
     slug: "privacy",
+    image: privacy,
     title: "Privacy and Data Protection",
     description:
       "Our privacy law practice provides comprehensive legal services to clients in protecting and managing their privacy rights and obligations.",
@@ -137,6 +186,7 @@ export const practiceAreasData = [
   {
     id: 6,
     slug: "realEstate",
+    image: real_estate,
     title: "Real Estate Law ",
     description:
       " Our real estate law practice provides comprehensive legal services to clients in all aspects of real estate transactions and property management.",
@@ -160,6 +210,7 @@ export const practiceAreasData = [
   {
     id: 7,
     slug: "tax",
+    image: tax,
     title: "Tax and Transfer Pricing",
     description:
       "Our tax law practice provides comprehensive legal services to clients in all aspects of tax planning, compliance, and dispute resolution.",
@@ -184,6 +235,7 @@ export const practiceAreasData = [
   {
     id: 8,
     slug: "tech",
+    image: tech,
     title: "Technology, Media & Telecommunications",
     description:
       "Our technology law practice provides comprehensive legal services to clients in all aspects of technology-related legal issues and transactions.",
@@ -208,6 +260,7 @@ export const practiceAreasData = [
   {
     id: 9,
     slug: "energy",
+    image: energy,
     title: "Energy Law",
     description:
       "Our energy law practice provides comprehensive legal services to clients in the energy sector, including oil and gas, renewable energy, and power generation.",

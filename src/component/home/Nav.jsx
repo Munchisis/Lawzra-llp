@@ -14,7 +14,7 @@ const Nav = ({ theme, setTheme }) => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about-us" },
-    { name: "Practice Areas", path: "/practice-areas" },
+    { name: "Practice Areas", path: "/areas-of-practice" },
     { name: "Our Team", path: "/our-team" },
     { name: "Insights", path: "/insights" },
     { name: "Careers", path: "/careers" },
