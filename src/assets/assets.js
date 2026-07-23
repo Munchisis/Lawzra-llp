@@ -1,4 +1,7 @@
 import hero from "./img/hero.avif";
+import hero2 from "./img/hero2.avif";
+import hero3 from "./img/hero3.avif";
+import aboutUsHome from "./img/aboutUsHome.avif";
 import lawyer1 from "./img/Lawyer1.avif";
 import lawyer2 from "./img/Lawyer2.avif";
 import lawyer3 from "./img/lawyer3.avif";
@@ -28,7 +31,6 @@ import profile from "./img/profile.avif";
 import profile1 from "./img/profile1.avif";
 import profile2 from "./img/profile2.avif";
 import profile3 from "./img/profile3.avif";
-import custody from "./img/custody.avif";
 import privacyPolicy from "./img/privacyPolicy.avif";
 import cookiePolicy from "./img/cookiePolicy.avif";
 import termsOfService from "./img/termsOfService.avif";
@@ -40,9 +42,12 @@ export const assets = {
   aboutUs4,
   aboutUs2,
   aboutUs,
+  aboutUsHome,
   logo,
   logoW,
   hero,
+  hero2,
+  hero3,
   banking,
   corporate,
   dispute,
@@ -64,7 +69,6 @@ export const assets = {
   profile1,
   profile2,
   profile3,
-  custody,
   privacyPolicy,
   cookiePolicy,
   termsOfService,
@@ -108,38 +112,7 @@ export const gallery = [
   },
 ];
 
-export const partnerInfo = [
-  {
-    id: 1,
-    img: lawyer1,
-    title: "Intellectual property Consultant",
-    desc: "Specializing in protecting and enforcing intellectual property rights including patents, trademarks, and copyrights.",
-    linkedin: "https://www.linkedin.com",
-    email: "lawyer@gmail.com",
-    width: 400,
-    height: 400,
-  },
-  {
-    id: 2,
-    img: lawyer2,
-    title: "Tax Law Consultant",
-    desc: "Specializing in Tax law matters.",
-    linkedin: "https://www.linkedin.com",
-    email: "lawyer@gmail.com",
-    width: 400,
-    height: 400,
-  },
-  {
-    id: 3,
-    img: lawyer3,
-    title: "IT Law Consultant",
-    desc: "Specializing in IT law matters including data privacy, cybersecurity, and digital contracts.",
-    linkedin: "https://www.linkedin.com",
-    email: "lawyer@gmail.com",
-    width: 400,
-    height: 400,
-  },
-];
+
 
 export const insightsData = [
   {
@@ -260,62 +233,5 @@ export const homeInsightsData = [
       "Intellectual Property Rights in the Digital Age: Challenges and Opportunities for Nigerian Creators and Innovators.",
     image: ip2,
     Date: "July 20, 2024",
-  },
-];
-
-export const practiceAreas = [
-  {
-    title: "Banking & Finance Law",
-    subtitle:
-      "Specialized legal advocacy tailored for the evolving commercial landscape.",
-    path: "banking",
-  },
-  {
-    title: "Corporate & Commercial",
-    subtitle:
-      "Advising businesses on formation, governance, contracts, and regulatory compliance.",
-    path: "corporate",
-  },
-  {
-    title: "Dispute Resolution",
-    subtitle:
-      "Representing clients in civil disputes with a focus on efficient and strategic outcomes.",
-    path: "dispute",
-  },
-  {
-    title: "Intellectual Property",
-    subtitle:
-      "Comprehensive legal services dedicated to the protection and enforcement of your creative and industrial innovations.",
-    path: "ip",
-  },
-  {
-    title: "Privacy and Data Protection",
-    subtitle:
-      "Comprehensive legal solutions for safeguarding data assets and ensuring strict adherence to global privacy obligations.",
-    path: "privacy",
-  },
-  {
-    title: "Real Estate",
-    subtitle:
-      "Handling land transactions, title verification, and resolution of property disputes.",
-    path: "real-estate",
-  },
-  {
-    title: "Tax and Transfer Pricing",
-    subtitle:
-      "Sophisticated legal counsel ensuring total compliance while optimizing financial outcomes through strategic planning.",
-    path: "tax",
-  },
-  {
-    title: "Technology, Media & Telecommunications",
-    subtitle:
-      "Full-service legal expertise tailored to navigate complex regulatory and commercial landscapes.",
-    path: "tech",
-  },
-  {
-    title: "Energy Law",
-    subtitle:
-      "Full-service legal expertise tailored to navigate complex regulatory and commercial landscapes.",
-    path: "energy",
   },
 ];

@@ -3,14 +3,14 @@ import { useForm } from "react-hook-form";
 import { Calendar, ShieldCheck, CheckCircle2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { m } from "framer-motion";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import { Turnstile } from "@marsidev/react-turnstile";
 import OperatingHours from "../OperatingHours";
 import { useNavigate } from "react-router-dom";
 
 const Appointment = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const captchaRef = useRef(null); // Create a ref for the captcha
+  const captchaRef = useRef(null); // Ref for the Turnstile widget
   const navigate = useNavigate();
 
   const {
@@ -21,39 +21,29 @@ const Appointment = () => {
     formState: { errors },
   } = useForm();
 
-  const onHCaptchaChange = (token) => {
-    setValue("h-captcha-response", token); // Store token in form data
+  const onTurnstileVerify = (token) => {
+    setValue("cf-turnstile-response", token); // Store token in form data
   };
 
   const onSubmit = async (data) => {
-    if (!data["h-captcha-response"]) {
+    if (!data["cf-turnstile-response"]) {
       toast.error("Please complete the captcha challenge");
       return;
     }
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData();
-      formData.append(
-        "access_key",
-        import.meta.env.VITE_WEB3FORMS_APPOINTMENT_KEY,
-      );
-
-      // Append all fields, including the 'h-captcha-response
-      Object.entries(data).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/appointment", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       const result = await response.json();
       if (result.success) {
         reset();
         navigate("/success-page");
-        captchaRef.current?.resetCaptcha(); // Reset widget for next use
+        captchaRef.current?.reset(); // Reset widget for next use
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
         toast.success(result.message || "Submission failed.");
@@ -250,11 +240,12 @@ const Appointment = () => {
             </div>
 
             <div className="flex justify-center py-2 md:justify-start">
-              <HCaptcha
+              <Turnstile
                 ref={captchaRef}
-                sitekey={import.meta.env.VITE_HCAPTCHA_SITEKEY}
-                onVerify={onHCaptchaChange}
-                theme="dark" // Matches your UI
+                siteKey={import.meta.env.VITE_TURNSTILE_SITEKEY}
+                onSuccess={onTurnstileVerify}
+                onExpire={() => setValue("cf-turnstile-response", "")}
+                options={{ theme: "dark" }} // Matches your UI
               />
             </div>
 

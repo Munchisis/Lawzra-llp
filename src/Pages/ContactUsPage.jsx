@@ -50,7 +50,7 @@ const ContactUsPage = () => {
         />
 
         {/* Overlay — was missing; needed for text legibility over the photo */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0A0F18]/80 via-[#0A0F18]/55 to-[#0A0F18]/85" />
+        <div className="absolute inset-0 z-10 bg-linear-to-b from-[#0A0F18]/80 via-[#0A0F18]/55 to-[#0A0F18]/85" />
 
         {/* Floating Text Content */}
         <m.div style={{ y: textY }} className="relative z-20 text-center">

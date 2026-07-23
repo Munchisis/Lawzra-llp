@@ -35,11 +35,11 @@ const PracticeAreaPage = () => {
 
   return (
     <AnimatedPage>
-      <div className="min-h-screen bg-[#FAF8F3] pb-24 dark:bg-[#101826]">
+      <div className="min-h-screen bg-[#FAF8F3] pb-16 sm:pb-24 dark:bg-[#101826]">
         {/* Hero Section with Parallax */}
         <div
           ref={containerRef}
-          className="relative isolate flex h-[60vh] flex-col items-center justify-center overflow-hidden px-4 text-white"
+          className="relative isolate flex h-[45vh] sm:h-[55vh] lg:h-[60vh] flex-col items-center justify-center overflow-hidden px-4 text-white"
         >
           <m.div
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -57,15 +57,15 @@ const PracticeAreaPage = () => {
 
           {/* Parallax Floating Text Content */}
           <m.div style={{ y: textY }} className="relative z-20 text-center">
-            <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
-              <span className="h-px w-8 bg-[#C9A876]/60" />
+            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
+              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
               Areas of Counsel
-              <span className="h-px w-8 bg-[#C9A876]/60" />
+              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
             </div>
-            <h1 className="font-display text-5xl font-medium">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium">
               Practice Areas
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/75">
+            <p className="mx-auto mt-3 sm:mt-4 max-w-2xl px-2 text-sm sm:text-base lg:text-lg text-white/75">
               Explore our diverse practice areas where our legal experts provide
               tailored solutions to meet your needs.
             </p>
@@ -73,13 +73,13 @@ const PracticeAreaPage = () => {
         </div>
 
         {/* Dynamic Card Grid Layout */}
-        <div className="mx-auto mt-20 max-w-7xl px-6">
+        <div className="mx-auto mt-10 sm:mt-16 lg:mt-20 max-w-7xl px-4 sm:px-6">
           <m.div
             variants={container}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4"
           >
             {practiceAreasCard.map((area) => (
               <m.div
@@ -89,7 +89,7 @@ const PracticeAreaPage = () => {
                 className="group flex cursor-pointer flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
               >
                 {/* Image Component Block with Hover Zoom */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     src={area.image}
@@ -105,8 +105,8 @@ const PracticeAreaPage = () => {
                 </div>
 
                 {/* Card Text Content Block */}
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="mb-4 line-clamp-2 font-display text-lg text-[#101826] dark:text-white">
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
+                  <h3 className="mb-3 sm:mb-4 line-clamp-2 font-display text-base sm:text-lg text-[#101826] dark:text-white">
                     {area.title}
                   </h3>
                   <div className="mt-auto">
@@ -121,17 +121,17 @@ const PracticeAreaPage = () => {
         </div>
 
         {/* Firm Call to Action Unit */}
-        <section className="mx-auto mt-32 max-w-5xl rounded-sm border border-[#C9A876]/20 bg-[#0C1420] p-12 px-6 text-center text-white">
-          <h2 className="font-display mb-4 text-3xl">
+        <section className="mx-auto mt-16 sm:mt-24 lg:mt-32 max-w-5xl rounded-sm border border-[#C9A876]/20 bg-[#0C1420] p-6 sm:p-10 lg:p-12 text-center text-white">
+          <h2 className="font-display mb-3 sm:mb-4 text-2xl sm:text-3xl">
             Need Specialized Legal Counsel?
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/60">
+          <p className="mx-auto mb-6 sm:mb-8 max-w-2xl text-sm sm:text-base text-white/60">
             Our partners are ready to discuss your specific requirements and
             develop a strategic approach to your case.
           </p>
           <button
             onClick={() => navigate("/appointment")}
-            className="cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
+            className="w-full sm:w-auto cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
           >
             Book a Consultation
           </button>

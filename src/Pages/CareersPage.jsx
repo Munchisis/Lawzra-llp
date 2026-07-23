@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import { m } from "framer-motion";
+import { Turnstile } from "@marsidev/react-turnstile";
 import JobOpenings from "../component/JobOpenings";
 import LifeAtLawzra from "../component/LifeAtLawzra";
 import AnimatedPage from "../component/AnimatedPage";
 import { assets } from "../assets/assets";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { useNavigate } from "react-router-dom";
 
 const CareersPage = () => {
@@ -27,7 +27,7 @@ const CareersPage = () => {
     // --- File Validation ---
     const file = formData.get("attachment");
     if (file && file.size > 0) {
-      const maxSize = 5 * 1024 * 1024; // 5MB limit for Web3Forms
+      const maxSize = 4 * 1024 * 1024; // kept under Vercel's serverless body-size limit
       const allowedTypes = [
         "application/pdf",
         "application/msword",
@@ -35,7 +35,7 @@ const CareersPage = () => {
       ];
 
       if (file.size > maxSize) {
-        toast.error("File is too large! Maximum size is 5MB.");
+        toast.error("File is too large! Maximum size is 4MB.");
         return;
       }
 
@@ -46,12 +46,10 @@ const CareersPage = () => {
     }
 
     setIsSubmitting(true);
-    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_CAREER_KEY);
-
-    formData.append("h-captcha-response", captchaToken);
+    formData.append("cf-turnstile-response", captchaToken);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/careers", {
         method: "POST",
         body: formData,
       });
@@ -59,7 +57,7 @@ const CareersPage = () => {
       const data = await response.json();
       if (data.success) {
         event.target.reset();
-        captchaRef.current.resetCaptcha(); // Reset widget after success
+        captchaRef.current.reset(); // Reset widget after success
         navigate("/success-page");
       } else {
         toast.error(data.message || "Submission failed.");
@@ -121,9 +119,6 @@ const CareersPage = () => {
             </p>
           </div>
 
-          {/* Changed from all-caps to sentence case — the original's shouty
-              uppercase headline read louder than the restrained tone the
-              rest of the site uses. */}
           <h1 className="font-display mx-auto mt-6 max-w-xl text-4xl font-medium leading-tight text-[#101826] dark:text-white md:mx-0 md:text-5xl">
             Interested in joining the{" "}
             <span className="text-[#C9A876]">Lawzra</span> team?
@@ -204,10 +199,10 @@ const CareersPage = () => {
             </div>
 
             <div className="flex justify-center py-2 md:justify-start">
-              <HCaptcha
+              <Turnstile
                 ref={captchaRef}
-                sitekey={import.meta.env.VITE_HCAPTCHA_SITEKEY}
-                theme="dark"
+                siteKey={import.meta.env.VITE_TURNSTILE_SITEKEY}
+                options={{ theme: "dark" }}
               />
             </div>
 
@@ -264,9 +259,6 @@ const CareersPage = () => {
         transition={{ delay: 0.4 }}
         viewport={{ once: true }}
       >
-        {/* Was w-1/2 ml-25 — a fixed half-width + fixed left margin with no
-            responsive variants, which pushes content off-center or off-screen
-            on smaller viewports. Swapped for a centered, responsive container. */}
         <div className="mx-auto mb-20 w-full max-w-4xl rounded-sm border border-[#C9A876]/20 px-6">
           <JobOpenings />
         </div>

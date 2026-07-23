@@ -21,7 +21,7 @@ const WhatsAppButton = () => {
     setHasInteracted(true);
   };
 
-  // 1. Timezone & Business Logic (Africa/Lagos)
+  // Timezone & Business Logic (Africa/Lagos)
   const now = new Date();
   const watDate = new Date(
     now.toLocaleString("en-US", { timeZone: "Africa/Lagos" }),
@@ -32,7 +32,7 @@ const WhatsAppButton = () => {
   const isWeekend = currentDay === 0 || currentDay === 6;
   const isBusinessHours = currentHour >= 8 && currentHour < 18 && !isWeekend;
 
-  // 2. Scroll Logic
+  // Scroll Logic
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -46,7 +46,7 @@ const WhatsAppButton = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // 3. Tooltip Rotation
+  // Tooltip Rotation
   useEffect(() => {
     const interval = setInterval(
       () => setTipIndex((prev) => (prev === 0 ? 1 : 0)),
@@ -55,13 +55,13 @@ const WhatsAppButton = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 4. Dynamic Content
+  // Dynamic Content
   const phoneNumber = "2348037333930";
   const getStatusConfig = () => {
     if (isBusinessHours)
       return {
         label: "Counsel Online",
-        icon: <Sun size={12} className="text-[#B08D57]" />,
+        icon: <Sun size={12} className="text-[#B08D57] dark:text-white" />,
         color: "bg-white/90 text-[#101826]",
         message: "Hello Lawzra LP, I'd like to book a consultation.",
       };
@@ -94,7 +94,7 @@ const WhatsAppButton = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -10 }}
-            className={`flex items-center gap-2 rounded-sm border px-4 py-2 text-[10px] font-bold uppercase tracking-widest shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-[#16223a] ${
+            className={`flex items-center gap-2 rounded-sm border px-4 py-2 text-[10px] font-bold uppercase tracking-widest shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-[#16223a] dark:text-white/80 ${
               tipIndex === 0
                 ? `${status.color} border-[#C9A876]/25`
                 : "border-[#C9A876] bg-[#C9A876] text-[#101826]"
@@ -113,8 +113,7 @@ const WhatsAppButton = () => {
         </>
       </div>
 
-      {/* Main WhatsApp Button — kept WhatsApp's own green; it's the recognized
-          signal for "this opens WhatsApp," not a decorative brand color */}
+      {/* Main WhatsApp Button */}
       <m.a
         href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(status.message)}`}
         target="_blank"
@@ -135,7 +134,7 @@ const WhatsAppButton = () => {
           />
         )}
 
-        {/* Notification Badge — kept red, the universal "unread count" signal */}
+        {/* Notification Badge */}
         {!hasInteracted && (
           <m.span
             initial={{ scale: 0 }}

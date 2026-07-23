@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { m } from "framer-motion";
-import { practiceAreas } from "../../assets/assets";
+import { practiceAreasHome } from "../../data/practiceData";
 
 const Practice = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <section className="bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826]">
       {/* Header */}
@@ -24,16 +28,17 @@ const Practice = () => {
         </h1>
 
         <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#4B5262] dark:text-white/60">
-          We provide comprehensive legal services tailored to meet the needs
-          of individuals, businesses, and institutions.
+          We provide comprehensive legal services tailored to meet the needs of
+          individuals, businesses, and institutions.
         </p>
       </m.div>
 
       {/* Grid */}
       <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {practiceAreas.map((area, index) => (
+        {practiceAreasHome.map((area, index) => (
           <m.div
             key={area.id || index}
+            onClick={() => navigate(`/areas-of-practice/${area.path}`)}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

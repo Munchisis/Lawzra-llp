@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { m } from "motion/react";
+import { assets } from "../../assets/assets";
 
 const AboutUs = () => {
   return (
@@ -15,7 +16,7 @@ const AboutUs = () => {
       >
         <img
           className="aspect-square w-full max-w-md rounded-sm object-cover"
-          src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=451&h=451&auto=format&fit=crop"
+          src={assets.aboutUsHome}
           alt="A member of the Lawzra legal team"
         />
         {/* Small corner tab, echoes the seal on the hero image */}
@@ -41,7 +42,7 @@ const AboutUs = () => {
           About Us
         </h1>
 
-        <div className="mt-5 h-[3px] w-14 bg-[#C9A876]" />
+        <div className="mt-5 h-0.75 w-14 bg-[#C9A876]" />
 
         <p className="mt-8">
           Lawzra is a premier legal services firm dedicated to providing expert

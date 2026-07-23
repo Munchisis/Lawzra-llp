@@ -1,7 +1,7 @@
 import { m } from "framer-motion";
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { partnerInfo } from "../../assets/assets";
+import { partnerHomeInfo } from "../../data/partnerData";
 
 const Partners = () => {
   return (
@@ -30,8 +30,8 @@ const Partners = () => {
       </m.div>
 
       {/* Partners Accordion Container */}
-      <div className="mx-auto mt-12 flex h-auto w-full max-w-7xl flex-col items-center justify-center gap-4 px-6 md:h-[550px] md:flex-row md:gap-3">
-        {partnerInfo.map((partner, index) => (
+      <div className="mx-auto mt-12 flex h-auto w-full max-w-7xl flex-col items-center justify-center gap-4 px-6 md:h-137.5 md:flex-row md:gap-3">
+        {partnerHomeInfo.map((partner, index) => (
           <m.div
             key={partner.id || index}
             initial={{ opacity: 0, x: -20 }}
@@ -51,7 +51,7 @@ const Partners = () => {
             />
 
             {/* Overlay Content — ink navy tint instead of pure black */}
-            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#0A0F18]/95 via-[#0A0F18]/35 to-transparent p-6 text-white transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
+            <div className="absolute inset-0 flex flex-col justify-end bg-linear-to-t from-[#0A0F18]/95 via-[#0A0F18]/35 to-transparent p-6 text-white transition-opacity duration-500 md:opacity-0 md:group-hover:opacity-100">
               <m.div
                 initial={{ y: 20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}

@@ -52,7 +52,7 @@ const InsightsArchivePage = () => {
             </div>
 
             {/* Description */}
-            <p className="mt-3 flex-grow text-left text-sm text-[#4B5262] line-clamp-3 dark:text-white/70">
+            <p className="mt-3 grow text-left text-sm text-[#4B5262] line-clamp-3 dark:text-white/70">
               {area.description}
             </p>
 

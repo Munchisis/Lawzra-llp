@@ -185,7 +185,7 @@ export const practiceAreasData = [
   },
   {
     id: 6,
-    slug: "realEstate",
+    slug: "real-estate",
     image: real_estate,
     title: "Real Estate Law ",
     description:
@@ -284,3 +284,62 @@ export const practiceAreasData = [
   },
 ];
 export default practiceAreasData;
+
+
+export const practiceAreasHome = [
+  {
+    title: "Banking & Finance Law",
+    subtitle:
+      "Specialized legal advocacy tailored for the evolving commercial landscape.",
+    path: "banking",
+  },
+  {
+    title: "Corporate & Commercial",
+    subtitle:
+      "Advising businesses on formation, governance, contracts, and regulatory compliance.",
+    path: "corporate",
+  },
+  {
+    title: "Dispute Resolution",
+    subtitle:
+      "Representing clients in civil disputes with a focus on efficient and strategic outcomes.",
+    path: "dispute",
+  },
+  {
+    title: "Intellectual Property",
+    subtitle:
+      "Comprehensive legal services dedicated to the protection and enforcement of your creative and industrial innovations.",
+    path: "ip",
+  },
+  {
+    title: "Privacy and Data Protection",
+    subtitle:
+      "Comprehensive legal solutions for safeguarding data assets and ensuring strict adherence to global privacy obligations.",
+    path: "privacy",
+  },
+  {
+    title: "Real Estate",
+    subtitle:
+      "Handling land transactions, title verification, and resolution of property disputes.",
+    path: "real-estate",
+  },
+  {
+    title: "Tax and Transfer Pricing",
+    subtitle:
+      "Sophisticated legal counsel ensuring total compliance while optimizing financial outcomes through strategic planning.",
+    path: "tax",
+  },
+  {
+    title: "Technology, Media & Telecommunications",
+    subtitle:
+      "Full-service legal expertise tailored to navigate complex regulatory and commercial landscapes.",
+    path: "tech",
+  },
+  {
+    title: "Energy Law",
+    subtitle:
+      "Full-service legal expertise tailored to navigate complex regulatory and commercial landscapes.",
+    path: "energy",
+  },
+];
+

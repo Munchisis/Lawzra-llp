@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { m } from "framer-motion";
 import { assets } from "../../assets/assets";
+import HeroImageSlideshow from "../HeroImageSlideshow";
 
 
 const Hero = () => {
@@ -23,7 +24,6 @@ const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-[#101826] text-white">
-
       {/* Subtle vignette instead of a purple gradient */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -79,7 +79,7 @@ const Hero = () => {
             <m.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => navigate("/Appointment")}
+              onClick={() => navigate("/appointment")}
               className="flex cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-6 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
             >
               Schedule a Consultation
@@ -118,7 +118,7 @@ const Hero = () => {
           </m.div>
         </m.div>
 
-        {/* Right: framed image + seal */}
+        {/* Right: framed image slideshow + seal */}
         <m.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,10 +126,8 @@ const Hero = () => {
           className="relative"
         >
           <div className="border border-[#C9A876]/30 bg-[#16223a] p-2.5">
-            <img
-              className="aspect-4/5 w-full rounded-sm object-cover sm:aspect-5/4 lg:aspect-4/5"
-              src={assets.hero}
-              // src="https://assets.prebuiltui.com/images/components/hero-section/hero-meeting-image.png"
+            <HeroImageSlideshow
+              images={[assets.hero, assets.hero2, assets.hero3]}
               alt="Legal Consultation"
             />
           </div>
