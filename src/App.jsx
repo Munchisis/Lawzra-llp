@@ -10,6 +10,7 @@ import ScrollToTopOnNavigate from "./component/ScrollToTopOnNavigate";
 import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 // Lazy load all main components and pages cleanly
 const Home = lazy(() => import("./Pages/home"));
@@ -111,6 +112,9 @@ const App = () => {
           <WhatsAppButton />
         </div>
       </LazyMotion>
+
+      {/* Speed Insights Tracking Component */}
+      <SpeedInsights />
     </>
   );
 };
