@@ -11,6 +11,7 @@ import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import Practice from "./component/home/Practice";
 
 // Lazy load all main components and pages cleanly
 const Home = lazy(() => import("./Pages/home"));
@@ -29,7 +30,6 @@ const PracticeDetails = lazy(() => import("./Pages/PracticeDetails"));
 // Insights, Articles and Blog archives layout splits
 const Insights = lazy(() => import("./Pages/InsightsArchivePage"));
 const InsightsArchivePage = lazy(() => import("./Pages/InsightsArchivePage"));
-const Insight = lazy(() => import("./component/home/insight"));
 
 // Form Utility and Corporate compliance sheets
 const Appointment = lazy(() => import("./component/home/appointment"));
@@ -84,11 +84,9 @@ const App = () => {
               <Route path="/careers" element={<Careers />} />
 
               {/* Full-page Dynamic Practice Area Routes */}
+              <Route path="/practice" element={<Practice />} />
               <Route path="/areas-of-practice" element={<PracticeAreaPage />} />
-              <Route
-                path="/areas-of-practice/:slug"
-                element={<PracticeDetails />}
-              />
+              <Route path="/areas-of-practice/:slug" element={<PracticeDetails />} />
 
               {/* Utility Scheduler and Booking pipelines */}
               <Route path="/appointment" element={<Appointment />} />

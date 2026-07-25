@@ -89,7 +89,7 @@ const PracticeDetails = () => {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 pt-8 sm:pt-12">
           <button
             onClick={() => navigate("/areas-of-practice")}
-            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] transition-colors hover:text-[#101826] dark:text-[#C9A876] dark:hover:text-white"
+            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] transition-colors hover:text-[#101826] dark:text-[#C9A876] dark:border dark:p-4 dark:border-[#c9a87628] dark:hover:text-[#c9c3ba]  "
           >
             <ArrowLeft size={14} /> Back to Overview
           </button>

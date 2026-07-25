@@ -84,7 +84,7 @@ const WhatsAppButton = () => {
     <m.div
       initial={{ y: 0, opacity: 1 }}
       animate={{ y: isVisible ? 0 : 100, opacity: isVisible ? 1 : 0 }}
-      className="fixed bottom-6 right-4 z-50 flex items-center gap-3 pb-[env(safe-area-inset-bottom)] md:bottom-10 md:right-10"
+      className="fixed bottom-20 right-4 z-50 flex items-center gap-3 pb-[env(safe-area-inset-bottom)] md:bottom-20 md:right-10"
     >
       {/* Tooltips */}
       <div className="hidden items-center sm:flex">

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Cookie, X } from "lucide-react"; //
-import { m } from "framer-motion"; //
+import { Cookie, X } from "lucide-react"; 
+import { m } from "framer-motion";
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -9,7 +9,7 @@ const CookieConsent = () => {
   useEffect(() => {
     const consent = localStorage.getItem("cookieConsent");
     if (!consent) {
-      // Small delay makes it feel less intrusive
+      
       const timer = setTimeout(() => setShowBanner(true), 1500);
       return () => clearTimeout(timer);
     }

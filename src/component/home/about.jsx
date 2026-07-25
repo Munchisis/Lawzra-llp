@@ -15,7 +15,7 @@ const AboutUs = () => {
         className="relative shrink-0 border border-[#C9A876]/40 bg-white p-2.5 dark:border-[#C9A876]/30 dark:bg-[#16223a]"
       >
         <img
-          className="aspect-square w-full max-w-md rounded-sm object-cover"
+          className="w-full max-w-md rounded-sm object-cover"
           src={assets.aboutUsHome}
           alt="A member of the Lawzra legal team"
         />
