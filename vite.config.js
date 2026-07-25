@@ -3,24 +3,11 @@ import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "vite-plugin-sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
-import fs from "node:fs";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    {
-      name: "ensure-dist-exists",
-      buildStart() {
-        if (!fs.existsSync("dist")) {
-          fs.mkdirSync("dist", { recursive: true });
-        }
-      },
-    },
-
     react(),
     tailwindcss(),
-
-    // Safe to run now that 'dist' is guaranteed to exist
     sitemap({
       hostname: "https://lawzra.com",
       dynamicRoutes: [
@@ -46,7 +33,6 @@ export default defineConfig({
         "/cookie-policy",
       ],
     }),
-
     visualizer({
       open: false,
       filename: "stats.html",
@@ -54,8 +40,8 @@ export default defineConfig({
       brotliSize: true,
     }),
   ],
-
   build: {
+    outDir: "dist",
     rollupOptions: {
       output: {
         manualChunks: {
@@ -64,6 +50,5 @@ export default defineConfig({
         },
       },
     },
-    outDir: "dist",
   },
 });
