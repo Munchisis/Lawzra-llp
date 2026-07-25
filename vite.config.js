@@ -8,7 +8,6 @@ import fs from "node:fs";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    // 1. Force ensure the directory exists at the very beginning of the build cycle
     {
       name: "ensure-dist-exists",
       buildStart() {
@@ -21,7 +20,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
 
-    // 2. Safe to run now that 'dist' is guaranteed to exist
+    // Safe to run now that 'dist' is guaranteed to exist
     sitemap({
       hostname: "https://lawzra.com",
       dynamicRoutes: [
@@ -31,16 +30,16 @@ export default defineConfig({
         "/our-team",
         "/insights",
         "/careers",
-        "/practice-areas",
-        "/practice-areas/banking",
-        "/practice-areas/corporate",
-        "/practice-areas/dispute",
-        "/practice-areas/energy",
-        "/practice-areas/ip",
-        "/practice-areas/real-estate",
-        "/practice-areas/privacy",
-        "/practice-areas/tax",
-        "/practice-areas/tech",
+        "/areas-of-practice-areas",
+        "/areas-of-practice-areas/banking",
+        "/areas-of-practice-areas/corporate",
+        "/areas-of-practice-areas/dispute",
+        "/areas-of-practice-areas/energy",
+        "/areas-of-practice-areas/ip",
+        "/areas-of-practice-areas/real-estate",
+        "/areas-of-practice-areas/privacy",
+        "/areas-of-practice-areas/tax",
+        "/areas-of-practice-areas/tech",
         "/appointment",
         "/privacy-policy",
         "/terms-of-service",
