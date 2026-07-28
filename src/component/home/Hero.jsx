@@ -1,12 +1,11 @@
 import { ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { assets } from "../../assets/assets";
 import HeroImageSlideshow from "../HeroImageSlideshow";
 
 
 const Hero = () => {
-  const navigate = useNavigate();
   const clientAvatars = [assets.profile, assets.profile1, assets.profile2];
 
   const container = {
@@ -76,15 +75,16 @@ const Hero = () => {
             variants={item}
             className="mt-10 flex flex-wrap items-center gap-5"
           >
-            <m.button
+            <m.Link
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              onClick={() => navigate("/appointment")}
+              to="/appointment"
+              aria-label="Schedule a Consultation"
               className="flex cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-6 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
             >
               Schedule a Consultation
               <ArrowRight size={18} />
-            </m.button>
+            </m.Link>
 
             <div className="flex items-center gap-2.5 text-sm italic text-white/70">
               <span className="relative flex size-2.5">
@@ -107,7 +107,7 @@ const Hero = () => {
                     key={index}
                     className="size-9 rounded-full border-2 border-[#101826] object-cover"
                     src={imgSrc}
-                    alt="Client"
+                    alt="Client testimonial photo"
                   />
                 ))}
               </div>

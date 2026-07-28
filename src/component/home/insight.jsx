@@ -71,6 +71,7 @@ const Insight = () => {
           >
             <Link
               to="/insights"
+              aria-label="view more on insights"
               className="group flex items-center gap-3 rounded-sm bg-[#C9A876] px-9 py-4 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
             >
               View Archive

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { m, useScroll, useTransform } from "framer-motion";
 import TeamCard from "../component/teamCard";
 import { partnerInfo } from "../data/partnerData.js";
@@ -114,12 +114,12 @@ const OurTeamPage = () => {
                   ))}
 
                   {/* Dynamic View Detail link that fires navigate() */}
-                  <button
-                    onClick={() => navigate(`/our-team/${member.slug}`)}
+                  <Link
+                    to={(`/our-team/${member.slug}`)}
                     className="mt-5 sm:mt-6 font-docket text-xs uppercase tracking-widest text-[#B08D57] hover:text-[#101826] dark:text-[#C9A876] dark:hover:text-white underline underline-offset-4 cursor-pointer block"
                   >
                     View Full Biography &rarr;
-                  </button>
+                  </Link>
                 </m.div>
 
                 {/* Team Card Visual */}

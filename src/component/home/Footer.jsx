@@ -73,6 +73,7 @@ const Footer = ({ theme }) => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={social.label}
                   whileHover={{ y: -4 }}
                   className="rounded-full border border-[#C9A876]/25 bg-white p-2 text-[#4B5262] transition-colors hover:border-[#C9A876] hover:text-[#B08D57] dark:border-white/10 dark:bg-[#16223a] dark:text-white/60 dark:hover:border-[#C9A876] dark:hover:text-[#C9A876]"
                 >
@@ -115,7 +116,10 @@ const Footer = ({ theme }) => {
                   type="email"
                   placeholder="Your email address"
                 />
-                <button className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm bg-[#C9A876] p-2 text-[#101826] transition-colors hover:bg-[#dbbb8c] active:scale-95">
+                <button
+                  aria-label="Subscribe"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm bg-[#C9A876] p-2 text-[#101826] transition-colors hover:bg-[#dbbb8c] active:scale-95"
+                >
                   <Send size={18} />
                 </button>
               </div>

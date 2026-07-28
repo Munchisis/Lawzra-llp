@@ -1,9 +1,9 @@
 import { m } from "framer-motion";
 import { assets } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CookiePolicy = () => {
-  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
       {/* Hero Header */}
@@ -173,12 +173,12 @@ const CookiePolicy = () => {
                 </p>
                 <p className="text-lg">Questions regarding this policy?</p>
               </div>
-              <button
-                onClick={() => navigate("/appointment")}
+              <Link
+                to="/appointment"
                 className="px-8 py-3 bg-white text-slate-900 rounded-full font-bold hover:bg-green-500 hover:text-white transition-all"
               >
                 Contact Legal
-              </button>
+              </Link>
             </div>
           </section>
         </m.div>

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, Linkedin, Mail } from "lucide-react";
 import { partnerInfo } from "../data/partnerData.js";
@@ -8,7 +8,6 @@ const SITE_URL = "https://lawzra.com";
 
 const TeamDetailsPage = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
 
   const member = partnerInfo.find((m) => m.slug === slug);
 
@@ -23,12 +22,12 @@ const TeamDetailsPage = () => {
           <h2 className="font-display text-2xl text-[#101826] dark:text-white mb-4">
             Profile Not Located
           </h2>
-          <button
-            onClick={() => navigate("/our-team")}
+          <Link
+            to="/our-team"
             className="text-[#C9A876] hover:underline"
           >
             Back to Team Overview
-          </button>
+          </Link>
         </div>
       </AnimatedPage>
     );
@@ -90,12 +89,12 @@ const TeamDetailsPage = () => {
 
       <div className="min-h-screen bg-[#FAF8F3] pb-16 sm:pb-24 dark:bg-[#101826] pt-8 sm:pt-12">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <button
-            onClick={() => navigate("/our-team")}
+          <Link
+            to="/our-team"
             className="font-docket flex items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] hover:text-[#101826] dark:text-[#C9A876] dark:hover:text-white mb-8 sm:mb-12"
           >
             <ArrowLeft size={14} /> All Professionals
-          </button>
+          </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
             {/* Sidebar Visual Card block */}
@@ -153,7 +152,7 @@ const TeamDetailsPage = () => {
               </div>
 
               {/* Call to action panel */}
-              <div className="mt-8 sm:mt-12 p-5 sm:p-8 border border-[#C9A876]/20 bg-[#16223a]/30 rounded-sm text-center lg:text-left">
+              <div className="mt-8 sm:mt-12 p-5 sm:p-8 border border-[#C9A876]/20 bg-white dark:bg-[#16223a]/30 rounded-sm text-center lg:text-left">
                 <h4 className="font-display text-base sm:text-lg text-[#101826] dark:text-white mb-2">
                   Book Counsel with {member.name}
                 </h4>
@@ -161,12 +160,12 @@ const TeamDetailsPage = () => {
                   Set up a private session directly to align litigation
                   parameters or advisory operations with our partners.
                 </p>
-                <button
-                  onClick={() => navigate("/appointment")}
+                <Link
+                  to="/appointment"
                   className="w-full sm:w-auto rounded-sm bg-[#C9A876] px-6 py-2.5 text-xs font-bold text-[#101826] uppercase tracking-wider hover:bg-[#dbbb8c] cursor-pointer"
                 >
                   Book Appointment
-                </button>
+                </Link>
               </div>
             </div>
           </div>

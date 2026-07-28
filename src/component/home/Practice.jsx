@@ -1,11 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { m } from "framer-motion";
 import { practiceAreasHome } from "../../data/practiceData";
 
 const Practice = () => {
-
-  const navigate = useNavigate();
-
 
   return (
     <section className="bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826]">
@@ -38,7 +35,6 @@ const Practice = () => {
         {practiceAreasHome.map((area, index) => (
           <m.div
             key={area.id || index}
-            onClick={() => navigate(`/areas-of-practice/${area.path}`)}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -46,7 +42,8 @@ const Practice = () => {
             whileHover={{ y: -5 }}
           >
             <Link
-              to={`/practice-areas/${area.path}`}
+              to={`/areas-of-practice/${area.path}`}
+              aria-label={`Learn more about ${area.title}`}
               className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white p-8 transition-all duration-300 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
             >
               {/* Decorative background element on hover */}

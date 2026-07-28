@@ -1,13 +1,12 @@
 import { MailIcon, MapPin, MenuIcon, PhoneCallIcon, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink,  } from "react-router-dom";
 import { m } from "motion/react";
 import { assets } from "../../assets/assets.js";
 import ThemeToggleBtn from "./theme-toggle-btn.jsx";
 
 
 const Nav = ({ theme, setTheme }) => {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
@@ -48,7 +47,6 @@ const Nav = ({ theme, setTheme }) => {
 
   return (
     <div className="w-full">
-
       {/* Top Banner */}
       <div className="font-docket bg-[#0C1420] py-2 text-white">
         <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-widest md:text-xs">
@@ -129,24 +127,36 @@ const Nav = ({ theme, setTheme }) => {
         <div className="flex items-center gap-4">
           <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
-        
-            <button
-              onClick={() => navigate("/contact-us")}
-              className="group relative hidden overflow-hidden rounded-sm border border-[#C9A876] px-6 py-2 text-xs font-bold text-[#C9A876] transition-all active:scale-95 hover:bg-[#C9A876] hover:text-[#101826] md:block"
-            >
-              <span className="relative z-10">Get in touch</span>
-            </button>
+          <Link
+            to="/contact-us"
+            className="group relative hidden overflow-hidden rounded-sm border border-[#C9A876] px-6 py-2 text-xs font-bold text-[#C9A876] transition-all active:scale-95 hover:bg-[#C9A876] hover:text-[#101826] md:block"
+          >
+            <span className="relative z-10">Get in touch</span>
+          </Link>
 
           {/* Mobile Toggle */}
-          <button className="p-2 md:hidden" onClick={() => setOpen(!open)}>
+          <button
+            className="p-2 md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+          >
             <m.div
               animate={{ rotate: open ? 90 : 0 }}
               transition={{ duration: 0.2 }}
             >
               {open ? (
-                <X className={isFixed ? "text-[#101826] dark:text-white" : "text-white"} />
+                <X
+                  className={
+                    isFixed ? "text-[#101826] dark:text-white" : "text-white"
+                  }
+                />
               ) : (
-                <MenuIcon className={isFixed ? "text-[#101826] dark:text-white" : "text-white"} />
+                <MenuIcon
+                  className={
+                    isFixed ? "text-[#101826] dark:text-white" : "text-white"
+                  }
+                />
               )}
             </m.div>
           </button>
@@ -179,16 +189,16 @@ const Nav = ({ theme, setTheme }) => {
                   </NavLink>
                 </m.div>
               ))}
-              <m.button
+              <m.Link
+                to="/contact-us"
                 variants={itemVariants}
                 onClick={() => {
-                  navigate("/contact-us");
                   setOpen(false);
                 }}
                 className="mt-6 w-full rounded-sm bg-[#C9A876] py-3 font-bold text-[#101826]"
               >
                 Get in touch
-              </m.button>
+              </m.Link>
             </m.div>
           )}
         </>

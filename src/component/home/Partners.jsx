@@ -5,7 +5,7 @@ import { partnerHomeInfo } from "../../data/partnerData";
 
 const Partners = () => {
   return (
-    <section className="overflow-hidden bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826] md:px-20">
+    <section className="overflow-hidden bg-[#FAF8F3] px-4 py-24 dark:bg-[#101826] md:px-20 mb-10">
       <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -97,6 +97,7 @@ const Partners = () => {
       >
         <Link
           to="/our-team"
+          aria-label="Meet the Full Team"
           className="group flex items-center gap-2 rounded-sm bg-[#C9A876] px-8 py-3.5 font-semibold text-[#101826] shadow-lg transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
         >
           Meet the Full Team

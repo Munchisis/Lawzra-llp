@@ -28,10 +28,11 @@ const HeroImageSlideshow = ({ images = [], interval = 6000, alt = "" }) => {
           key={index}
           src={images[index]}
           alt={alt}
-          initial={{ opacity: 0 }}
+          fetchpriority={index === 0 ? "high" : "auto"}
+          initial={index === 0 ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          transition={{ duration: index === 0 ? 0 : 1.2, ease: "easeInOut" }}
           className="absolute inset-0 h-full w-full object-cover"
         />
       </AnimatePresence>

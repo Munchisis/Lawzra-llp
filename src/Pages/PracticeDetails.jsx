@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import { practiceAreasData } from "../data/practiceData";
@@ -8,7 +8,6 @@ const SITE_URL = "https://lawzra.com";
 
 const PracticeDetails = () => {
   const { slug } = useParams();
-  const navigate = useNavigate();
 
   // Find the exact practice data object matching the active URL slug
   const practice = practiceAreasData.find((p) => p.slug === slug);
@@ -25,12 +24,12 @@ const PracticeDetails = () => {
           <h2 className="font-display mb-4 text-2xl font-medium text-[#101826] dark:text-white">
             Practice Area Not Found
           </h2>
-          <button
-            onClick={() => navigate("/areas-of-practice")}
+          <Link
+            to="/areas-of-practice"
             className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-wider text-[#B08D57] hover:text-[#dbbb8c] dark:text-[#C9A876]"
           >
             <ArrowLeft size={16} /> Return to practice areas
-          </button>
+          </Link>
         </div>
       </AnimatedPage>
     );
@@ -87,12 +86,12 @@ const PracticeDetails = () => {
       <div className="min-h-screen bg-[#FAF8F3] pb-16 sm:pb-24 dark:bg-[#101826]">
         {/* Navigation Step-Back Banner Area */}
         <div className="mx-auto max-w-4xl px-4 sm:px-6 pt-8 sm:pt-12">
-          <button
-            onClick={() => navigate("/areas-of-practice")}
+          <Link
+            to="/areas-of-practice"
             className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] transition-colors hover:text-[#101826] dark:text-[#C9A876] dark:border dark:p-4 dark:border-[#c9a87628] dark:hover:text-[#c9c3ba]  "
           >
             <ArrowLeft size={14} /> Back to Overview
-          </button>
+          </Link>
         </div>
 
         {/* Main Content Layout Container */}
@@ -174,12 +173,12 @@ const PracticeDetails = () => {
             mitigation and advisory approaches for your legal portfolio
             objectives.
           </p>
-          <button
-            onClick={() => navigate("/appointment")}
+          <Link
+            to="/appointment"
             className="w-full sm:w-auto cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
           >
             Schedule a Consultation
-          </button>
+          </Link>
         </section>
       </div>
     </AnimatedPage>

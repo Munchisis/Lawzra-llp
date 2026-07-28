@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Scale } from "lucide-react";
 import { practiceAreasCard, assets } from "../data/practiceData";
 import { useRef } from "react";
@@ -129,12 +129,12 @@ const PracticeAreaPage = () => {
             Our partners are ready to discuss your specific requirements and
             develop a strategic approach to your case.
           </p>
-          <button
-            onClick={() => navigate("/appointment")}
+          <Link
+            to="/appointment"
             className="w-full sm:w-auto cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
           >
             Book a Consultation
-          </button>
+          </Link>
         </section>
       </div>
     </AnimatedPage>

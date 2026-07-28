@@ -72,6 +72,7 @@ const AboutUs = () => {
         >
           <Link
             to="/About-us"
+            aria-label="about-us"
             className="flex w-max cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-7 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
           >
             <span>Read more</span>
