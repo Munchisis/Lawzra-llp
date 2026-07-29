@@ -11,11 +11,13 @@
   },
   "overrides": {
     "brace-expansion": "^5.0.8",
-     "react-router": "$react-router"
+    "react-router": "$react-router"
   },
-  
   "dependencies": {
     "@marsidev/react-turnstile": "^1.5.3",
+    "@portabletext/react": "^7.0.1",
+    "@sanity/client": "^7.25.0",
+    "@sanity/image-url": "^2.1.1",
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",

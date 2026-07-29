@@ -31,6 +31,7 @@ const PracticeDetails = lazy(() => import("./Pages/PracticeDetails"));
 // Insights, Articles and Blog archives layout splits
 const Insights = lazy(() => import("./Pages/InsightsArchivePage"));
 const InsightsArchivePage = lazy(() => import("./Pages/InsightsArchivePage"));
+const InsightDetails = lazy(() => import("./Pages/InsightDetailsPage"));
 
 // Form Utility and Corporate compliance sheets
 const Appointment = lazy(() => import("./component/home/appointment"));
@@ -81,7 +82,9 @@ const App = () => {
 
               {/* Legal Insights, Blogs and Articles Routes */}
               <Route path="/insights" element={<Insights />} />
+              <Route path="/insights/:slug" element={<InsightDetails />} />
               <Route path="/insight" element={<InsightsArchivePage />} />
+
               <Route path="/careers" element={<Careers />} />
 
               {/* Full-page Dynamic Practice Area Routes */}

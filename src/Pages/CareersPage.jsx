@@ -99,7 +99,7 @@ const CareersPage = () => {
         <m.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A876]/10 blur-[120px]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A876]/10 blur-[120px]"
         />
 
         {/* Left Content */}
