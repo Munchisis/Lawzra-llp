@@ -10,6 +10,7 @@ export default defineConfig({
     tailwindcss(),
     sitemap({
       hostname: "https://lawzra.com",
+      generateRobotsTxt: false,
       dynamicRoutes: [
         "/",
         "/about-us",
