@@ -11,6 +11,7 @@ import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/next";
 import Practice from "./component/home/Practice";
 
 // Lazy load all main components and pages cleanly
@@ -86,7 +87,10 @@ const App = () => {
               {/* Full-page Dynamic Practice Area Routes */}
               <Route path="/practice" element={<Practice />} />
               <Route path="/areas-of-practice" element={<PracticeAreaPage />} />
-              <Route path="/areas-of-practice/:slug" element={<PracticeDetails />} />
+              <Route
+                path="/areas-of-practice/:slug"
+                element={<PracticeDetails />}
+              />
 
               {/* Utility Scheduler and Booking pipelines */}
               <Route path="/appointment" element={<Appointment />} />
@@ -111,8 +115,9 @@ const App = () => {
         </div>
       </LazyMotion>
 
-      {/* Speed Insights Tracking Component */}
+      {/* Speed Insights/Analytics Tracking Component */}
       <SpeedInsights />
+      <Analytics />
     </>
   );
 };
