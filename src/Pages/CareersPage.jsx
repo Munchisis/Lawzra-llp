@@ -6,7 +6,8 @@ import JobOpenings from "../component/JobOpenings";
 import LifeAtLawzra from "../component/LifeAtLawzra";
 import AnimatedPage from "../component/AnimatedPage";
 import { assets } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import SEO from "../../SEO";
 
 const CareersPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -78,6 +79,12 @@ const CareersPage = () => {
 
   return (
     <AnimatedPage>
+      <SEO
+        title="Careers"
+        description="Join the Lawzra LLP team. Explore current openings and apply to build your legal career with a leading Nigerian law firm."
+        canonical="/careers"
+      />
+
       {/* Visual Header Section */}
       <m.section
         initial={{ opacity: 0 }}
@@ -209,7 +216,12 @@ const CareersPage = () => {
             <div className="flex flex-col items-center justify-between gap-4 pt-4 sm:flex-row">
               <p className="text-xs text-[#4B5262]/70 dark:text-white/40">
                 By applying, you agree to our{" "}
-                <span className="cursor-pointer underline">Privacy Policy</span>
+                <Link
+                  to="/privacy-policy"
+                  className="underline hover:text-[#B08D57] dark:hover:text-[#C9A876]"
+                >
+                  Privacy Policy
+                </Link>
                 .
               </p>
 

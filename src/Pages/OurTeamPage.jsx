@@ -1,13 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { m, useScroll, useTransform } from "framer-motion";
 import TeamCard from "../component/teamCard";
 import { partnerInfo } from "../data/partnerData.js";
 import { assets } from "../assets/assets";
 import AnimatedPage from "../component/AnimatedPage";
 import { useRef } from "react";
+import SEO from "../../SEO";
 
 const OurTeamPage = () => {
-  const navigate = useNavigate();
   const containerRef = useRef(null);
 
   const cardVariants = {
@@ -38,6 +38,12 @@ const OurTeamPage = () => {
 
   return (
     <AnimatedPage>
+      <SEO
+        title="Our Team"
+        description="Meet the partners and legal professionals of Lawzra LLP."
+        canonical="/our-team"
+      />
+
       <div className="bg-[#FAF8F3] pb-16 sm:pb-24 dark:bg-[#101826]">
         {/* Parallax Hero Header */}
         <div
@@ -115,7 +121,7 @@ const OurTeamPage = () => {
 
                   {/* Dynamic View Detail link that fires navigate() */}
                   <Link
-                    to={(`/our-team/${member.slug}`)}
+                    to={`/our-team/${member.slug}`}
                     className="mt-5 sm:mt-6 font-docket text-xs uppercase tracking-widest text-[#B08D57] hover:text-[#101826] dark:text-[#C9A876] dark:hover:text-white underline underline-offset-4 cursor-pointer block"
                   >
                     View Full Biography &rarr;
@@ -128,14 +134,18 @@ const OurTeamPage = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  onClick={() => navigate(`/our-team/${member.slug}`)}
-                  className="cursor-pointer w-full max-w-xs sm:max-w-sm lg:w-auto lg:max-w-none"
+                  className="w-full max-w-xs sm:max-w-sm lg:w-auto lg:max-w-none"
                 >
-                  <TeamCard
-                    image={member.image}
-                    name={member.name}
-                    position={member.position}
-                  />
+                  <Link
+                    to={`/our-team/${member.slug}`}
+                    aria-label={`View ${member.name}'s biography`}
+                  >
+                    <TeamCard
+                      image={member.image}
+                      name={member.name}
+                      position={member.position}
+                    />
+                  </Link>
                 </m.div>
               </section>
             );

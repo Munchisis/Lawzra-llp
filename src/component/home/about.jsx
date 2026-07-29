@@ -71,11 +71,11 @@ const AboutUs = () => {
           className="mt-9 w-max"
         >
           <Link
-            to="/About-us"
-            aria-label="about-us"
+            to="/about-us"
+            aria-label="Learn more about Lawzra LLP"
             className="flex w-max cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-7 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
           >
-            <span>Read more</span>
+            <span>Learn More about Us</span>
             <ArrowRight className="h-5 w-5" />
           </Link>
         </m.div>

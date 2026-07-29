@@ -67,6 +67,10 @@ const TeamDetailsPage = () => {
 
         {/* Open Graph */}
         <meta property="og:type" content="profile" />
+        <meta
+          property="profile:last_name"
+          content={member.name?.split(" ").slice(1).join(" ")}
+        />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content={canonicalUrl} />
@@ -103,6 +107,9 @@ const TeamDetailsPage = () => {
                 <img
                   src={member.image}
                   alt={`${member.name}, ${member.position} at Lawzra LLP`}
+                  width={400}
+                  height={500}
+                  loading="lazy"
                   className="w-full h-auto object-cover rounded-xs"
                 />
                 <div className="mt-4 pt-4 border-t border-[#C9A876]/10 text-center">
@@ -118,16 +125,18 @@ const TeamDetailsPage = () => {
                       href={member.linkedin}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`${member.name}'s LinkedIn profile`}
                       className="hover:text-[#101826] dark:hover:text-white transition-colors"
                     >
                       <Linkedin size={18} />
                     </a>
-                    <a
+                    <aimg
                       href={`mailto:${member.email}`}
+                      aria-label={`Email ${member.name}`}
                       className="hover:text-[#101826] dark:hover:text-white transition-colors"
                     >
                       <Mail size={18} />
-                    </a>
+                    </aimg>
                   </div>
                 </div>
               </div>

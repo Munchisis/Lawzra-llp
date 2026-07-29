@@ -1,10 +1,16 @@
 import { insightsData } from "../assets/assets";
 import aboutUs4 from "../assets/img/about-us-4.avif";
+import SEO from "../../SEO";
 
 const InsightsArchivePage = () => {
   return (
     <div className="bg-[#FAF8F3] dark:bg-[#101826]">
       {/* Hero Section */}
+      <SEO
+        title="Insights"
+        description="Legal insights and analysis from Lawzra LLP on issues across corporate, tax, energy, IP, and dispute resolution."
+        canonical="/insights"
+      />
       <div
         style={{ backgroundImage: `url(${aboutUs4})` }}
         className="relative mb-10 flex h-64 flex-col items-center justify-center bg-cover bg-center"

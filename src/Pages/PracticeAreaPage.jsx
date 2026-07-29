@@ -1,13 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ArrowRight, Scale } from "lucide-react";
 import { practiceAreasCard, assets } from "../data/practiceData";
 import { useRef } from "react";
 import { m, useScroll, useTransform } from "framer-motion";
 import AnimatedPage from "../component/AnimatedPage";
+import SEO from "../../SEO";
 
 const PracticeAreaPage = () => {
   const containerRef = useRef(null);
-  const navigate = useNavigate();
 
   // Track scroll progress specifically for this hero section
   const { scrollYProgress } = useScroll({
@@ -35,6 +35,11 @@ const PracticeAreaPage = () => {
 
   return (
     <AnimatedPage>
+      <SEO
+        title="Practice Areas"
+        description="Explore the areas of law we practice at Lawzra LLP, including corporate, banking, tax, real estate, IP, energy, and dispute resolution."
+        canonical="/areas-of-practice"
+      />
       <div className="min-h-screen bg-[#FAF8F3] pb-16 sm:pb-24 dark:bg-[#101826]">
         {/* Hero Section with Parallax */}
         <div
@@ -82,39 +87,39 @@ const PracticeAreaPage = () => {
             className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 xl:grid-cols-4"
           >
             {practiceAreasCard.map((area) => (
-              <m.div
-                variants={item}
-                key={area.path}
-                onClick={() => navigate(`/areas-of-practice/${area.path}`)}
-                className="group flex cursor-pointer flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
-              >
-                {/* Image Component Block with Hover Zoom */}
-                <div className="relative h-40 sm:h-48 overflow-hidden">
-                  <img
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    src={area.image}
-                    alt={area.title}
-                  />
-                  {/* Floating Scales Icon Badge */}
-                  <div className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-[#101826]/90">
-                    <Scale
-                      size={16}
-                      className="text-[#B08D57] dark:text-[#C9A876]"
+              <m.div variants={item} key={area.path}>
+                <Link
+                  to={`/areas-of-practice/${area.path}`}
+                  aria-label={`View our ${area.title} expertise`}
+                  className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
+                >
+                  {/* Image Component Block with Hover Zoom */}
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
+                    <img
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      src={area.image}
+                      alt={area.title}
                     />
+                    <div className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-[#101826]/90">
+                      <Scale
+                        size={16}
+                        className="text-[#B08D57] dark:text-[#C9A876]"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                {/* Card Text Content Block */}
-                <div className="flex flex-1 flex-col p-4 sm:p-6">
-                  <h3 className="mb-3 sm:mb-4 line-clamp-2 font-display text-base sm:text-lg text-[#101826] dark:text-white">
-                    {area.title}
-                  </h3>
-                  <div className="mt-auto">
-                    <span className="font-docket flex items-center gap-2 text-[11px] uppercase tracking-wide text-[#B08D57] transition-all group-hover:gap-4 dark:text-[#C9A876]">
-                      View Expertise <ArrowRight size={16} />
-                    </span>
+                  {/* Card Text Content Block */}
+                  <div className="flex flex-1 flex-col p-4 sm:p-6">
+                    <h3 className="mb-3 sm:mb-4 line-clamp-2 font-display text-base sm:text-lg text-[#101826] dark:text-white">
+                      {area.title}
+                    </h3>
+                    <div className="mt-auto">
+                      <span className="font-docket flex items-center gap-2 text-[11px] uppercase tracking-wide text-[#B08D57] transition-all group-hover:gap-4 dark:text-[#C9A876]">
+                        View Expertise <ArrowRight size={16} />
+                      </span>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </m.div>
             ))}
           </m.div>

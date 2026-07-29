@@ -2,6 +2,7 @@ import { assets } from "../assets/assets";
 import { m, useScroll, useTransform } from "framer-motion";
 import SpeakToALawyer from "../component/home/SpeakToALawyer";
 import { useRef } from "react";
+import SEO from "../../SEO";
 
 const ContactUsPage = () => {
   const containerRef = useRef(null);
@@ -32,7 +33,17 @@ const ContactUsPage = () => {
   };
 
   return (
-    <m.div initial="hidden" animate="visible" className="bg-[#FAF8F3] pb-20 dark:bg-[#101826]">
+    <m.div
+      initial="hidden"
+      animate="visible"
+      className="bg-[#FAF8F3] pb-20 dark:bg-[#101826]"
+    >
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Lawzra LLP. Visit our offices in Lagos, Abuja, and Umuahia, or reach out by phone and email."
+        canonical="/contact-us"
+      />
+
       {/* Hero Header */}
       <div
         ref={containerRef}
@@ -61,8 +72,8 @@ const ContactUsPage = () => {
           </div>
           <h1 className="font-display text-5xl font-medium">Contact Us</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/75">
-            Have questions or need assistance? Reach out to us using the
-            contact information below.
+            Have questions or need assistance? Reach out to us using the contact
+            information below.
           </p>
         </m.div>
       </div>
@@ -90,13 +101,18 @@ const ContactUsPage = () => {
           className="flex flex-1 flex-col justify-between gap-8 md:flex-row"
         >
           {/* Umuahia */}
-          <m.div variants={fadeInUp} className="flex-1 text-center text-[#4B5262] dark:text-white/60">
+          <m.div
+            variants={fadeInUp}
+            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+          >
             <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Umuahia
             </h3>
             <p className="mb-4 h-12 text-sm">
               23 Umuahia Road, Umuahia, Abia State
             </p>
+            {/* NOTE: the map pin below currently resolves to "23 Ikot Ekpene - Umuahia Rd,
+                Umu Obasi" — double check this matches the address above before shipping */}
             <div className="overflow-hidden rounded-sm border border-[#C9A876]/20 dark:border-white/10">
               <iframe
                 title="Umuahia Address"
@@ -111,7 +127,10 @@ const ContactUsPage = () => {
           </m.div>
 
           {/* Lagos */}
-          <m.div variants={fadeInUp} className="flex-1 text-center text-[#4B5262] dark:text-white/60">
+          <m.div
+            variants={fadeInUp}
+            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+          >
             <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Lagos
             </h3>
@@ -130,7 +149,10 @@ const ContactUsPage = () => {
           </m.div>
 
           {/* Abuja */}
-          <m.div variants={fadeInUp} className="flex-1 text-center text-[#4B5262] dark:text-white/60">
+          <m.div
+            variants={fadeInUp}
+            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+          >
             <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Abuja
             </h3>
@@ -161,6 +183,7 @@ const ContactUsPage = () => {
             <h4 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
               Call us
             </h4>
+
             <a
               href="tel:+2348037333930"
               className="text-sm text-[#4B5262] transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
@@ -173,6 +196,7 @@ const ContactUsPage = () => {
             <h4 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
               Email
             </h4>
+
             <a
               href="mailto:contact@lawzra.com"
               className="text-sm text-[#4B5262] transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
@@ -193,14 +217,28 @@ const ContactUsPage = () => {
           <div className="mt-6 flex justify-center gap-6">
             {/* Social icons with hover animation */}
             {[
-              { href: "https://x.com", icon: <TwitterIcon /> },
-              { href: "https://github.com", icon: <GithubIcon /> },
-              { href: "https://linkedin.com", icon: <LinkedinIcon /> },
+              {
+                href: "https://x.com",
+                icon: <TwitterIcon />,
+                label: "Lawzra LLP on X",
+              },
+              {
+                href: "https://github.com",
+                icon: <GithubIcon />,
+                label: "Lawzra LLP on GitHub",
+              },
+              {
+                href: "https://linkedin.com",
+                icon: <LinkedinIcon />,
+                label: "Lawzra LLP on LinkedIn",
+              },
             ].map((social, idx) => (
               <m.a
                 key={idx}
                 href={social.href}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
                 whileHover={{ y: -3, scale: 1.1 }}
                 className="text-[#4B5262] transition-colors hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876]"
               >

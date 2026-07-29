@@ -1,10 +1,16 @@
 import { assets } from "../assets/assets";
+import SEO from "../../SEO";
 
 const PrivacyPolicy = () => {
   const lastUpdated = "March 12, 2026";
 
   return (
     <>
+      <SEO
+        title="Privacy Policy"
+        description="Lawzra LLP's privacy policy, outlining how we collect, use, and protect your personal data in accordance with the NDPA 2023 and NDPR."
+        canonical="/privacy-policy"
+      />
       <div
         className="bg-cover bg-center h-64 flex flex-col items-center justify-center mb-10 bg-slate-800"
         style={{
@@ -29,7 +35,7 @@ const PrivacyPolicy = () => {
               1. Introduction & Scope
             </h2>
             <p className="mb-4">
-              <strong>Lawzra LP</strong> ("the Firm", "we", "us", "our") is
+              <strong>Lawzra LLP</strong> ("the Firm", "we", "us", "our") is
               committed to protecting the privacy and security of your personal
               data. This Privacy Policy describes how we collect, use, disclose,
               and safeguard your information when you visit our website, utilize
@@ -211,7 +217,7 @@ const PrivacyPolicy = () => {
               <p>
                 <strong>Email:</strong>
                 <a
-                  href="mailto:dpo@lawzra.com"
+                  href="mailto:privacy@lawzra.com"
                   className="text-rose-500 hover:underline"
                 >
                   privacy@lawzra.com

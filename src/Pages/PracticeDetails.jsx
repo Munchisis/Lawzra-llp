@@ -101,6 +101,10 @@ const PracticeDetails = () => {
             <img
               src={practice.image}
               alt={practice.title}
+              width={1200}
+              height={630}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover filter brightness-95"
             />
             <div className="absolute inset-0 bg-linear-to-t from-[#101826]/30 via-transparent to-transparent" />
