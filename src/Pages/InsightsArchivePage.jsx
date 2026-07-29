@@ -71,7 +71,7 @@ const InsightsArchivePage = () => {
           <Link
             key={item.slug}
             to={`/insights/${item.slug}`}
-            className="flex w-full max-w-72 flex-col rounded-sm border border-[#C9A876]/20 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
+            className="flex w-full max-w-72 mb-20 flex-col rounded-sm border border-[#C9A876]/20 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
           >
             {item.coverImage && (
               <img
