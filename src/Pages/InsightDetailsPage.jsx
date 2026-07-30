@@ -11,6 +11,40 @@ const QUERY = `*[_type == "insight" && slug.current == $slug][0]{
   title, category, coverImage, excerpt, body, publishedAt, "slug": slug.current
 }`;
 
+const portableTextComponents = {
+  block: {
+    normal: ({ children }) => (
+      <p className="mb-5 leading-relaxed">{children}</p>
+    ),
+    h2: ({ children }) => (
+      <h2 className="mt-10 mb-4 font-display text-2xl font-medium text-[#101826] dark:text-white">
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3 className="mt-8 mb-3 font-display text-xl font-medium text-[#101826] dark:text-white">
+        {children}
+      </h3>
+    ),
+  },
+  list: {
+    bullet: ({ children }) => (
+      <ul className="mb-5 ml-6 list-disc space-y-2">{children}</ul>
+    ),
+    number: ({ children }) => (
+      <ol className="mb-5 ml-6 list-decimal space-y-2">{children}</ol>
+    ),
+  },
+  listItem: {
+    bullet: ({ children }) => (
+      <li className="leading-relaxed pl-1">{children}</li>
+    ),
+    number: ({ children }) => (
+      <li className="leading-relaxed pl-1">{children}</li>
+    ),
+  },
+};
+
 const InsightDetailsPage = () => {
   const { slug } = useParams();
   const [insight, setInsight] = useState(null);
@@ -84,8 +118,11 @@ const InsightDetailsPage = () => {
           })}
         </p>
 
-        <div className="prose dark:prose-invert max-w-none text-[#4B5262] dark:text-white/75">
-          <PortableText value={insight.body} />
+        <div className="max-w-none text-[#4B5262] dark:text-white/75">
+          <PortableText
+            value={insight.body}
+            components={portableTextComponents}
+          />
         </div>
       </div>
     </div>
