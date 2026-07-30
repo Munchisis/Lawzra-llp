@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lawzra.com
+Sitemap: https://lawzra.com/sitemap.xml
