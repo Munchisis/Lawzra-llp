@@ -1,7 +1,8 @@
 import hero from "./img/hero.avif";
 import hero2 from "./img/hero2.avif";
 import hero3 from "./img/hero3.avif";
-import aboutUsHome from "./img/aboutUsHome.avif";
+import aboutUsHome896 from "./img/aboutUsHome-896.avif";
+import aboutUsHome1792 from "./img/aboutUsHome-1792.avif";
 import lawyer1 from "./img/Lawyer1.avif";
 import lawyer2 from "./img/Lawyer2.avif";
 import lawyer3 from "./img/lawyer3.avif";
@@ -42,7 +43,8 @@ export const assets = {
   aboutUs4,
   aboutUs2,
   aboutUs,
-  aboutUsHome,
+  aboutUsHome896,
+  aboutUsHome1792,
   logo,
   logoW,
   hero,

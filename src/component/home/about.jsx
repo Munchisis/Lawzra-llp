@@ -16,8 +16,12 @@ const AboutUs = () => {
       >
         <img
           className="w-full max-w-md rounded-sm object-cover"
-          src={assets.aboutUsHome}
-          alt="A member of the Lawzra legal team"
+          src={assets.aboutUsHome896}
+          srcSet={`${assets.aboutUsHome896} 896w, ${assets.aboutUsHome1792} 1792w`}
+          sizes="896px"
+          alt="Profile image of the Lawzra LLP"
+          width="896"
+          height="489"
         />
         {/* Small corner tab, echoes the seal on the hero image */}
         <div className="font-docket absolute -bottom-4 -right-4 hidden bg-assent px-3 py-1.5 text-[10px] uppercase tracking-[0.15em] text-[#101826] shadow-md sm:block">

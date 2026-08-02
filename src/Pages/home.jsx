@@ -10,24 +10,26 @@ import { m } from "framer-motion";
 
 const Home = () => {
   return (
-    <m.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-    >
+    <>
       <SEO
         title="Top Law Firm in Nigeria"
         description="Lawzra offers expert legal services across Nigeria in corporate law, banking, tax, real estate, IP, energy, tech and dispute resolution."
         canonical="/"
       />
       <Hero />
-      <About />
-      <Practice />
-      <Partners />
-      <Insight />
-      <Testimonial />
-      <SpeakToALawyer />
-    </m.div>
+      <m.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
+        <About />
+        <Practice />
+        <Partners />
+        <Insight />
+        <Testimonial />
+        <SpeakToALawyer />
+      </m.div>
+    </>
   );
 };
 

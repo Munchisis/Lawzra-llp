@@ -53,13 +53,12 @@ const Hero = () => {
           </m.div>
 
           {/* Headline */}
-          <m.h1
-            variants={item}
+          <h1
             className="font-display mt-6 max-w-2xl text-4xl font-medium leading-[1.08] tracking-tight md:text-6xl lg:text-[3.6rem]"
           >
             Trusted Legal Representation Across Multiple{" "}
             <span className="text-assent">Practice Areas</span>
-          </m.h1>
+          </h1>
 
           {/* Subtext */}
           <m.p
