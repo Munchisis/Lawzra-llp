@@ -62,9 +62,9 @@ const OurTeamPage = () => {
           <div className="absolute inset-0 z-10 bg-linear-to-b from-[#0A0F18]/80 via-[#0A0F18]/55 to-[#0A0F18]/85" />
 
           <m.div style={{ y: textY }} className="relative z-20 text-center">
-            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" /> The People{" "}
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
+            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-assent">
+              <span className="h-px w-6 sm:w-8 bg-assent/60" /> The People{" "}
+              <span className="h-px w-6 sm:w-8 bg-assent/60" />
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium">
               Our Team
@@ -93,7 +93,7 @@ const OurTeamPage = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.3 }}
-                  className={`max-w-2xl text-center text-sm sm:text-base leading-relaxed text-[#4B5262] dark:text-white/70 lg:text-left ${
+                  className={`max-w-2xl text-center text-sm sm:text-base leading-relaxed text-primary-text dark:text-white/70 lg:text-left ${
                     isReversed ? "lg:text-left" : ""
                   }`}
                 >
@@ -105,7 +105,7 @@ const OurTeamPage = () => {
                     {member.name}
                   </h2>
                   <p
-                    className={`font-docket mb-4 sm:mb-6 inline-block text-xs sm:text-sm uppercase tracking-wide not-italic text-[#B08D57] dark:text-[#C9A876] border-[#C9A876] border-l-4 pl-4 sm:pl-6 text-left ${
+                    className={`font-docket mb-4 sm:mb-6 inline-block text-xs sm:text-sm uppercase tracking-wide not-italic text-secondary-assent dark:text-assent border-assent border-l-4 pl-4 sm:pl-6 text-left ${
                       isReversed ? "lg:border-l-4 lg:border-r-0 lg:pl-6" : ""
                     }`}
                   >
@@ -122,7 +122,7 @@ const OurTeamPage = () => {
                   {/* Dynamic View Detail link that fires navigate() */}
                   <Link
                     to={`/our-team/${member.slug}`}
-                    className="mt-5 sm:mt-6 font-docket text-xs uppercase tracking-widest text-[#B08D57] hover:text-[#101826] dark:text-[#C9A876] dark:hover:text-white underline underline-offset-4 cursor-pointer block"
+                    className="mt-5 sm:mt-6 font-docket text-xs uppercase tracking-widest text-secondary-assent hover:text-[#101826] dark:text-assent dark:hover:text-white underline underline-offset-4 cursor-pointer block"
                   >
                     View Full Biography &rarr;
                   </Link>

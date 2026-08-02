@@ -50,8 +50,8 @@ const ThemeToggleBtn = ({ theme, setTheme }) => {
       className={`cursor-pointer rounded-full border p-2 transition-all duration-300
         ${
           !isFixed
-            ? "border-transparent text-white/80 hover:border-[#C9A876] hover:text-[#C9A876]"
-            : "border-[#C9A876]/30 text-[#4B5262] hover:border-[#C9A876] hover:text-[#B08D57] dark:border-white/15 dark:text-white/70 dark:hover:border-[#C9A876] dark:hover:text-[#C9A876]"
+            ? "border-transparent text-white/80 hover:border-assent hover:text-assent"
+            : "border-assent/30 text-primary-text hover:border-assent hover:text-secondary-assent dark:border-white/15 dark:text-white/70 dark:hover:border-assent dark:hover:text-assent"
         }
         `}
     >

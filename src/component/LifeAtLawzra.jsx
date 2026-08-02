@@ -2,18 +2,18 @@ import { gallery } from "../assets/assets";
 
 const LifeAtLawzra = () => {
   return (
-    <section className="border-t border-[#C9A876]/15 bg-[#FAF8F3] px-6 py-24 dark:border-white/10 dark:bg-[#101826]">
+    <section className="border-t border-assent/15 bg-[#FAF8F3] px-6 py-24 dark:border-white/10 dark:bg-[#101826]">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <div className="font-docket mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-              <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+            <div className="font-docket mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+              <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
               Culture
             </div>
             <h2 className="font-display mb-4 text-4xl italic text-[#101826] dark:text-white">
               Life at Lawzra
             </h2>
-            <p className="leading-relaxed text-[#4B5262] dark:text-white/60">
+            <p className="leading-relaxed text-primary-text dark:text-white/60">
               We believe in more than just legal excellence. We foster a culture
               of growth, well-being, and genuine connection. From our
               state-of-the-art office in Lagos to our community outreach in
@@ -22,19 +22,19 @@ const LifeAtLawzra = () => {
           </div>
           <div className="flex gap-4">
             <div className="px-4 text-center">
-              <p className="font-display text-2xl text-[#B08D57] dark:text-[#C9A876]">
+              <p className="font-display text-2xl text-secondary-assent dark:text-assent">
                 25+
               </p>
-              <p className="font-docket text-[10px] uppercase tracking-widest text-[#4B5262] dark:text-white/40">
+              <p className="font-docket text-[10px] uppercase tracking-widest text-primary-text dark:text-white/40">
                 Associates
               </p>
             </div>
-            <div className="h-10 w-px bg-[#C9A876]/25" />
+            <div className="h-10 w-px bg-assent/25" />
             <div className="px-4 text-center">
-              <p className="font-display text-2xl text-[#B08D57] dark:text-[#C9A876]">
+              <p className="font-display text-2xl text-secondary-assent dark:text-assent">
                 3
               </p>
-              <p className="font-docket text-[10px] uppercase tracking-widest text-[#4B5262] dark:text-white/40">
+              <p className="font-docket text-[10px] uppercase tracking-widest text-primary-text dark:text-white/40">
                 Offices
               </p>
             </div>
@@ -46,7 +46,7 @@ const LifeAtLawzra = () => {
           {gallery.map((img, index) => (
             <div
               key={index}
-              className={`${img.size} group relative overflow-hidden rounded-sm border border-[#C9A876]/15 bg-[#0C1420]`}
+              className={`${img.size} group relative overflow-hidden rounded-sm border border-assent/15 bg-[#0C1420]`}
             >
               <img
                 src={img.src}

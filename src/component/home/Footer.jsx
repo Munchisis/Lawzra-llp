@@ -26,13 +26,13 @@ const Footer = ({ theme }) => {
   };
 
   return (
-    <footer className="border-t border-[#C9A876]/15 bg-[#FAF8F3] transition-colors duration-300 dark:border-white/10 dark:bg-[#0C1420]">
+    <footer className="border-t border-assent/15 bg-[#FAF8F3] transition-colors duration-300 dark:border-white/10 dark:bg-[#0C1420]">
       <m.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="w-full px-6 pt-16 text-sm text-[#4B5262] dark:text-white/50 md:px-16 lg:px-24 xl:px-32"
+        className="w-full px-6 pt-16 text-sm text-primary-text dark:text-white/50 md:px-16 lg:px-24 xl:px-32"
       >
         <div className="mb-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3">
           {/* Column 1: Brand & Socials */}
@@ -48,8 +48,8 @@ const Footer = ({ theme }) => {
                 sizes="55px"
                 className="h-14 w-14 object-contain transition-transform"
               />
-              <div className="font-display text-lg tracking-tight text-[#101826] transition-colors group-hover:text-[#B08D57] dark:text-white dark:group-hover:text-[#C9A876]">
-                Lawzra <span className="text-[#C9A876]">LLP</span>
+              <div className="font-display text-lg tracking-tight text-[#101826] transition-colors group-hover:text-secondary-assent dark:text-white dark:group-hover:text-assent">
+                Lawzra <span className="text-assent">LLP</span>
               </div>
             </Link>
             <p className="max-w-sm leading-relaxed">
@@ -75,7 +75,7 @@ const Footer = ({ theme }) => {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   whileHover={{ y: -4 }}
-                  className="rounded-full border border-[#C9A876]/25 bg-white p-2 text-[#4B5262] transition-colors hover:border-[#C9A876] hover:text-[#B08D57] dark:border-white/10 dark:bg-[#16223a] dark:text-white/60 dark:hover:border-[#C9A876] dark:hover:text-[#C9A876]"
+                  className="rounded-full border border-assent/25 bg-white p-2 text-primary-text transition-colors hover:border-assent hover:text-secondary-assent dark:border-white/10 dark:bg-[#16223a] dark:text-white/60 dark:hover:border-assent dark:hover:text-assent"
                 >
                   {social.icon}
                 </m.a>
@@ -107,18 +107,18 @@ const Footer = ({ theme }) => {
               Subscribe to Insights
             </h2>
             <div className="max-w-sm space-y-5">
-              <p className="text-[#4B5262] dark:text-white/50">
+              <p className="text-primary-text dark:text-white/50">
                 Stay updated with the latest legal developments and firm news.
               </p>
               <div className="group relative">
                 <input
-                  className="h-12 w-full rounded-sm border border-[#C9A876]/30 bg-white px-4 pr-12 shadow-sm outline-none transition-all focus:border-[#C9A876] dark:border-white/10 dark:bg-[#16223a] dark:focus:border-[#C9A876]"
+                  className="h-12 w-full rounded-sm border border-assent/30 bg-white px-4 pr-12 shadow-sm outline-none transition-all focus:border-assent dark:border-white/10 dark:bg-[#16223a] dark:focus:border-assent"
                   type="email"
                   placeholder="Your email address"
                 />
                 <button
                   aria-label="Subscribe"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm bg-[#C9A876] p-2 text-[#101826] transition-colors hover:bg-[#dbbb8c] active:scale-95"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm bg-assent p-2 text-[#101826] transition-colors hover:bg-[#dbbb8c] active:scale-95"
                 >
                   <Send size={18} />
                 </button>
@@ -130,7 +130,7 @@ const Footer = ({ theme }) => {
         {/* Bottom Copyright */}
         <m.div
           variants={itemVariants}
-          className="font-docket flex flex-col items-center justify-between gap-4 border-t border-[#C9A876]/15 py-10 text-center text-[11px] uppercase tracking-widest text-[#4B5262]/70 dark:border-white/10 dark:text-white/40 md:flex-row"
+          className="font-docket flex flex-col items-center justify-between gap-4 border-t border-assent/15 py-10 text-center text-[11px] uppercase tracking-widest text-primary-text/70 dark:border-white/10 dark:text-white/40 md:flex-row"
         >
           <p>© {new Date().getFullYear()} Lawzra LLP. All rights reserved.</p>
           <div className="flex gap-6">
@@ -148,7 +148,7 @@ const Footer = ({ theme }) => {
 const FooterLink = ({ to, children }) => (
   <Link
     to={to}
-    className="inline-block text-[#4B5262] transition-all hover:translate-x-1 hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876]"
+    className="inline-block text-primary-text transition-all hover:translate-x-1 hover:text-secondary-assent dark:text-white/50 dark:hover:text-assent"
   >
     {children}
   </Link>

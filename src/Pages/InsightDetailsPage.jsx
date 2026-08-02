@@ -91,7 +91,7 @@ const InsightDetailsPage = () => {
         <h2 className="font-display text-2xl text-[#101826] dark:text-white mb-4">
           Insight Not Found
         </h2>
-        <Link to="/insights" className="text-[#C9A876] hover:underline">
+        <Link to="/insights" className="text-assent hover:underline">
           Back to Insights
         </Link>
       </div>
@@ -146,7 +146,7 @@ const InsightDetailsPage = () => {
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Link
           to="/insights"
-          className="font-docket flex items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] hover:text-[#101826] dark:text-[#C9A876] mb-8"
+          className="font-docket flex items-center gap-2 text-xs uppercase tracking-widest text-secondary-assent hover:text-[#101826] dark:text-assent mb-8"
         >
           <ArrowLeft size={14} /> All Insights
         </Link>
@@ -161,7 +161,7 @@ const InsightDetailsPage = () => {
           />
         )}
 
-        <span className="font-docket rounded-sm bg-[#C9A876]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-[#B08D57] dark:bg-[#C9A876]/15 dark:text-[#C9A876]">
+        <span className="font-docket rounded-sm bg-assent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-secondary-assent dark:bg-assent/15 dark:text-assent">
           {insight.category}
         </span>
 
@@ -170,7 +170,7 @@ const InsightDetailsPage = () => {
         </h1>
 
         <div className="flex items-center justify-between mb-8">
-          <p className="text-xs text-[#4B5262]/70 dark:text-white/40">
+          <p className="text-xs text-primary-text/70 dark:text-white/40">
             {new Date(insight.publishedAt).toLocaleDateString("en-GB", {
               day: "numeric",
               month: "long",
@@ -181,7 +181,7 @@ const InsightDetailsPage = () => {
 
           {/* Share buttons */}
           <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase tracking-widest text-[#4B5262]/60 dark:text-white/40">
+            <span className="text-[10px] uppercase tracking-widest text-primary-text/60 dark:text-white/40">
               Share
             </span>
 
@@ -190,7 +190,7 @@ const InsightDetailsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Share on LinkedIn"
-              className="text-[#4B5262] hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876] transition-colors"
+              className="text-primary-text hover:text-secondary-assent dark:text-white/50 dark:hover:text-assent transition-colors"
             >
               <Linkedin size={16} />
             </a>
@@ -200,7 +200,7 @@ const InsightDetailsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Share on X"
-              className="text-[#4B5262] hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876] transition-colors"
+              className="text-primary-text hover:text-secondary-assent dark:text-white/50 dark:hover:text-assent transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -222,14 +222,14 @@ const InsightDetailsPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Share on WhatsApp"
-              className="text-[#4B5262] hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876] transition-colors"
+              className="text-primary-text hover:text-secondary-assent dark:text-white/50 dark:hover:text-assent transition-colors"
             >
               <MessageCircle size={16} />
             </a>
           </div>
         </div>
 
-        <div className="max-w-none text-[#4B5262] dark:text-white/75">
+        <div className="max-w-none text-primary-text dark:text-white/75">
           <PortableText
             value={insight.body}
             components={portableTextComponents}
@@ -238,7 +238,7 @@ const InsightDetailsPage = () => {
 
         {/* Related Articles */}
         {insight.related?.length > 0 && (
-          <div className="mt-16 pt-10 border-t border-[#C9A876]/15 dark:border-white/10">
+          <div className="mt-16 pt-10 border-t border-assent/15 dark:border-white/10">
             <h2 className="font-display text-xl text-[#101826] dark:text-white mb-6">
               Related Insights
             </h2>
@@ -247,7 +247,7 @@ const InsightDetailsPage = () => {
                 <Link
                   key={item.slug}
                   to={`/insights/${item.slug}`}
-                  className="flex flex-col rounded-sm border border-[#C9A876]/20 bg-white p-3 transition hover:border-[#C9A876] hover:shadow-lg dark:border-white/10 dark:bg-[#16223a]"
+                  className="flex flex-col rounded-sm border border-assent/20 bg-white p-3 transition hover:border-assent hover:shadow-lg dark:border-white/10 dark:bg-[#16223a]"
                 >
                   {item.coverImage && (
                     <img

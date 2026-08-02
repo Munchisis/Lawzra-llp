@@ -65,10 +65,10 @@ const ContactUsPage = () => {
 
         {/* Floating Text Content */}
         <m.div style={{ y: textY }} className="relative z-20 text-center">
-          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
-            <span className="h-px w-8 bg-[#C9A876]/60" />
+          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-assent">
+            <span className="h-px w-8 bg-assent/60" />
             The Firm
-            <span className="h-px w-8 bg-[#C9A876]/60" />
+            <span className="h-px w-8 bg-assent/60" />
           </div>
           <h1 className="font-display text-5xl font-medium">Contact Us</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/75">
@@ -80,10 +80,10 @@ const ContactUsPage = () => {
 
       {/* Section Header */}
       <div className="mb-10 mt-20 text-center">
-        <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           Locations
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
         </div>
         <h2 className="font-display text-3xl text-[#101826] dark:text-white">
           Our Offices
@@ -103,17 +103,16 @@ const ContactUsPage = () => {
           {/* Umuahia */}
           <m.div
             variants={fadeInUp}
-            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+            className="flex-1 text-center text-primary-text dark:text-white/60"
           >
-            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
+            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-assent/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Umuahia
             </h3>
             <p className="mb-4 h-12 text-sm">
               23 Umuahia Road, Umuahia, Abia State
             </p>
-            {/* NOTE: the map pin below currently resolves to "23 Ikot Ekpene - Umuahia Rd,
-                Umu Obasi" — double check this matches the address above before shipping */}
-            <div className="overflow-hidden rounded-sm border border-[#C9A876]/20 dark:border-white/10">
+            
+            <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Umuahia Address"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.282277354315!2d7.490965307056033!3d5.525071033944038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042dcc55fcfb9d3%3A0x895808b4da555136!2s23%20Ikot%20Ekpene%20-%20Umuahia%20Rd%2C%20Umu%20Obasi%2C%20Umuahia%20440236%2C%20Abia!5e0!3m2!1sen!2sng!4v1772536857376!5m2!1sen!2sng"
@@ -129,13 +128,13 @@ const ContactUsPage = () => {
           {/* Lagos */}
           <m.div
             variants={fadeInUp}
-            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+            className="flex-1 text-center text-primary-text dark:text-white/60"
           >
-            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
+            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-assent/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Lagos
             </h3>
             <p className="mb-4 h-12 text-sm">456 Victoria Island, Lagos</p>
-            <div className="overflow-hidden rounded-sm border border-[#C9A876]/20 dark:border-white/10">
+            <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Lagos Address"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5649008489004!2d3.4064220202624313!3d6.449863207461226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b302639d0f9%3A0xee176cf139947aaf!2s23%20Obalende%20Rd%2C%20Ikoyi%2C%20Lagos%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1772548996488!5m2!1sen!2sng"
@@ -151,13 +150,13 @@ const ContactUsPage = () => {
           {/* Abuja */}
           <m.div
             variants={fadeInUp}
-            className="flex-1 text-center text-[#4B5262] dark:text-white/60"
+            className="flex-1 text-center text-primary-text dark:text-white/60"
           >
-            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-[#C9A876]/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
+            <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-assent/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Abuja
             </h3>
             <p className="mb-4 h-12 text-sm">789 Wuse, Abuja</p>
-            <div className="overflow-hidden rounded-sm border border-[#C9A876]/20 dark:border-white/10">
+            <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Abuja Address"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1927.7385738209975!2d7.473999014843507!3d9.078412525742701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0afd946acf11%3A0x641c035f13845f8b!2sWuse%2C%20Abuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1773645356501!5m2!1sen!2sng"
@@ -177,39 +176,39 @@ const ContactUsPage = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
           viewport={{ once: true }}
-          className="flex w-full flex-col gap-6 border-t border-[#C9A876]/20 p-6 dark:border-white/10 lg:w-72 lg:border-l lg:border-t-0"
+          className="flex w-full flex-col gap-6 border-t border-assent/20 p-6 dark:border-white/10 lg:w-72 lg:border-l lg:border-t-0"
         >
           <div className="text-center">
-            <h4 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
+            <h4 className="font-docket text-xs uppercase tracking-widest text-secondary-assent dark:text-assent">
               Call us
             </h4>
 
             <a
               href="tel:+2348037333930"
-              className="text-sm text-[#4B5262] transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
+              className="text-sm text-primary-text transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
             >
               +234 803 733 3930
             </a>
           </div>
 
-          <div className="border-t border-[#C9A876]/15 pt-6 text-center dark:border-white/10">
-            <h4 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
+          <div className="border-t border-assent/15 pt-6 text-center dark:border-white/10">
+            <h4 className="font-docket text-xs uppercase tracking-widest text-secondary-assent dark:text-assent">
               Email
             </h4>
 
             <a
               href="mailto:contact@lawzra.com"
-              className="text-sm text-[#4B5262] transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
+              className="text-sm text-primary-text transition-colors hover:text-[#101826] dark:text-white/60 dark:hover:text-white"
             >
               contact@lawzra.com
             </a>
           </div>
 
-          <div className="border-t border-[#C9A876]/15 pt-6 text-center dark:border-white/10">
-            <h4 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
+          <div className="border-t border-assent/15 pt-6 text-center dark:border-white/10">
+            <h4 className="font-docket text-xs uppercase tracking-widest text-secondary-assent dark:text-assent">
               Head office
             </h4>
-            <p className="text-sm text-[#4B5262] dark:text-white/60">
+            <p className="text-sm text-primary-text dark:text-white/60">
               No 23 Obalende, Lekki Phase 1, Lagos State
             </p>
           </div>
@@ -240,7 +239,7 @@ const ContactUsPage = () => {
                 rel="noopener noreferrer"
                 aria-label={social.label}
                 whileHover={{ y: -3, scale: 1.1 }}
-                className="text-[#4B5262] transition-colors hover:text-[#B08D57] dark:text-white/50 dark:hover:text-[#C9A876]"
+                className="text-primary-text transition-colors hover:text-secondary-assent dark:text-white/50 dark:hover:text-assent"
               >
                 {social.icon}
               </m.a>

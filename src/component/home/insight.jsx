@@ -50,9 +50,9 @@ const Insight = () => {
   if (!loading && insights.length === 0) return null;
 
   return (
-    <section className="relative mx-4 mb-10 overflow-hidden rounded-sm border border-[#C9A876]/15 bg-white py-20 dark:border-white/10 dark:bg-[#101826] md:mx-10 lg:mx-20">
+    <section className="relative mx-4 mb-10 overflow-hidden rounded-sm border border-assent/15 bg-white py-20 dark:border-white/10 dark:bg-[#101826] md:mx-10 lg:mx-20">
       {/* Subtle Background Accent */}
-      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 -translate-y-1/2 translate-x-1/4 rounded-full bg-[#C9A876]/10 blur-[100px]" />
+      <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 -translate-y-1/2 translate-x-1/4 rounded-full bg-assent/10 blur-[100px]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-8 lg:px-12">
         <div className="flex flex-col items-end justify-between gap-10 md:flex-row">
@@ -61,9 +61,9 @@ const Insight = () => {
               initial={{ opacity: 0, y: -10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-docket mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]"
+              className="font-docket mb-4 flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent"
             >
-              <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+              <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
               Insights — Latest Research
             </m.div>
 
@@ -74,7 +74,7 @@ const Insight = () => {
               variants={textVariants}
               className="font-display text-3xl font-medium leading-tight tracking-tight text-[#101826] dark:text-white md:text-4xl lg:text-6xl"
             >
-              Insights <span className="text-[#C9A876]">.</span>
+              Insights <span className="text-assent">.</span>
             </m.h1>
 
             <m.p
@@ -82,7 +82,7 @@ const Insight = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={textVariants}
-              className="mt-6 max-w-lg text-lg leading-relaxed text-[#4B5262] dark:text-white/60"
+              className="mt-6 max-w-lg text-lg leading-relaxed text-primary-text dark:text-white/60"
             >
               Deep-dive analysis into the legal shifts shaping our world,
               curated by our global legal experts.
@@ -98,7 +98,7 @@ const Insight = () => {
             <Link
               to="/insights"
               aria-label="View the full Insights archive"
-              className="group flex items-center gap-3 rounded-sm bg-[#C9A876] px-9 py-4 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
+              className="group flex items-center gap-3 rounded-sm bg-assent px-9 py-4 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
             >
               View Archive
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5" />
@@ -119,7 +119,7 @@ const Insight = () => {
               key={item.slug}
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="group flex flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-[#FAF8F3] transition-all duration-500 hover:border-[#C9A876] hover:shadow-[0_20px_50px_rgba(16,24,38,0.08)] dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
+              className="group flex flex-col overflow-hidden rounded-sm border border-assent/20 bg-[#FAF8F3] transition-all duration-500 hover:border-assent hover:shadow-[0_20px_50px_rgba(16,24,38,0.08)] dark:border-white/10 dark:bg-[#16223a] dark:hover:border-assent"
             >
               <Link
                 to={`/insights/${item.slug}`}
@@ -142,10 +142,10 @@ const Insight = () => {
 
                 <div className="flex grow flex-col p-7">
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="font-docket rounded-sm bg-[#C9A876]/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-[#B08D57] dark:bg-[#C9A876]/15 dark:text-[#C9A876]">
+                    <span className="font-docket rounded-sm bg-assent/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-secondary-assent dark:bg-assent/15 dark:text-assent">
                       {item.category}
                     </span>
-                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-[#4B5262]/70 dark:text-white/40">
+                    <span className="flex items-center gap-1.5 text-[11px] font-medium text-primary-text/70 dark:text-white/40">
                       <Calendar className="h-3.5 w-3.5" />
                       {new Date(item.publishedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -155,18 +155,18 @@ const Insight = () => {
                     </span>
                   </div>
 
-                  <h3 className="font-display mb-3 text-xl leading-snug text-[#101826] transition-colors line-clamp-2 group-hover:text-[#8A6A38] dark:text-white dark:group-hover:text-[#C9A876]">
+                  <h3 className="font-display mb-3 text-xl leading-snug text-[#101826] transition-colors line-clamp-2 group-hover:text-[#8A6A38] dark:text-white dark:group-hover:text-assent">
                     {item.title}
                   </h3>
 
-                  <p className="mb-8 text-sm leading-relaxed text-[#4B5262] line-clamp-3 dark:text-white/60">
+                  <p className="mb-8 text-sm leading-relaxed text-primary-text line-clamp-3 dark:text-white/60">
                     {item.excerpt}
                   </p>
 
-                  <div className="mt-auto border-t border-[#C9A876]/15 pt-5 dark:border-white/10">
+                  <div className="mt-auto border-t border-assent/15 pt-5 dark:border-white/10">
                     <span className="font-docket inline-flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#101826] transition-all group-hover:gap-4 dark:text-white">
                       Read Full Case
-                      <ArrowRight className="h-4 w-4 text-[#C9A876]" />
+                      <ArrowRight className="h-4 w-4 text-assent" />
                     </span>
                   </div>
                 </div>

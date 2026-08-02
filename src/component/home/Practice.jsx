@@ -14,17 +14,17 @@ const Practice = () => {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           Areas of Counsel
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
         </div>
 
         <h1 className="font-display mt-4 text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           Practice Areas
         </h1>
 
-        <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-[#4B5262] dark:text-white/60">
+        <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-primary-text dark:text-white/60">
           We provide comprehensive legal services tailored to meet the needs of
           individuals, businesses, and institutions.
         </p>
@@ -44,17 +44,17 @@ const Practice = () => {
             <Link
               to={`/areas-of-practice/${area.path}`}
               aria-label={`Learn more about ${area.title}`}
-              className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white p-8 transition-all duration-300 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
+              className="group relative flex h-full flex-col items-center justify-center overflow-hidden rounded-sm border border-assent/20 bg-white p-8 transition-all duration-300 hover:border-assent hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-assent"
             >
               {/* Decorative background element on hover */}
-              <div className="absolute -bottom-4 -right-4 h-12 w-12 rounded-full bg-[#C9A876]/10 transition-transform duration-500 group-hover:scale-[6]" />
+              <div className="absolute -bottom-4 -right-4 h-12 w-12 rounded-full bg-assent/10 transition-transform duration-500 group-hover:scale-[6]" />
 
               <div className="relative z-10 flex flex-col items-center gap-2 text-center">
-                <span className="font-docket text-xs text-[#C9A876]">§</span>
-                <h3 className="font-display text-lg text-[#101826] transition-colors group-hover:text-[#8A6A38] dark:text-white dark:group-hover:text-[#C9A876]">
+                <span className="font-docket text-xs text-assent">§</span>
+                <h3 className="font-display text-lg text-[#101826] transition-colors group-hover:text-[#8A6A38] dark:text-white dark:group-hover:text-assent">
                   {area.title}
                 </h3>
-                <p className="text-sm text-[#4B5262] dark:text-white/60">
+                <p className="text-sm text-primary-text dark:text-white/60">
                   {area.subtitle}
                 </p>
               </div>

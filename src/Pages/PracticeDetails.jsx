@@ -26,7 +26,7 @@ const PracticeDetails = () => {
           </h2>
           <Link
             to="/areas-of-practice"
-            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-wider text-[#B08D57] hover:text-[#dbbb8c] dark:text-[#C9A876]"
+            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-wider text-secondary-assent hover:text-[#dbbb8c] dark:text-assent"
           >
             <ArrowLeft size={16} /> Return to practice areas
           </Link>
@@ -88,7 +88,7 @@ const PracticeDetails = () => {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 pt-8 sm:pt-12">
           <Link
             to="/areas-of-practice"
-            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-widest text-[#B08D57] transition-colors hover:text-[#101826] dark:text-[#C9A876] dark:border dark:p-4 dark:border-[#c9a87628] dark:hover:text-[#c9c3ba]  "
+            className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-widest text-secondary-assent transition-colors hover:text-[#101826] dark:text-assent dark:border dark:p-4 dark:border-[#c9a87628] dark:hover:text-[#c9c3ba]  "
           >
             <ArrowLeft size={14} /> Back to Overview
           </Link>
@@ -97,7 +97,7 @@ const PracticeDetails = () => {
         {/* Main Content Layout Container */}
         <article className="mx-auto mt-6 sm:mt-8 max-w-4xl px-4 sm:px-6">
           {/* Featured Hero Banner Image element */}
-          <div className="relative h-48 sm:h-64 w-full overflow-hidden rounded-sm border border-[#C9A876]/20 lg:h-[45vh]">
+          <div className="relative h-48 sm:h-64 w-full overflow-hidden rounded-sm border border-assent/20 lg:h-[45vh]">
             <img
               src={practice.image}
               alt={practice.title}
@@ -111,7 +111,7 @@ const PracticeDetails = () => {
           </div>
 
           {/* Heading Title Block */}
-          <header className="mt-6 sm:mt-10 border-b border-[#C9A876]/20 pb-4 sm:pb-6">
+          <header className="mt-6 sm:mt-10 border-b border-assent/20 pb-4 sm:pb-6">
             <h1 className="font-display text-2xl sm:text-3xl font-medium tracking-tight text-[#101826] lg:text-5xl dark:text-white">
               {practice.title}
             </h1>
@@ -125,9 +125,9 @@ const PracticeDetails = () => {
           {/* Specific Expertise Checklist Section Loop */}
           {practice.expertise && practice.expertise.length > 0 && (
             <div className="mt-10 sm:mt-16">
-              <div className="font-docket mb-4 sm:mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-[#B08D57] dark:text-[#C9A876]">
+              <div className="font-docket mb-4 sm:mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.15em] text-secondary-assent dark:text-assent">
                 Our Specific Core Expertise
-                <span className="h-px flex-1 bg-[#C9A876]/20" />
+                <span className="h-px flex-1 bg-assent/20" />
               </div>
 
               <ul className="grid grid-cols-1 gap-4 sm:gap-6 sm:grid-cols-2">
@@ -138,12 +138,12 @@ const PracticeDetails = () => {
                   return (
                     <li
                       key={index}
-                      className="flex items-start gap-4 rounded-sm border border-[#C9A876]/10 bg-white p-4 sm:p-5 shadow-xs transition-colors hover:border-[#C9A876]/30 dark:border-white/5 dark:bg-[#16223a]"
+                      className="flex items-start gap-4 rounded-sm border border-assent/10 bg-white p-4 sm:p-5 shadow-xs transition-colors hover:border-assent/30 dark:border-white/5 dark:bg-[#16223a]"
                     >
                       <div className="mt-0.5 shrink-0">
                         <CheckCircle2
                           size={18}
-                          className="text-[#B08D57] dark:text-[#C9A876]"
+                          className="text-secondary-assent dark:text-assent"
                         />
                       </div>
 
@@ -168,7 +168,7 @@ const PracticeDetails = () => {
         </article>
 
         {/* Dynamic Context Footer Call to Action Panel */}
-        <section className="mx-auto mt-16 sm:mt-24 max-w-4xl rounded-sm border border-[#C9A876]/20 bg-[#0C1420] p-6 sm:p-10 lg:p-12 text-center text-white">
+        <section className="mx-auto mt-16 sm:mt-24 max-w-4xl rounded-sm border border-assent/20 bg-[#0C1420] p-6 sm:p-10 lg:p-12 text-center text-white">
           <h2 className="font-display mb-3 sm:mb-4 text-xl sm:text-2xl">
             Discuss Your {practice.title} Matter
           </h2>
@@ -179,7 +179,7 @@ const PracticeDetails = () => {
           </p>
           <Link
             to="/appointment"
-            className="w-full sm:w-auto cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
+            className="w-full sm:w-auto cursor-pointer rounded-sm bg-assent px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
           >
             Schedule a Consultation
           </Link>

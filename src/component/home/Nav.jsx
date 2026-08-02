@@ -47,9 +47,9 @@ const Nav = ({ theme, setTheme }) => {
   return (
     <div className="w-full">
       {/* Top Banner */}
-      <div className="font-docket bg-[#0C1420] py-2 text-white">
+      <div className="font-docket bg-background-assent py-2 text-white">
         <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-widest md:text-xs">
-          <p className="text-[#C9A876]">Free Consultation Available</p>
+          <p className="text-assent">Free Consultation Available</p>
           
             <a href="tel:+2348037333930"
             className="flex items-center gap-1 text-white/70 hover:text-white">
@@ -71,7 +71,7 @@ const Nav = ({ theme, setTheme }) => {
       {/* Navbar */}
       <div className={isFixed ? "fixed top-0 left-0 z-50 w-full" : "relative z-50"}>
         {/* Static base layer — "not scrolled" look, no animation needed */}
-        <div className={`absolute inset-0 ${isFixed ? "" : "bg-[#101826]"}`} />
+        <div className={`absolute inset-0 ${isFixed ? "" : "bg-background-secondary"}`} />
 
         {/* Fixed-state layer — only opacity animates (compositor-only) */}
         <m.div
@@ -101,7 +101,7 @@ const Nav = ({ theme, setTheme }) => {
                 className="h-10 w-auto object-contain md:h-12"
               />
               <h1 className="font-display text-lg tracking-wide dark:text-white/90">
-                Lawzra <span className="text-[#C9A876]">LLP</span>
+                Lawzra <span className="text-">LLP</span>
               </h1>
             </Link>
           </div>
@@ -115,10 +115,10 @@ const Nav = ({ theme, setTheme }) => {
                 className={({ isActive }) =>
                   `text-sm font-semibold transition-colors duration-300 ${
                     isActive
-                      ? "text-[#C9A876]"
+                      ? "text-assent"
                       : isFixed
-                        ? "text-[#4B5262] hover:text-[#B08D57] dark:text-white/70 dark:hover:text-[#C9A876]"
-                        : "text-white/70 hover:text-[#C9A876]"
+                        ? "text-primary-text hover:text-secondary-assent dark:text-white/70 dark:hover:text-assent"
+                        : "text-white/70 hover:text-assent dark:text-white/70 dark:hover:text-assent"
                   }`
                 }
               >
@@ -133,8 +133,8 @@ const Nav = ({ theme, setTheme }) => {
 
             <Link
               to="/contact-us"
-              className="group relative hidden overflow-hidden rounded-sm border border-[#C9A876] px-6 py-2 text-xs font-bold text-[#C9A876] transition-all active:scale-95 hover:bg-[#C9A876] hover:text-[#101826] md:block"
-            >
+              className="group relative hidden overflow-hidden rounded-sm border border-assent px-6 py-2 text-xs font-bold text-assent transition-all active:scale-95 hover:bg-assent hover:text-primary md:block"
+            > 
               <span className="relative z-10">Get in touch</span>
             </Link>
 
@@ -152,13 +152,13 @@ const Nav = ({ theme, setTheme }) => {
                 {open ? (
                   <X
                     className={
-                      isFixed ? "text-[#101826] dark:text-white" : "text-white"
+                      isFixed ? "text-primary-text dark:text-white" : "text-white"
                     }
                   />
                 ) : (
                   <MenuIcon
                     className={
-                      isFixed ? "text-[#101826] dark:text-white" : "text-white"
+                      isFixed ? "text-primary-text dark:text-white" : "text-white"
                     }
                   />
                 )}
@@ -174,7 +174,7 @@ const Nav = ({ theme, setTheme }) => {
                 initial="closed"
                 animate="opened"
                 exit="closed"
-                className="absolute top-20 left-0 z-50 flex w-full flex-col overflow-hidden border-t border-[#C9A876]/20 bg-[#FAF8F3] p-6 shadow-xl dark:bg-[#101826] md:hidden"
+                className="absolute top-20 left-0 z-50 flex w-full flex-col overflow-hidden border-t border-assent/20 bg-[#FAF8F3] p-6 shadow-xl dark:bg-background-secondary md:hidden"
               >
                 {navLinks.map((link, i) => (
                   <m.div variants={itemVariants} key={i}>
@@ -182,10 +182,10 @@ const Nav = ({ theme, setTheme }) => {
                       to={link.path}
                       onClick={() => setOpen(false)}
                       className={({ isActive }) =>
-                        `block border-b border-[#C9A876]/15 py-3 text-lg font-medium ${
+                        `block border-b border-assent/15 py-3 text-lg font-medium ${
                           isActive
-                            ? "text-[#B08D57] dark:text-[#C9A876]"
-                            : "text-[#4B5262] dark:text-white/70"
+                            ? "text-secondary-assent dark:text-assent"
+                            : "text-primary-text dark:text-white/70"
                         }`
                       }
                     >
@@ -199,7 +199,7 @@ const Nav = ({ theme, setTheme }) => {
                   onClick={() => {
                     setOpen(false);
                   }}
-                  className="mt-6 w-full rounded-sm bg-[#C9A876] py-3 font-bold text-[#101826]"
+                  className="mt-6 w-full rounded-sm bg-assent py-3 font-bold text-primary"
                 >
                   Get in touch
                 </m.Link>

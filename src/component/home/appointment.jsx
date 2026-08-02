@@ -64,7 +64,7 @@ const Appointment = () => {
         className="relative hidden w-2/5 flex-col justify-between overflow-hidden bg-[#0C1420] p-16 lg:flex"
       >
         <div className="z-10">
-          <h2 className="font-docket mb-4 text-sm uppercase tracking-widest text-[#C9A876]">
+          <h2 className="font-docket mb-4 text-sm uppercase tracking-widest text-assent">
             Private Counsel
           </h2>
           <h1 className="font-display text-5xl leading-tight text-white">
@@ -79,7 +79,7 @@ const Appointment = () => {
 
         <div className="z-10 space-y-8">
           <div className="flex items-start gap-4">
-            <ShieldCheck className="text-[#C9A876]" size={24} />
+            <ShieldCheck className="text-assent" size={24} />
             <div>
               <h4 className="font-semibold text-white">
                 Attorney-Client Privilege
@@ -97,13 +97,13 @@ const Appointment = () => {
         <m.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative w-full max-w-xl rounded-sm border border-[#C9A876]/20 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#16223a] md:p-10"
+          className="relative w-full max-w-xl rounded-sm border border-assent/20 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#16223a] md:p-10"
         >
           <div className="mb-8 text-center lg:text-left">
             <h1 className="font-display text-2xl text-[#101826] dark:text-white md:text-3xl">
               Book a Consultation
             </h1>
-            <p className="mt-1 text-sm text-[#4B5262] dark:text-white/50">
+            <p className="mt-1 text-sm text-primary-text dark:text-white/50">
               Lawzra Partnership Legal Services
             </p>
           </div>
@@ -114,7 +114,7 @@ const Appointment = () => {
           >
             {/* Full Name */}
             <div>
-              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                 Full Legal Name
               </label>
               <input
@@ -124,7 +124,7 @@ const Appointment = () => {
                 className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
                   errors.fullName
                     ? "border-red-500"
-                    : "border-[#C9A876]/25 focus:border-[#C9A876] dark:border-white/10 dark:focus:border-[#C9A876]"
+                    : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
                 }`}
               />
             </div>
@@ -132,7 +132,7 @@ const Appointment = () => {
             {/* Email & Phone */}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               <div>
-                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-[#4B5262] dark:text-white/50">
+                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Email Address
                 </label>
                 <input
@@ -148,7 +148,7 @@ const Appointment = () => {
                   className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
                     errors.email
                       ? "border-red-500"
-                      : "border-[#C9A876]/25 focus:border-[#C9A876] dark:border-white/10 dark:focus:border-[#C9A876]"
+                      : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
                   }`}
                 />
                 {errors.email && (
@@ -159,7 +159,7 @@ const Appointment = () => {
               </div>
 
               <div>
-                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-[#4B5262] dark:text-white/50">
+                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Phone Number
                 </label>
                 <input
@@ -181,7 +181,7 @@ const Appointment = () => {
                   className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
                     errors.phone
                       ? "border-red-500"
-                      : "border-[#C9A876]/25 focus:border-[#C9A876] dark:border-white/10 dark:focus:border-[#C9A876]"
+                      : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
                   }`}
                 />
                 {/* Display Error Message */}
@@ -195,12 +195,12 @@ const Appointment = () => {
 
             {/* Practice Area */}
             <div>
-              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                 Area of Practice
               </label>
               <select
                 {...register("practiceArea")}
-                className="w-full appearance-none rounded-sm border border-[#C9A876]/25 bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:border-white/10 dark:bg-[#101826] dark:text-white/60"
+                className="w-full appearance-none rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:border-white/10 dark:bg-[#101826] dark:text-white/60"
               >
                 <option>Corporate/Commercial Law</option>
                 <option>Dispute Resolution</option>
@@ -211,7 +211,7 @@ const Appointment = () => {
 
               {/* Legal Matter Description */}
               <div className="md:col-span-2">
-                <label className="font-docket mb-1 mt-4 block text-[10px] uppercase tracking-wide text-[#4B5262] dark:text-white/50">
+                <label className="font-docket mb-1 mt-4 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Brief Description of Matter
                 </label>
                 <textarea
@@ -228,7 +228,7 @@ const Appointment = () => {
                   className={`w-full resize-none rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none transition-all dark:bg-[#101826] dark:text-white ${
                     errors.message
                       ? "border-red-500"
-                      : "border-[#C9A876]/25 focus:border-[#C9A876] dark:border-white/10 dark:focus:border-[#C9A876]"
+                      : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
                   }`}
                 />
                 {errors.message && (
@@ -258,7 +258,7 @@ const Appointment = () => {
                 className={`flex w-full items-center justify-center gap-2 rounded-sm py-4 font-bold shadow-lg transition-all ${
                   isSuccess
                     ? "bg-green-500 text-white"
-                    : "bg-[#C9A876] text-[#101826] hover:bg-[#dbbb8c]"
+                    : "bg-assent text-[#101826] hover:bg-[#dbbb8c]"
                 }`}
               >
                 {isSubmitting ? (
@@ -287,7 +287,7 @@ const Appointment = () => {
               <h3 className="font-display mb-2 text-2xl text-[#101826] dark:text-white">
                 Request Sent
               </h3>
-              <p className="text-sm text-[#4B5262] dark:text-white/60">
+              <p className="text-sm text-primary-text dark:text-white/60">
                 We will contact you shortly to confirm your slot.
               </p>
             </m.div>

@@ -17,7 +17,7 @@ const CookiePolicy = () => {
           className="absolute inset-0 bg-cover bg-center opacity-40 scale-110"
           style={{ backgroundImage: `url(${assets.cookiePolicy})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-transparent to-transparent" />
 
         <div className="relative z-10 text-center px-6">
           <m.span
@@ -83,7 +83,7 @@ const CookiePolicy = () => {
           </section>
 
           {/* Breakdown of Cookie Types */}
-          <section className="mb-16 bg-slate-50 dark:bg-slate-900/40 p-10 rounded-[2rem] border border-slate-100 dark:border-slate-800">
+          <section className="mb-16 bg-slate-50 dark:bg-slate-900/40 p-10 rounded-4xl border border-slate-100 dark:border-slate-800">
             <h2 className="text-3xl font-serif font-bold text-slate-800 dark:text-white mb-8">
               3. Types of Cookies We Use
             </h2>

@@ -1,17 +1,62 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+
+@font-face {
+font-family: "Fraunces Fallback";
+src: local("Georgia");
+size-adjust: 105%; 
+}
+
+@font-face {
+font-family: "Fraunces";
+src: url("/fonts/fraunces-400.woff2") format("woff2");
+font-weight: 400;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: "Fraunces";
+src: url("/fonts/fraunces-500.woff2") format("woff2");
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: "Fraunces";
+src: url("/fonts/fraunces-600.woff2") format("woff2");
+font-weight: 600;
+font-style: normal;
+font-display: swap;
+}
+@font-face {
+font-family: "IBM Plex Mono";
+src: url("/fonts/ibm-plex-mono-500.woff2") format("woff2");
+font-weight: 500;
+font-style: normal;
+font-display: swap;
+}
 
 @theme {
   --color-primary: #151518;
   --color-primary-dark: #111113;
 
   --color-secondary: #191919;
-  --color-secondary-dark: #131313 --color-secondary-light: #242424;
+  --color-secondary-dark: #131313;
+  --color-secondary-light: #242424;
 
-  --color-highlight: #f97583;
+  --color-assent: #C9A876;
+  --color-secondary-assent: #B08D57;
+
+  --color-background-assent: #0C1420;
+  --color-background-secondary: #0C1420;
+
+  --color-primary-text: #4B5262;
+
+
+
 
   --color-light-text: #e1e4e8;
   --color-dark-text: #6a737d;
@@ -20,6 +65,8 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+
 
 html.lenis,
 html.lenis body {

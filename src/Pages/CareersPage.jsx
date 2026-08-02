@@ -99,7 +99,7 @@ const CareersPage = () => {
         <m.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A876]/10 blur-[120px]"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-assent/10 blur-[120px]"
         />
 
         {/* Left Content */}
@@ -110,7 +110,7 @@ const CareersPage = () => {
           viewport={{ once: true }}
           className="z-10 text-center md:text-left"
         >
-          <div className="mx-auto flex w-fit items-center rounded-full border border-[#C9A876]/30 bg-[#0C1420] p-1.5 text-xs md:mx-0">
+          <div className="mx-auto flex w-fit items-center rounded-full border border-assent/30 bg-[#0C1420] p-1.5 text-xs md:mx-0">
             <div className="mr-4 flex items-center -space-x-3">
               {clientAvatars.map((imgSrc, index) => (
                 <img
@@ -128,17 +128,17 @@ const CareersPage = () => {
 
           <h1 className="font-display mx-auto mt-6 max-w-xl text-4xl font-medium leading-tight text-[#101826] dark:text-white md:mx-0 md:text-5xl">
             Interested in joining the{" "}
-            <span className="text-[#C9A876]">Lawzra</span> team?
+            <span className="text-assent">Lawzra</span> team?
           </h1>
 
-          <div className="mx-auto mt-8 max-w-md space-y-4 text-[#4B5262] dark:text-white/60 md:mx-0">
+          <div className="mx-auto mt-8 max-w-md space-y-4 text-primary-text dark:text-white/60 md:mx-0">
             <p className="text-sm leading-relaxed">
               Thank you for your interest in joining our organisation. Please
               complete the form and upload your CV and cover letter.
             </p>
-            <p className="font-docket border-l-2 border-[#C9A876] pl-4 text-sm not-italic">
+            <p className="font-docket border-l-2 border-assent pl-4 text-sm not-italic">
               Issues submitting? Email us at{" "}
-              <span className="font-semibold text-[#B08D57] dark:text-[#C9A876]">
+              <span className="font-semibold text-secondary-assent dark:text-assent">
                 careers@lawzra.com
               </span>
             </p>
@@ -151,11 +151,11 @@ const CareersPage = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="z-10 w-full max-w-lg rounded-sm border border-[#C9A876]/20 bg-white p-8 shadow-2xl dark:border-white/10 dark:bg-[#16223a]"
+          className="z-10 w-full max-w-lg rounded-sm border border-assent/20 bg-white p-8 shadow-2xl dark:border-white/10 dark:bg-[#16223a]"
         >
           <form onSubmit={onSubmit} className="space-y-6">
             <div>
-              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-primary-text dark:text-white/50">
                 Full Name
               </label>
               <input
@@ -163,12 +163,12 @@ const CareersPage = () => {
                 name="name"
                 required
                 placeholder="Ola Oluwajayi"
-                className="w-full rounded-sm border border-[#C9A876]/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-[#C9A876] dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-[#C9A876]"
+                className="w-full rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-assent dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-assent"
               />
             </div>
 
             <div>
-              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-primary-text dark:text-white/50">
                 Email Address
               </label>
               <input
@@ -176,24 +176,24 @@ const CareersPage = () => {
                 name="email"
                 required
                 placeholder="oluwajayi@example.com"
-                className="w-full rounded-sm border border-[#C9A876]/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-[#C9A876] dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-[#C9A876]"
+                className="w-full rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-assent dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-assent"
               />
             </div>
 
             <div>
-              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-primary-text dark:text-white/50">
                 Upload CV (PDF, DOC)
               </label>
               <input
                 type="file"
                 name="attachment"
                 accept=".pdf,.doc,.docx"
-                className="w-full cursor-pointer text-sm text-[#4B5262] file:mr-4 file:cursor-pointer file:rounded-sm file:border-0 file:bg-[#C9A876]/15 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-[#B08D57] hover:file:bg-[#C9A876]/25 dark:text-white/50 dark:file:text-[#C9A876]"
+                className="w-full cursor-pointer text-sm text-primary-text file:mr-4 file:cursor-pointer file:rounded-sm file:border-0 file:bg-assent/15 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-secondary-assent hover:file:bg-assent/25 dark:text-white/50 dark:file:text-assent"
               />
             </div>
 
             <div>
-              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-[#4B5262] dark:text-white/50">
+              <label className="font-docket mb-2 block text-xs uppercase tracking-widest text-primary-text dark:text-white/50">
                 Message
               </label>
               <textarea
@@ -201,7 +201,7 @@ const CareersPage = () => {
                 placeholder="Tell us about yourself..."
                 rows="3"
                 required
-                className="w-full resize-none rounded-sm border border-[#C9A876]/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-[#C9A876] dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-[#C9A876]"
+                className="w-full resize-none rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-[#101826] outline-none transition focus:border-assent dark:border-white/10 dark:bg-[#101826] dark:text-white dark:focus:border-assent"
               ></textarea>
             </div>
 
@@ -214,11 +214,11 @@ const CareersPage = () => {
             </div>
 
             <div className="flex flex-col items-center justify-between gap-4 pt-4 sm:flex-row">
-              <p className="text-xs text-[#4B5262]/70 dark:text-white/40">
+              <p className="text-xs text-primary-text/70 dark:text-white/40">
                 By applying, you agree to our{" "}
                 <Link
                   to="/privacy-policy"
-                  className="underline hover:text-[#B08D57] dark:hover:text-[#C9A876]"
+                  className="underline hover:text-secondary-assent dark:hover:text-assent"
                 >
                   Privacy Policy
                 </Link>
@@ -230,7 +230,7 @@ const CareersPage = () => {
                 whileTap={{ scale: isSubmitting ? 1 : 0.97 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="flex w-full items-center justify-center gap-2 rounded-sm bg-[#C9A876] px-10 py-3 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
+                className="flex w-full items-center justify-center gap-2 rounded-sm bg-assent px-10 py-3 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
               >
                 {isSubmitting ? (
                   <>
@@ -271,7 +271,7 @@ const CareersPage = () => {
         transition={{ delay: 0.4 }}
         viewport={{ once: true }}
       >
-        <div className="mx-auto mb-20 w-full max-w-4xl rounded-sm border border-[#C9A876]/20 px-6">
+        <div className="mx-auto mb-20 w-full max-w-4xl rounded-sm border border-assent/20 px-6">
           <JobOpenings />
         </div>
       </m.div>

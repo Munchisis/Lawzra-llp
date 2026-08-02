@@ -12,7 +12,7 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="relative shrink-0 border border-[#C9A876]/40 bg-white p-2.5 dark:border-[#C9A876]/30 dark:bg-[#16223a]"
+        className="relative shrink-0 border border-assent/40 bg-white p-2.5 dark:border-assent/30 dark:bg-[#16223a]"
       >
         <img
           className="w-full max-w-md rounded-sm object-cover"
@@ -20,7 +20,7 @@ const AboutUs = () => {
           alt="A member of the Lawzra legal team"
         />
         {/* Small corner tab, echoes the seal on the hero image */}
-        <div className="font-docket absolute -bottom-4 -right-4 hidden bg-[#C9A876] px-3 py-1.5 text-[10px] uppercase tracking-[0.15em] text-[#101826] shadow-md sm:block">
+        <div className="font-docket absolute -bottom-4 -right-4 hidden bg-assent px-3 py-1.5 text-[10px] uppercase tracking-[0.15em] text-[#101826] shadow-md sm:block">
           Est. 2016
         </div>
       </m.div>
@@ -31,10 +31,10 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="max-w-lg text-[15px] leading-relaxed text-[#4B5262] dark:text-white/65"
+        className="max-w-lg text-[15px] leading-relaxed text-primary-text dark:text-white/65"
       >
-        <div className="font-docket flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        <div className="font-docket flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           About — Firm Profile
         </div>
 
@@ -42,7 +42,7 @@ const AboutUs = () => {
           About Us
         </h1>
 
-        <div className="mt-5 h-0.75 w-14 bg-[#C9A876]" />
+        <div className="mt-5 h-0.75 w-14 bg-assent" />
 
         <p className="mt-8">
           Lawzra is a premier legal services firm dedicated to providing expert
@@ -73,7 +73,7 @@ const AboutUs = () => {
           <Link
             to="/about-us"
             aria-label="Learn more about Lawzra LLP"
-            className="flex w-max cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-7 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
+            className="flex w-max cursor-pointer items-center gap-2 rounded-sm bg-assent px-7 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
           >
             <span>Learn More about Us</span>
             <ArrowRight className="h-5 w-5" />

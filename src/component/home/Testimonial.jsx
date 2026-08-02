@@ -3,11 +3,11 @@ import { CheckCircle2 } from "lucide-react";
 import { cardsData } from "../../data/testimonials";
 
 const CreateCard = ({ card }) => (
-  <div className="mx-4 flex w-80 shrink-0 flex-col justify-between rounded-sm border border-[#C9A876]/20 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#16223a]">
+  <div className="mx-4 flex w-80 shrink-0 flex-col justify-between rounded-sm border border-assent/20 bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-[#16223a]">
     <div>
       <div className="flex gap-3">
         <img
-          className="size-12 rounded-full object-cover ring-2 ring-[#C9A876]/25"
+          className="size-12 rounded-full object-cover ring-2 ring-assent/25"
           src={card.image}
           alt={card.name}
           width={48}
@@ -23,19 +23,19 @@ const CreateCard = ({ card }) => (
             {/* Kept blue — this signals "verified," a recognized meaning distinct from brand color */}
             <CheckCircle2 className="h-4 w-4 fill-blue-500/10 text-blue-500" />
           </div>
-          <span className="font-docket text-[11px] text-[#4B5262] dark:text-white/40">
+          <span className="font-docket text-[11px] text-primary-text dark:text-white/40">
             {card.handle}
           </span>
         </div>
       </div>
-      <p className="mt-4 text-sm italic leading-relaxed text-[#4B5262] dark:text-white/70">
+      <p className="mt-4 text-sm italic leading-relaxed text-primary-text dark:text-white/70">
         "{card.testimonial}"
       </p>
     </div>
 
     <div className="mt-4 flex gap-1">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-lg text-[#C9A876]">
+        <span key={i} className="text-lg text-assent">
           ★
         </span>
       ))}
@@ -54,16 +54,16 @@ const Testimonial = () => {
         transition={{ duration: 0.6 }}
         className="mb-12 px-6 text-center"
       >
-        <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           Client Testimony
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
         </div>
 
         <h2 className="font-display text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           What Our Clients Say
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-[#4B5262] dark:text-white/60">
+        <p className="mx-auto mt-4 max-w-2xl text-primary-text dark:text-white/60">
           Hear from our satisfied clients who have experienced the difference
           with Lawzra Law Firm.
         </p>

@@ -12,7 +12,7 @@ const SpeakToALawyer = () => {
       <div className="p-5 text-center">
         <Link
           to="/appointment"
-          className="inline-block rounded-sm bg-[#C9A876] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#101826] shadow-xl shadow-[#C9A876]/20 transition-all duration-300 hover:bg-[#dbbb8c] active:scale-95"
+          className="inline-block rounded-sm bg-assent px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#101826] shadow-xl shadow-assent/20 transition-all duration-300 hover:bg-[#dbbb8c] active:scale-95"
         >
           Schedule a Consultation
         </Link>

@@ -43,15 +43,15 @@ const JobOpenings = () => {
     <section className="bg-[#FAF8F3] px-6 m-8 py-20 dark:bg-[#101826]">
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center">
-          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-            <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+            <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
             Now Hiring
-            <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+            <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           </div>
           <h2 className="font-display mb-4 text-3xl text-[#101826] dark:text-white md:text-4xl">
             Current Openings
           </h2>
-          <p className="text-[#4B5262] dark:text-white/50">
+          <p className="text-primary-text dark:text-white/50">
             Select a role to view requirements. If you don't see a fit, use
             the form above for a general application.
           </p>
@@ -63,8 +63,8 @@ const JobOpenings = () => {
               key={job.id}
               className={`overflow-hidden rounded-sm border transition-all duration-300 ${
                 activeId === job.id
-                  ? "border-[#C9A876] bg-white shadow-[0_0_20px_rgba(201,168,118,0.15)] dark:bg-white/5"
-                  : "border-[#C9A876]/20 bg-white hover:bg-[#FAF8F3] dark:border-white/10 dark:bg-transparent dark:hover:bg-white/5"
+                  ? "border-assent bg-white shadow-[0_0_20px_rgba(201,168,118,0.15)] dark:bg-white/5"
+                  : "border-assent/20 bg-white hover:bg-[#FAF8F3] dark:border-white/10 dark:bg-transparent dark:hover:bg-white/5"
               }`}
             >
               {/* Header */}
@@ -76,15 +76,15 @@ const JobOpenings = () => {
                   <h3 className="font-display mb-2 text-xl text-[#101826] dark:text-white">
                     {job.title}
                   </h3>
-                  <div className="flex flex-wrap gap-4 text-xs text-[#4B5262] dark:text-white/40">
+                  <div className="flex flex-wrap gap-4 text-xs text-primary-text dark:text-white/40">
                     <span className="flex items-center gap-1">
-                      <MapPin size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.location}
+                      <MapPin size={14} className="text-secondary-assent dark:text-assent" /> {job.location}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Briefcase size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.type}
+                      <Briefcase size={14} className="text-secondary-assent dark:text-assent" /> {job.type}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Clock size={14} className="text-[#B08D57] dark:text-[#C9A876]" /> {job.experience}
+                      <Clock size={14} className="text-secondary-assent dark:text-assent" /> {job.experience}
                     </span>
                   </div>
                 </div>
@@ -92,7 +92,7 @@ const JobOpenings = () => {
                   animate={{ rotate: activeId === job.id ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ChevronDown className="text-[#4B5262] dark:text-white/40" />
+                  <ChevronDown className="text-primary-text dark:text-white/40" />
                 </m.div>
               </button>
 
@@ -106,11 +106,11 @@ const JobOpenings = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="border-t border-[#C9A876]/15 px-6 pb-8 pt-4 text-sm leading-relaxed text-[#4B5262] dark:border-white/10 dark:text-white/60">
+                    <div className="border-t border-assent/15 px-6 pb-8 pt-4 text-sm leading-relaxed text-primary-text dark:border-white/10 dark:text-white/60">
                       <p className="mb-6">{job.description}</p>
                       <button
                         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                        className="font-docket flex items-center gap-2 text-xs uppercase tracking-wide text-[#B08D57] transition-colors hover:text-[#8A6A38] dark:text-[#C9A876] dark:hover:text-[#dbbb8c]"
+                        className="font-docket flex items-center gap-2 text-xs uppercase tracking-wide text-secondary-assent transition-colors hover:text-[#8A6A38] dark:text-assent dark:hover:text-[#dbbb8c]"
                       >
                         Apply for this position ↑
                       </button>

@@ -13,17 +13,17 @@ const Partners = () => {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#B08D57] dark:text-[#C9A876]">
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+        <div className="font-docket flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
           The Partners — Leadership
-          <span className="h-px w-8 bg-[#B08D57]/60 dark:bg-[#C9A876]/60" />
+          <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
         </div>
 
         <h1 className="font-display mt-4 text-3xl font-medium text-[#101826] dark:text-white md:text-4xl">
           Our Partners
         </h1>
 
-        <p className="mx-auto mt-4 max-w-lg px-4 text-sm text-[#4B5262] dark:text-white/60">
+        <p className="mx-auto mt-4 max-w-lg px-4 text-sm text-primary-text dark:text-white/60">
           Meet the leadership driving our commitment to legal excellence and
           strategic innovation.
         </p>
@@ -40,7 +40,7 @@ const Partners = () => {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             // Hover Expansion Logic
             whileHover={{ flex: 2 }}
-            className="group relative h-80 w-full cursor-pointer overflow-hidden rounded-sm border border-[#C9A876]/25 transition-all duration-500 ease-out md:h-full md:flex-1"
+            className="group relative h-80 w-full cursor-pointer overflow-hidden rounded-sm border border-assent/25 transition-all duration-500 ease-out md:h-full md:flex-1"
           >
             <m.img
               whileHover={{ scale: 1.05 }}
@@ -57,7 +57,7 @@ const Partners = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                <span className="font-docket text-[10px] uppercase tracking-[0.15em] text-[#C9A876]">
+                <span className="font-docket text-[10px] uppercase tracking-[0.15em] text-assent">
                   Partner
                 </span>
                 <h2 className="font-display mt-1 text-xl leading-tight md:text-2xl">
@@ -72,13 +72,13 @@ const Partners = () => {
                     href={partner.linkedin}
                     target="_blank"
                     rel="noopener"
-                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-[#C9A876] hover:text-[#101826]"
+                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-assent hover:text-[#101826]"
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
                     href={`mailto:${partner.email}`}
-                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-[#C9A876] hover:text-[#101826]"
+                    className="rounded-full bg-white/10 p-2 transition-colors hover:bg-assent hover:text-[#101826]"
                   >
                     <Mail className="h-5 w-5" />
                   </a>
@@ -98,7 +98,7 @@ const Partners = () => {
         <Link
           to="/our-team"
           aria-label="Meet the Full Team"
-          className="group flex items-center gap-2 rounded-sm bg-[#C9A876] px-8 py-3.5 font-semibold text-[#101826] shadow-lg transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
+          className="group flex items-center gap-2 rounded-sm bg-assent px-8 py-3.5 font-semibold text-[#101826] shadow-lg transition-colors duration-300 hover:bg-[#dbbb8c] active:scale-95"
         >
           Meet the Full Team
           <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

@@ -46,9 +46,9 @@ const Hero = () => {
           {/* Docket-style eyebrow */}
           <m.div
             variants={item}
-            className="font-docket flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-[#C9A876]"
+            className="font-docket flex items-center gap-3 text-[11px] uppercase tracking-[0.2em] text-assent"
           >
-            <span className="h-px w-8 bg-[#C9A876]/60" />
+            <span className="h-px w-8 bg-assent/60" />
             File Ref — LZ / General Practice
           </m.div>
 
@@ -58,7 +58,7 @@ const Hero = () => {
             className="font-display mt-6 max-w-2xl text-4xl font-medium leading-[1.08] tracking-tight md:text-6xl lg:text-[3.6rem]"
           >
             Trusted Legal Representation Across Multiple{" "}
-            <span className="text-[#C9A876]">Practice Areas</span>
+            <span className="text-assent">Practice Areas</span>
           </m.h1>
 
           {/* Subtext */}
@@ -80,7 +80,7 @@ const Hero = () => {
               whileTap={{ scale: 0.98 }}
               to="/appointment"
               aria-label="Schedule a Consultation"
-              className="flex cursor-pointer items-center gap-2 rounded-sm bg-[#C9A876] px-6 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
+              className="flex cursor-pointer items-center gap-2 rounded-sm bg-assent px-6 py-3 font-semibold text-[#101826] transition-colors duration-300 hover:bg-[#dbbb8c]"
             >
               Schedule a Consultation
               <ArrowRight size={18} />
@@ -125,7 +125,7 @@ const Hero = () => {
           transition={{ duration: 0.9, delay: 0.35, ease: "easeOut" }}
           className="relative"
         >
-          <div className="border border-[#C9A876]/30 bg-[#16223a] p-2.5">
+          <div className="border border-assent/30 bg-[#16223a] p-2.5">
             <HeroImageSlideshow
               images={[assets.hero, assets.hero2, assets.hero3]}
               alt="Legal Consultation"
@@ -203,13 +203,13 @@ const Hero = () => {
       <div className="relative z-10 border-t border-white/10 bg-[#0C1420]">
         <div className="font-docket mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-2 px-6 py-4 text-center text-[11px] uppercase tracking-[0.15em] text-white/40">
           <span>Serving Clients Across Nigeria</span>
-          <span className="text-[#C9A876]/50">|</span>
+          <span className="text-assent/50">|</span>
           <span>Committed to Excellence</span>
-          <span className="text-[#C9A876]/50">|</span>
+          <span className="text-assent/50">|</span>
           <span>Integrity</span>
-          <span className="text-[#C9A876]/50">|</span>
+          <span className="text-assent/50">|</span>
           <span>Results</span>
-          <span className="text-[#C9A876]/50">|</span>
+          <span className="text-assent/50">|</span>
           <span>Member, Nigerian Bar Association</span>
         </div>
       </div>

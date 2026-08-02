@@ -35,7 +35,7 @@ const ScrollToTop = () => {
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-[#B08D57] dark:bg-[#B08D57] text-white shadow-2xl hover:bg-rose-400 dark:hover:bg-green-500 transition-colors cursor-pointer border border-white/10"
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-secondary-assent dark:bg-secondary-assent text-white shadow-2xl hover:bg-rose-400 dark:hover:bg-green-500 transition-colors cursor-pointer border border-white/10"
         >
           <ArrowUp size={20} strokeWidth={2.5} className='text-black'/>
         </m.button>

@@ -66,7 +66,7 @@ const App = () => {
           {/* Suspense fallback component watches client-side route transitions fluidly */}
           <Suspense
             fallback={
-              <div className="h-screen flex items-center justify-center bg-[#FAF8F3] text-sm tracking-widest text-[#B08D57] uppercase dark:bg-[#101826]">
+              <div className="h-screen flex items-center justify-center bg-[#FAF8F3] text-sm tracking-widest text-secondary-assent uppercase dark:bg-[#101826]">
                 Loading...
               </div>
             }

@@ -61,7 +61,7 @@ const WhatsAppButton = () => {
     if (isBusinessHours)
       return {
         label: "Counsel Online",
-        icon: <Sun size={12} className="text-[#B08D57] dark:text-white" />,
+        icon: <Sun size={12} className="text-secondary-assent dark:text-white" />,
         color: "bg-white/90 text-[#101826]",
         message: "Hello Lawzra LP, I'd like to book a consultation.",
       };
@@ -69,9 +69,9 @@ const WhatsAppButton = () => {
     return {
       label: isLateWeekend ? "Responds Mon 8 AM" : "Responds at 8 AM",
       icon: isLateWeekend ? (
-        <Calendar size={12} className="text-[#B08D57]" />
+        <Calendar size={12} className="text-secondary-assent" />
       ) : (
-        <Moon size={12} className="text-[#B08D57]" />
+        <Moon size={12} className="text-secondary-assent" />
       ),
       color: "bg-[#FAF8F3] text-[#4B5262]",
       message: `Hello Lawzra LP, I'm reaching out ${isWeekend ? "over the weekend" : "after hours"} to inquire about your fees.`,
@@ -96,8 +96,8 @@ const WhatsAppButton = () => {
             exit={{ opacity: 0, x: -10 }}
             className={`flex items-center gap-2 rounded-sm border px-4 py-2 text-[10px] font-bold uppercase tracking-widest shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-[#16223a] dark:text-white/80 ${
               tipIndex === 0
-                ? `${status.color} border-[#C9A876]/25`
-                : "border-[#C9A876] bg-[#C9A876] text-[#101826]"
+                ? `${status.color} border-assent/25`
+                : "border-assent bg-assent text-[#101826]"
             }`}
           >
             {tipIndex === 0 ? (

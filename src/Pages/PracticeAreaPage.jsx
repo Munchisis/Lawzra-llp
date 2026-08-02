@@ -62,10 +62,10 @@ const PracticeAreaPage = () => {
 
           {/* Parallax Floating Text Content */}
           <m.div style={{ y: textY }} className="relative z-20 text-center">
-            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
+            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-assent">
+              <span className="h-px w-6 sm:w-8 bg-assent/60" />
               Areas of Counsel
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
+              <span className="h-px w-6 sm:w-8 bg-assent/60" />
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium">
               Practice Areas
@@ -91,7 +91,7 @@ const PracticeAreaPage = () => {
                 <Link
                   to={`/areas-of-practice/${area.path}`}
                   aria-label={`View our ${area.title} expertise`}
-                  className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-sm border border-[#C9A876]/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A876] hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-[#C9A876]"
+                  className="group flex h-full cursor-pointer flex-col overflow-hidden rounded-sm border border-assent/20 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-assent hover:shadow-xl dark:border-white/10 dark:bg-[#16223a] dark:hover:border-assent"
                 >
                   {/* Image Component Block with Hover Zoom */}
                   <div className="relative h-40 sm:h-48 overflow-hidden">
@@ -103,7 +103,7 @@ const PracticeAreaPage = () => {
                     <div className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100 dark:bg-[#101826]/90">
                       <Scale
                         size={16}
-                        className="text-[#B08D57] dark:text-[#C9A876]"
+                        className="text-secondary-assent dark:text-assent"
                       />
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const PracticeAreaPage = () => {
                       {area.title}
                     </h3>
                     <div className="mt-auto">
-                      <span className="font-docket flex items-center gap-2 text-[11px] uppercase tracking-wide text-[#B08D57] transition-all group-hover:gap-4 dark:text-[#C9A876]">
+                      <span className="font-docket flex items-center gap-2 text-[11px] uppercase tracking-wide text-secondary-assent transition-all group-hover:gap-4 dark:text-assent">
                         View Expertise <ArrowRight size={16} />
                       </span>
                     </div>
@@ -126,7 +126,7 @@ const PracticeAreaPage = () => {
         </div>
 
         {/* Firm Call to Action Unit */}
-        <section className="mx-auto mt-16 sm:mt-24 lg:mt-32 max-w-5xl rounded-sm border border-[#C9A876]/20 bg-[#0C1420] p-6 sm:p-10 lg:p-12 text-center text-white">
+        <section className="mx-auto mt-16 sm:mt-24 lg:mt-32 max-w-5xl rounded-sm border border-assent/20 bg-[#0C1420] p-6 sm:p-10 lg:p-12 text-center text-white">
           <h2 className="font-display mb-3 sm:mb-4 text-2xl sm:text-3xl">
             Need Specialized Legal Counsel?
           </h2>
@@ -136,7 +136,7 @@ const PracticeAreaPage = () => {
           </p>
           <Link
             to="/appointment"
-            className="w-full sm:w-auto cursor-pointer rounded-sm bg-[#C9A876] px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
+            className="w-full sm:w-auto cursor-pointer rounded-sm bg-assent px-10 py-4 font-bold text-[#101826] shadow-lg transition-all hover:bg-[#dbbb8c] active:scale-95"
           >
             Book a Consultation
           </Link>

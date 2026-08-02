@@ -65,10 +65,10 @@ const AboutUsPage = () => {
 
           {/* Floating Text Content */}
           <m.div style={{ y: textY }} className="relative z-20 text-center">
-            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#C9A876]">
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
+            <div className="font-docket mb-3 sm:mb-4 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-assent">
+              <span className="h-px w-6 sm:w-8 bg-assent/60" />
               The Firm
-              <span className="h-px w-6 sm:w-8 bg-[#C9A876]/60" />
+              <span className="h-px w-6 sm:w-8 bg-assent/60" />
             </div>
             <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-medium">
               About Us
@@ -91,15 +91,15 @@ const AboutUsPage = () => {
               whileHover={{ scale: 1.02 }}
               // Each card waits 0.2s longer than the previous one
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="text-sm text-[#4B5262] dark:text-white/60"
+              className="text-sm text-primary-text dark:text-white/60"
             >
-              <h1 className="font-docket text-xs uppercase tracking-widest text-[#B08D57] dark:text-[#C9A876]">
+              <h1 className="font-docket text-xs uppercase tracking-widest text-secondary-assent dark:text-assent">
                 {goal.title}
               </h1>
               <h2 className="font-display mt-1 text-lg sm:text-xl text-[#101826] dark:text-white">
                 {goal.subtitle}
               </h2>
-              <p className="mt-4 border-t border-[#C9A876]/20 pt-4 leading-relaxed dark:border-white/10">
+              <p className="mt-4 border-t border-assent/20 pt-4 leading-relaxed dark:border-white/10">
                 {goal.description}
               </p>
             </m.div>
@@ -116,18 +116,18 @@ const AboutUsPage = () => {
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className={`flex flex-col ${section.reverse ? "md:flex-row-reverse" : "md:flex-row"} mx-auto mb-12 sm:mb-16 lg:mb-20 max-w-7xl items-center justify-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6`}
           >
-            <div className="max-w-lg text-sm text-[#4B5262] dark:text-white/60 text-center md:text-left">
+            <div className="max-w-lg text-sm text-primary-text dark:text-white/60 text-center md:text-left">
               <h1 className="font-display text-xl sm:text-2xl uppercase tracking-wide text-[#101826] dark:text-white">
                 {section.title}
               </h1>
-              <div className="mt-2 h-0.75 w-16 bg-[#C9A876] mx-auto md:mx-0" />
+              <div className="mt-2 h-0.75 w-16 bg-assent mx-auto md:mx-0" />
               <div className="mt-6 sm:mt-8 space-y-4 leading-relaxed text-left">
                 {section.paragraphs.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>
             </div>
-            <div className="relative w-full shrink-0 overflow-hidden rounded-sm border border-[#C9A876]/25 md:w-1/2">
+            <div className="relative w-full shrink-0 overflow-hidden rounded-sm border border-assent/25 md:w-1/2">
               <img
                 className="h-64 sm:h-80 md:h-100 w-full object-cover"
                 src={section.image}

@@ -26,7 +26,7 @@ const SuccessPage = () => {
 
         <Link
           to="/"
-          className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-wider text-[#B08D57] hover:text-[#dbbb8c] dark:text-[#C9A876]"
+          className="font-docket flex cursor-pointer items-center gap-2 text-xs uppercase tracking-wider text-secondary-assent hover:text-[#dbbb8c] dark:text-assent"
         >
           <Home size={18} />
           Back to Homepage
