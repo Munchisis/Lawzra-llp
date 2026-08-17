@@ -83,7 +83,6 @@ const App = () => {
               {/* Legal Insights, Blogs and Articles Routes */}
               <Route path="/insights" element={<Insights />} />
               <Route path="/insights/:slug" element={<InsightDetails />} />
-              <Route path="/insight" element={<InsightsArchivePage />} />
 
               <Route path="/careers" element={<Careers />} />
 
