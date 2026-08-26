@@ -25,7 +25,7 @@ export const partnerInfo = [
     image: assets.lawyer2,
     name: "Macsunny Ezikpe Nwoke",
     title: "Tax Law & Property Law",
-    position: "Senior Associate",
+    position: "Senior Partner",
     linkedin: "https://www.linkedin.com",
     email: "macsunny@lawzra.com",
     shortDesc: [
@@ -47,7 +47,7 @@ export const partnerInfo = [
     image: assets.lawyer3,
     name: "Emuchay Chigozie Kelechi",
     title: "IT & Corporate Consultant",
-    position: "Senior Associate",
+    position: "Senior Partner",
     linkedin: "https://www.linkedin.com",
     email: "chigozie@lawzra.com",
     shortDesc: [
