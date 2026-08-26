@@ -183,7 +183,7 @@ const InsightsArchivePage = () => {
         </div>
       )}
 
-      <div className="mx-auto mb-8 flex max-w-7xl flex-wrap items-stretch justify-center gap-8 px-6 pt-4">
+      <div className="mx-auto pb-8 flex max-w-7xl flex-wrap items-stretch justify-center gap-8 px-6 pt-4">
         {(loading || (isFilterActive && filtering)) && (
           <p className="text-primary-text dark:text-white/60">
             {isFilterActive ? "Filtering…" : "Loading insights…"}
