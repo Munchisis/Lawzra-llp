@@ -6,6 +6,7 @@ import aboutUsHome1792 from "./img/aboutUsHome-1792.avif";
 import lawyer1 from "./img/Lawyer1.avif";
 import lawyer2 from "./img/Lawyer2.avif";
 import lawyer3 from "./img/lawyer3.avif";
+import lawyer4 from "./img/lawyer4.avif";
 import aboutUs4 from "./img/about-us-4.avif";
 import aboutUs2 from "./img/aboutus2.avif";
 import aboutUs from "./img/aboutus.avif";
@@ -40,6 +41,7 @@ export const assets = {
   lawyer1,
   lawyer2,
   lawyer3,
+  lawyer4,
   aboutUs4,
   aboutUs2,
   aboutUs,

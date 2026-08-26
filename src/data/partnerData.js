@@ -59,7 +59,29 @@ export const partnerInfo = [
       "A graduate of the Abia State University Uturu, his commitment to excellence in Technical Writing and Technology Law has earned him a reputation as a reliable strategic advisor.",
     ],
   },
+  {
+    id: 4,
+    slug: "Tamunonengiaofori-Cheryl",
+    image: assets.lawyer4,
+    name: "Tamunonengiaofori Cheryl Corkson",
+    title: "Fashion Law",
+    position: "Senior Associate",
+    linkedin: "https://www.linkedin.com",
+    email: "Tamunonengiaofori@lawzra.com",
+    shortDesc: [
+      "Tamunonengiaofori Cheryl Corkson is a Senior Associate with a decade of legal practice spanning corporate, commercial, and fashion law. She brings a rare combination of deep transactional experience and sector-specific insight, making her a trusted adviser to businesses navigating both conventional commercial matters and the fast-evolving creative and fashion industries.",
+    ],
+    longDesc: [
+      "Tamunonengiaofori Cheryl Corkson is a Senior Associate with a decade of legal practice spanning corporate, commercial, and fashion law. She brings a rare combination of deep transactional experience and sector-specific insight, making her a trusted adviser to businesses navigating both conventional commercial matters and the fast-evolving creative and fashion industries.",
+
+      "Cheryl holds a Bachelor of Laws (LL.B) from Rivers State University and was called to the Nigerian Bar in July 2016.",
+
+      "With ten years of professional experience, Cheryl has built a specialized practice at the intersection of Corporate Law, Commercial Law, and Fashion Law. Over the past five-plus years, she has concentrated on Corporate and Commercial Law, advising clients on a wide range of matters including corporate governance, mergers and acquisitions, contract negotiation, and regulatory compliance. Her expertise extends to the fashion industry, where she provides legal counsel on intellectual property protection, brand management, licensing agreements, and the unique challenges faced by creative enterprises.",
+    ],
+  },
 ];
+
+
 
 export const partnerHomeInfo = [
   {
