@@ -17,11 +17,8 @@ import corporate from "./img/corporate.avif";
 import dispute from "./img/dispute.avif";
 import energy from "./img/energy.avif";
 import ip from "./img/ip.avif";
-import ip2 from "./img/ip2.avif";
-import media from "./img/media.avif";
 import real_estate from "./img/real_estate.avif";
 import tax from "./img/tax.avif";
-import tax2 from "./img/tax2.avif";
 import privacy from "./img/privacy.avif";
 import tech from "./img/tech.avif";
 import office1 from "./img/office1.avif";
@@ -61,9 +58,6 @@ export const assets = {
   real_estate,
   tax,
   tech,
-  ip2,
-  media,
-  tax2,
   office1,
   office2,
   office3,
@@ -116,126 +110,3 @@ export const gallery = [
   },
 ];
 
-
-
-export const insightsData = [
-  {
-    title: "Commercial",
-    category: "Commercial",
-    description:
-      "Explore how digital transformation is reshaping the banking industry and what it means for consumers and financial institutions.",
-    image: banking,
-    Date: "June 20, 2024",
-  },
-  {
-    title: "privacy",
-    description:
-      "Analysis of Policy Developments on Cross-Border Data Transfers (CBDT) and Digital Trade in Nigeria.",
-    image: privacy,
-    Date: "June 20, 2024",
-  },
-  {
-    title: "Arbitration",
-    category: "Dispute Resolution",
-    description:
-      "Enforcement of Arbitral Awards Under the Provisions of the Arbitration and Mediation Act, 2023 and Other Extant Statutes in Nigeria",
-    image: dispute,
-    Date: "June 20, 2024",
-  },
-  {
-    title: "Insolvency",
-    category: "Dispute Resolution",
-    description:
-      "Reviving Businesses: A Critical Analysis of Insolvency Provisions Under Cama 1990 and Cama 2020.",
-    image: real_estate,
-    Date: "June 20, 2024",
-  },
-  {
-    title: "Criminal Law",
-    description:
-      "The Law & Politics of Presidential Pardon: A Jurisprudential Inquiry Into Mercy, Finality, and Power.",
-    image: energy,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Evidence Law",
-    description:
-      "Inadmissibility of Photocopy of Certified True Copy of Public Document In Evidence",
-    image: media,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Family Law",
-    description:
-      "Navigating the Complexities of Child Custody in Nigeria: Legal Frameworks, Cultural Considerations, and Best Practices for Protecting Children's Rights.",
-    image: media,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Corporate Law",
-    description:
-      "Understanding Corporate Governance and Legal Compliance in Nigeria.",
-    image: corporate,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Data Privacy",
-    description:
-      "Data Privacy in Nigeria: Navigating the Legal Landscape and Protecting Personal Information in the Digital Age.",
-    image: privacy,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Real Estate Law",
-    description:
-      "Real Estate Law in Nigeria: Navigating Legal Challenges and Ensuring Secure Property Transactions.",
-    image: real_estate,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Mergers and Acquisitions",
-    description:
-      "Mergers and Acquisitions in Nigeria: Navigating Legal Complexities and Market Dynamics for Successful Transactions.",
-    image: corporate,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Technology",
-    description:
-      "Underlying Risks of Using AI-Generated Evidence in Nigeria’s Justice System: A Critical Examination of Admissibility, Reliability, and Ethical Implications.",
-    image: tech,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Intellectual Property",
-    description:
-      "Intellectual Property Rights in the Digital Age: Challenges and Opportunities for Nigerian Creators and Innovators.",
-    image: ip2,
-    Date: "July 20, 2024",
-  },
-];
-
-export const homeInsightsData = [
-  {
-    title: "Data Privacy",
-    description:
-      "Data Privacy in Nigeria: Navigating the Legal Landscape and Protecting Personal Information in the Digital Age.",
-    image: privacy,
-    Date: "July 20, 2024",
-  },
-
-  {
-    title: "Technology",
-    description:
-      "Underlying Risks of Using AI-Generated Evidence in Nigeria’s Justice System: A Critical Examination of Admissibility, Reliability, and Ethical Implications.",
-    image: tech,
-    Date: "July 20, 2024",
-  },
-  {
-    title: "Intellectual Property",
-    description:
-      "Intellectual Property Rights in the Digital Age: Challenges and Opportunities for Nigerian Creators and Innovators.",
-    image: ip2,
-    Date: "July 20, 2024",
-  },
-];

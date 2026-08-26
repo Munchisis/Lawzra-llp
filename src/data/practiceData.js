@@ -1,14 +1,10 @@
-
 import banking from "../assets/img/banking.avif";
 import corporate from "../assets/img/corporate.avif";
 import dispute from "../assets/img/dispute.avif";
 import energy from "../assets/img/energy.avif";
 import ip from "../assets/img/ip.avif";
-import ip2 from "../assets/img/ip2.avif";
-import media from "../assets/img/media.avif";
 import real_estate from "../assets/img/real_estate.avif";
 import tax from "../assets/img/tax.avif";
-import tax2 from "../assets/img/tax2.avif";
 import privacy from "../assets/img/privacy.avif";
 import tech from "../assets/img/tech.avif";
 
@@ -23,9 +19,6 @@ export const assets = {
   real_estate,
   tax,
   tech,
-  ip2,
-  media,
-  tax2,
 };
 
 export const practiceAreasCard = [
