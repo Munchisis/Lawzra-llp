@@ -2,7 +2,6 @@ import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Calendar, ShieldCheck, CheckCircle2 } from "lucide-react";
 import toast from "react-hot-toast";
-import { m } from "framer-motion";
 import { Turnstile } from "@marsidev/react-turnstile";
 import OperatingHours from "../OperatingHours";
 import { useNavigate } from "react-router-dom";
@@ -46,21 +45,24 @@ const Appointment = () => {
         captchaRef.current?.reset(); // Reset widget for next use
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        toast.success(result.message || "Submission failed.");
+        toast.error(result.message || "Submission failed.");
       }
     } catch (error) {
-      toast.error("Error:", error);
+      toast.error(error.message || "An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    handleSubmit(onSubmit)(event);
+  };
+
   return (
     <section className="flex min-h-screen flex-col bg-[#FAF8F3] dark:bg-[#101826] lg:flex-row">
       {/* Left Side Content */}
-      <m.div
-        initial={{ opacity: 0, x: -80 }}
-        animate={{ opacity: 1, x: 0 }}
+      <div
         className="relative hidden w-2/5 flex-col justify-between overflow-hidden bg-[#0C1420] p-16 lg:flex"
       >
         <div className="z-10">
@@ -90,13 +92,11 @@ const Appointment = () => {
             </div>
           </div>
         </div>
-      </m.div>
+      </div>
 
       {/* Right Side Form */}
       <div className="flex flex-1 items-center justify-center p-4 md:p-12">
-        <m.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="relative w-full max-w-xl rounded-sm border border-assent/20 bg-white p-6 shadow-2xl dark:border-white/10 dark:bg-[#16223a] md:p-10"
         >
           <div className="mb-8 text-center lg:text-left">
@@ -109,16 +109,17 @@ const Appointment = () => {
           </div>
 
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={submitHandler}
             className="grid grid-cols-1 gap-5"
           >
             {/* Full Name */}
             <div>
-              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+              <label htmlFor="fullName" className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                 Full Legal Name
               </label>
               <input
                 {...register("fullName", { required: true })}
+                id="fullName"
                 type="text"
                 placeholder="e.g. Chidi Okechukwu"
                 className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
@@ -132,7 +133,7 @@ const Appointment = () => {
             {/* Email & Phone */}
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
               <div>
-                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                <label htmlFor="email" className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Email Address
                 </label>
                 <input
@@ -143,6 +144,7 @@ const Appointment = () => {
                       message: "Invalid email address",
                     },
                   })}
+                  id="email"
                   type="email"
                   placeholder="name@company.com"
                   className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
@@ -159,7 +161,7 @@ const Appointment = () => {
               </div>
 
               <div>
-                <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                <label htmlFor="phone" className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Phone Number
                 </label>
                 <input
@@ -175,6 +177,7 @@ const Appointment = () => {
                       message: "Phone number must be at least 10 digits",
                     },
                   })}
+                  id="phone"
                   type="tel"
                   inputMode="numeric"
                   placeholder="+234..."
@@ -195,11 +198,12 @@ const Appointment = () => {
 
             {/* Practice Area */}
             <div>
-              <label className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+              <label htmlFor="practiceArea" className="font-docket mb-1 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                 Area of Practice
               </label>
               <select
                 {...register("practiceArea")}
+                id="practiceArea"
                 className="w-full appearance-none rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:border-white/10 dark:bg-[#101826] dark:text-white/60"
               >
                 <option>Corporate/Commercial Law</option>
@@ -211,7 +215,7 @@ const Appointment = () => {
 
               {/* Legal Matter Description */}
               <div className="md:col-span-2">
-                <label className="font-docket mb-1 mt-4 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                <label htmlFor="message" className="font-docket mb-1 mt-4 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
                   Brief Description of Matter
                 </label>
                 <textarea
@@ -223,6 +227,7 @@ const Appointment = () => {
                         "Please provide a bit more detail (min 20 characters)",
                     },
                   })}
+                  id="message"
                   rows={4}
                   placeholder="Describe your legal situation..."
                   className={`w-full resize-none rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none transition-all dark:bg-[#101826] dark:text-white ${
@@ -251,9 +256,8 @@ const Appointment = () => {
 
             {/* Submit Button */}
             <div className="pt-2">
-              <m.button
+              <button
                 disabled={isSubmitting}
-                whileTap={{ scale: 0.98 }}
                 type="submit"
                 className={`flex w-full items-center justify-center gap-2 rounded-sm py-4 font-bold shadow-lg transition-all ${
                   isSuccess
@@ -272,15 +276,13 @@ const Appointment = () => {
                     <Calendar size={18} /> Schedule Meeting
                   </>
                 )}
-              </m.button>
+              </button>
             </div>
           </form>
 
           {/* Success Message Overlay */}
           {isSuccess && (
-            <m.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+            <div
               className="absolute inset-0 z-50 flex flex-col items-center justify-center rounded-sm bg-[#FAF8F3]/95 p-8 text-center backdrop-blur-sm dark:bg-[#101826]/95"
             >
               <CheckCircle2 className="mb-4 h-16 w-16 text-green-500" />
@@ -290,9 +292,9 @@ const Appointment = () => {
               <p className="text-sm text-primary-text dark:text-white/60">
                 We will contact you shortly to confirm your slot.
               </p>
-            </m.div>
+            </div>
           )}
-        </m.div>
+        </div>
       </div>
     </section>
   );
