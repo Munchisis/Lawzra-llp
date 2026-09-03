@@ -1,6 +1,12 @@
 import { Resend } from "resend";
 import { formidable } from "formidable";
 import fs from "fs";
+/* global process */
+import {
+  isRateLimited,
+  requireEnvironment,
+  validateContactFields,
+} from "./validation.js";
 
 // Multipart bodies (the CV upload) must be parsed by formidable itself,
 // not Vercel's default JSON body parser
@@ -51,6 +57,23 @@ export default async function handler(req, res) {
       .json({ success: false, message: "Method not allowed" });
   }
 
+  if (isRateLimited(req)) {
+    return res
+      .status(429)
+      .json({ success: false, message: "Too many requests. Please try again later." });
+  }
+
+  const configurationError = requireEnvironment(
+    "RESEND_API_KEY",
+    "RESEND_FROM_EMAIL",
+    "RESEND_TO_EMAIL",
+    "TURNSTILE_SECRET_KEY",
+  );
+  if (configurationError) {
+    console.error(configurationError);
+    return res.status(500).json({ success: false, message: "Service is not configured" });
+  }
+
   let fields, files;
   try {
     ({ fields, files } = await parseForm(req));
@@ -73,11 +96,11 @@ export default async function handler(req, res) {
   const turnstileToken = first(fields["cf-turnstile-response"]);
   const attachment = first(files.attachment);
 
-  if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Missing required fields" });
+  const validation = validateContactFields({ name, email, message });
+  if (validation.error) {
+    return res.status(400).json({ success: false, message: validation.error });
   }
+  const normalized = validation.values;
 
   if (!turnstileToken) {
     return res
@@ -113,7 +136,7 @@ export default async function handler(req, res) {
       .json({ success: false, message: "Captcha service unavailable" });
   }
 
-  if (attachment?.mimetype && !ALLOWED_TYPES.includes(attachment.mimetype)) {
+  if (attachment && !ALLOWED_TYPES.includes(attachment.mimetype)) {
     return res.status(400).json({
       success: false,
       message: "Invalid file type. Please upload a PDF or Word document.",
@@ -124,8 +147,22 @@ export default async function handler(req, res) {
     const attachments = [];
     if (attachment) {
       const fileBuffer = fs.readFileSync(attachment.filepath);
+      const extension = (attachment.originalFilename || "").toLowerCase().split(".").pop();
+      const validSignature =
+        (extension === "pdf" && fileBuffer.subarray(0, 5).toString() === "%PDF-") ||
+        (extension === "doc" && fileBuffer.subarray(0, 2).toString("hex") === "d0cf") ||
+        (extension === "docx" && fileBuffer.subarray(0, 2).toString("hex") === "504b");
+      if (!validSignature) {
+        return res.status(400).json({
+          success: false,
+          message: "File contents do not match the selected file type.",
+        });
+      }
       attachments.push({
-        filename: attachment.originalFilename || "attachment",
+        filename: (attachment.originalFilename || "attachment").replace(
+          /[^a-zA-Z0-9._-]/g,
+          "_",
+        ),
         content: fileBuffer.toString("base64"),
       });
     }
@@ -133,14 +170,14 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL, // must be a verified sending domain in Resend
       to: process.env.RESEND_TO_EMAIL, // the firm's careers/hiring inbox
-      replyTo: email,
-      subject: `New Career Application — ${name}`,
+      replyTo: normalized.email,
+      subject: `New Career Application — ${normalized.name}`,
       html: `
         <h2>New Career Application</h2>
-        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Name:</strong> ${escapeHtml(normalized.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(normalized.email)}</p>
         <p><strong>Message:</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(normalized.message).replace(/\n/g, "<br />")}</p>
       `,
       attachments,
     });

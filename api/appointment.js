@@ -1,6 +1,11 @@
 import { Resend } from "resend";
+import {
+  isRateLimited,
+  requireEnvironment,
+  validateContactFields,
+} from "./validation.js";
 
-/* eslint-env node */
+/* global process */
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Minimal HTML escaping so submitted text can't break out of the email markup
@@ -21,6 +26,23 @@ export default async function handler(req, res) {
       .json({ success: false, message: "Method not allowed" });
   }
 
+  if (isRateLimited(req)) {
+    return res
+      .status(429)
+      .json({ success: false, message: "Too many requests. Please try again later." });
+  }
+
+  const configurationError = requireEnvironment(
+    "RESEND_API_KEY",
+    "RESEND_FROM_EMAIL",
+    "RESEND_TO_EMAIL",
+    "TURNSTILE_SECRET_KEY",
+  );
+  if (configurationError) {
+    console.error(configurationError);
+    return res.status(500).json({ success: false, message: "Service is not configured" });
+  }
+
   const {
     fullName,
     email,
@@ -30,12 +52,16 @@ export default async function handler(req, res) {
     "cf-turnstile-response": turnstileToken,
   } = req.body || {};
 
-  // Required-field check mirrors the client-side react-hook-form rules
-  if (!fullName || !email || !phone || !message) {
-    return res
-      .status(400)
-      .json({ success: false, message: "Missing required fields" });
+  const validation = validateContactFields({
+    name: fullName,
+    email,
+    phone,
+    message,
+  });
+  if (validation.error) {
+    return res.status(400).json({ success: false, message: validation.error });
   }
+  const normalized = validation.values;
 
   if (!turnstileToken) {
     return res
@@ -76,16 +102,16 @@ export default async function handler(req, res) {
     await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL, // e.g. "Lawzra Appointments <appointments@lawzra.com>" — must be a verified sending domain in Resend
       to: process.env.RESEND_TO_EMAIL, // the firm's intake inbox
-      replyTo: email,
-      subject: `New Consultation Request — ${fullName}`,
+      replyTo: normalized.email,
+      subject: `New Consultation Request — ${normalized.name}`,
       html: `
         <h2>New Consultation Request</h2>
-        <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
-        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+        <p><strong>Name:</strong> ${escapeHtml(normalized.name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(normalized.email)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(normalized.phone)}</p>
         <p><strong>Practice Area:</strong> ${escapeHtml(practiceArea || "Not specified")}</p>
         <p><strong>Message:</strong></p>
-        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(normalized.message).replace(/\n/g, "<br />")}</p>
       `,
     });
 
