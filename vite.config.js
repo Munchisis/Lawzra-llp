@@ -1,3 +1,4 @@
+import { sentryVitePlugin } from "@sentry/vite-plugin";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
@@ -5,18 +6,18 @@ import sitemap from "vite-plugin-sitemap";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-    visualizer({
-      open: false,
-      filename: "stats.html",
-      gzipSize: true,
-      brotliSize: true,
-    }),
-  ],
+  plugins: [react(), tailwindcss(), visualizer({
+    open: false,
+    filename: "stats.html",
+    gzipSize: true,
+    brotliSize: true,
+  }), sentryVitePlugin({
+    org: "humri-ae",
+    project: "sentry-lawzra"
+  })],
   build: {
     outDir: "dist",
+
     rollupOptions: {
       output: {
         manualChunks: {
@@ -25,5 +26,7 @@ export default defineConfig({
         },
       },
     },
+
+    sourcemap: true
   },
 });

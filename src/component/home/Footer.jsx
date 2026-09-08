@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
+import { practiceAreasCard } from "../../data/practiceData";
 import { m } from "framer-motion";
 import { Github, Linkedin, Instagram, Send, XIcon } from "lucide-react";
 
@@ -34,7 +35,7 @@ const Footer = ({ theme }) => {
         viewport={{ once: true, amount: 0.1 }}
         className="w-full px-6 pt-16 text-sm text-primary-text dark:text-white/50 md:px-16 lg:px-24 xl:px-32"
       >
-        <div className="mb-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mb-16 grid grid-cols-1 gap-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: Brand & Socials */}
           <m.div
             variants={itemVariants}
@@ -100,6 +101,20 @@ const Footer = ({ theme }) => {
               <FooterLink to="/terms-of-service">Terms of Service</FooterLink>
             </div>
           </m.div>
+
+          <div className="flex flex-col space-y-2">
+            <h2 className="font-docket mb-2 text-xs uppercase tracking-[0.2em] text-[#101826] dark:text-white">
+              Practice Areas
+            </h2>
+            {practiceAreasCard.map((area) => (
+              <FooterLink
+                key={area.path}
+                to={`/areas-of-practice/${area.path}`}
+              >
+                {area.title}
+              </FooterLink>
+            ))}
+          </div>
 
           {/* Column 3: Newsletter */}
           <m.div variants={itemVariants}>

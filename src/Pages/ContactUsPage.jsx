@@ -1,11 +1,46 @@
 import { assets } from "../assets/assets";
 import { m, useScroll, useTransform } from "framer-motion";
 import SpeakToALawyer from "../component/home/SpeakToALawyer";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Send } from "lucide-react";
+import toast from "react-hot-toast";
 import SEO from "../../SEO";
 
 const ContactUsPage = () => {
   const containerRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to send your message");
+      }
+
+      reset();
+      toast.success("Your message has been sent");
+    } catch (error) {
+      toast.error(error.message || "Unable to send your message");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Track scroll progress specifically for this hero section
   const { scrollYProgress } = useScroll({
@@ -111,7 +146,7 @@ const ContactUsPage = () => {
             <p className="mb-4 h-12 text-sm">
               23 Umuahia Road, Umuahia, Abia State
             </p>
-            
+
             <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Umuahia Address"
@@ -247,6 +282,166 @@ const ContactUsPage = () => {
           </div>
         </m.div>
       </div>
+
+      {/* Contact Form */}
+      <section className="mx-auto mt-20 max-w-4xl px-6">
+        <div className="mb-10 text-center">
+          <div className="font-docket mb-4 flex items-center justify-center gap-3 text-[11px] uppercase tracking-[0.2em] text-secondary-assent dark:text-assent">
+            <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
+            Send an Enquiry
+            <span className="h-px w-8 bg-secondary-assent/60 dark:bg-assent/60" />
+          </div>
+          <h2 className="font-display text-3xl text-[#101826] dark:text-white">
+            How can we help?
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-primary-text dark:text-white/60">
+            Tell us a little about your matter and a member of our team will get
+            back to you.
+          </p>
+        </div>
+
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="grid gap-5 rounded-sm border border-assent/20 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#16223a] md:p-10"
+        >
+          <div className="grid gap-5 md:grid-cols-2">
+            <div>
+              <label className="font-docket mb-2 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                Full Name
+              </label>
+              <input
+                {...register("fullName", { required: "Name is required" })}
+                type="text"
+                autoComplete="name"
+                className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
+                  errors.fullName
+                    ? "border-red-500"
+                    : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
+                }`}
+              />
+              {errors.fullName && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.fullName.message}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="font-docket mb-2 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                Email Address
+              </label>
+              <input
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Enter a valid email address",
+                  },
+                })}
+                type="email"
+                autoComplete="email"
+                className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
+                  errors.email
+                    ? "border-red-500"
+                    : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
+                }`}
+              />
+              {errors.email && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.email.message}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <div>
+              <label className="font-docket mb-2 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                Phone Number
+              </label>
+              <input
+                {...register("phone", {
+                  required: "Phone number is required",
+                  pattern: {
+                    value: /^[0-9+\s()-]+$/,
+                    message: "Enter a valid phone number",
+                  },
+                })}
+                type="tel"
+                autoComplete="tel"
+                className={`w-full rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
+                  errors.phone
+                    ? "border-red-500"
+                    : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
+                }`}
+              />
+              {errors.phone && (
+                <p className="mt-1 text-xs text-red-500">
+                  {errors.phone.message}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <label className="font-docket mb-2 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+                Area of Practice
+              </label>
+              <select
+                {...register("practiceArea")}
+                defaultValue="Not specified"
+                className="w-full rounded-sm border border-assent/25 bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:border-white/10 dark:bg-[#101826] dark:text-white"
+              >
+                <option>Not specified</option>
+                <option>Banking & Finance</option>
+                <option>Corporate & Commercial</option>
+                <option>Dispute Resolution</option>
+                <option>Intellectual Property</option>
+                <option>Privacy and Data Protection</option>
+                <option>Real Estate</option>
+                <option>Tax and Transfer Pricing</option>
+                <option>Technology, Media & Telecommunications</option>
+                <option>Energy Law</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label className="font-docket mb-2 block text-[10px] uppercase tracking-wide text-primary-text dark:text-white/50">
+              Message
+            </label>
+            <textarea
+              {...register("message", {
+                required: "Message is required",
+                minLength: {
+                  value: 20,
+                  message: "Please provide at least 20 characters",
+                },
+              })}
+              rows={5}
+              className={`w-full resize-none rounded-sm border bg-[#FAF8F3] px-4 py-3 text-sm text-[#101826] outline-none dark:bg-[#101826] dark:text-white ${
+                errors.message
+                  ? "border-red-500"
+                  : "border-assent/25 focus:border-assent dark:border-white/10 dark:focus:border-assent"
+              }`}
+            />
+            {errors.message && (
+              <p className="mt-1 text-xs text-red-500">
+                {errors.message.message}
+              </p>
+            )}
+          </div>
+
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="flex items-center justify-center gap-2 rounded-sm bg-assent px-6 py-4 font-bold text-[#101826] transition-colors hover:bg-[#dbbb8c] disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            <Send size={17} />
+            {isSubmitting ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+      </section>
+
       <div className="pt-20">
         <SpeakToALawyer />
       </div>

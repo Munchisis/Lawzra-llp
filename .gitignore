@@ -66,3 +66,6 @@ node_modules/.vite
 
 # OS generated files
 Thumbs.db
+
+# Sentry Config File
+.env.sentry-build-plugin
