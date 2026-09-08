@@ -72,24 +72,29 @@ const InsightDetailsPage = () => {
   const { slug } = useParams();
   const [insight, setInsight] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     sanityClient
       .fetch(QUERY, { slug })
       .then(setInsight)
+      .catch((err) => {
+        console.error("Failed to load insight:", err);
+        setError(true);
+      })
       .finally(() => setLoading(false));
   }, [slug]);
 
   if (loading) return null;
 
-  if (!insight) {
+  if (error || !insight) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#FAF8F3] dark:bg-[#101826]">
         <Helmet>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
         <h2 className="font-display text-2xl text-[#101826] dark:text-white mb-4">
-          Insight Not Found
+          {error ? "Unable to Load Insight" : "Insight Not Found"}
         </h2>
         <Link to="/insights" className="text-assent hover:underline">
           Back to Insights
