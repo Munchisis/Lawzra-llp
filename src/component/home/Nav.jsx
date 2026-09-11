@@ -21,11 +21,32 @@ const Nav = ({ theme, setTheme }) => {
 
   useEffect(() => {
     const handleScroll = () => setIsFixed(window.scrollY > 40);
+    const handleResize = () => {
+      if (window.innerWidth >= 768) setOpen(false);
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
-  // Animation Variants for Mobile Menu
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -46,34 +67,33 @@ const Nav = ({ theme, setTheme }) => {
 
   return (
     <div className="w-full">
-      {/* Top Banner */}
       <div className="font-docket bg-background-assent py-2 text-white">
-        <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] uppercase tracking-widest md:text-xs">
+        <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] uppercase tracking-widest sm:gap-4 md:text-xs">
           <p className="text-assent">Free Consultation Available</p>
-          
-            <a href="tel:+2348037333930"
-            className="flex items-center gap-1 text-white/70 hover:text-white">
-        
+
+          <a
+            href="tel:+2348037333930"
+            className="flex items-center gap-1 text-white/70 hover:text-white"
+          >
             <PhoneCallIcon size={13} /> +234 803 733 3930
           </a>
-          
-           <a href="mailto:info@lawzra.com"
+
+          <a
+            href="mailto:info@lawzra.com"
             className="flex items-center gap-1 text-white/70 hover:text-white"
           >
             <MailIcon size={13} /> info@lawzra.com
           </a>
+
           <span className="hidden items-center gap-1 text-white/70 lg:flex">
             <MapPin size={13} /> Lekki Phase 1, Lagos State
           </span>
         </div>
       </div>
 
-      {/* Navbar */}
       <div className={isFixed ? "fixed top-0 left-0 z-50 w-full" : "relative z-50"}>
-        {/* Static base layer — "not scrolled" look, no animation needed */}
         <div className={`absolute inset-0 ${isFixed ? "" : "bg-background-secondary"}`} />
 
-        {/* Fixed-state layer — only opacity animates (compositor-only) */}
         <m.div
           className={`absolute inset-0 backdrop-blur-sm shadow-md ${
             theme === "dark" ? "bg-[#101826]/95" : "bg-[#FAF8F3]/95"
@@ -84,13 +104,12 @@ const Nav = ({ theme, setTheme }) => {
         />
 
         <nav
-          className={`relative flex h-20 items-center justify-between px-6 md:px-16 lg:px-24 ${
+          className={`relative mx-auto flex h-20 max-w-[1600px] items-center justify-between px-4 sm:px-6 md:px-16 lg:px-24 ${
             isFixed ? "" : "text-white"
           }`}
         >
-          {/* Logo */}
-          <div>
-            <Link to="/" className="flex items-center gap-2">
+          <div className="flex min-w-0 items-center">
+            <Link to="/" className="flex min-w-0 items-center gap-2">
               <m.img
                 key={isFixed ? "fixed" : "static"}
                 initial={{ opacity: 0 }}
@@ -98,15 +117,14 @@ const Nav = ({ theme, setTheme }) => {
                 whileHover={{ rotate: 8, scale: 1.1 }}
                 src={isFixed && theme !== "dark" ? assets.logo : assets.logoW}
                 alt="Lawzra Logo"
-                className="h-10 w-auto object-contain md:h-12"
+                className="h-9 w-auto object-contain sm:h-10 md:h-12"
               />
-              <h1 className="font-display text-lg tracking-wide dark:text-white/90">
+              <h1 className="truncate font-display text-base tracking-wide sm:text-lg dark:text-white/90">
                 Lawzra <span className="text-">LLP</span>
               </h1>
             </Link>
           </div>
 
-          {/* Desktop Links */}
           <div className="hidden items-center gap-6 md:flex lg:gap-10">
             {navLinks.map((link, i) => (
               <NavLink
@@ -127,20 +145,18 @@ const Nav = ({ theme, setTheme }) => {
             ))}
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
             <ThemeToggleBtn theme={theme} setTheme={setTheme} />
 
             <Link
               to="/contact-us"
               className="group relative hidden overflow-hidden rounded-sm border border-assent px-6 py-2 text-xs font-bold text-assent transition-all active:scale-95 hover:bg-assent hover:text-primary md:block"
-            > 
+            >
               <span className="relative z-10">Get in touch</span>
             </Link>
 
-            {/* Mobile Toggle */}
             <button
-              className="p-2 md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full md:hidden"
               onClick={() => setOpen(!open)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
@@ -166,50 +182,45 @@ const Nav = ({ theme, setTheme }) => {
             </button>
           </div>
 
-          {/* Mobile Menu Dropdown */}
-          <>
-            {open && (
-              <m.div
-                variants={menuVariants}
-                initial="closed"
-                animate="opened"
-                exit="closed"
-                className="absolute top-20 left-0 z-50 flex w-full flex-col overflow-hidden border-t border-assent/20 bg-[#FAF8F3] p-6 shadow-xl dark:bg-background-secondary md:hidden"
+          {open && (
+            <m.div
+              variants={menuVariants}
+              initial="closed"
+              animate="opened"
+              exit="closed"
+              className="absolute left-0 top-full z-[60] flex w-full flex-col overflow-hidden border-t border-assent/20 bg-[#FAF8F3] p-5 shadow-xl dark:bg-background-secondary md:hidden"
+            >
+              {navLinks.map((link, i) => (
+                <m.div variants={itemVariants} key={i}>
+                  <NavLink
+                    to={link.path}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `block border-b border-assent/15 py-3 text-lg font-medium ${
+                        isActive
+                          ? "text-secondary-assent dark:text-assent"
+                          : "text-primary-text dark:text-white/70"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                </m.div>
+              ))}
+
+              <m.Link
+                to="/contact-us"
+                variants={itemVariants}
+                onClick={() => setOpen(false)}
+                className="mt-6 w-full rounded-sm bg-assent py-3 text-center font-bold text-primary"
               >
-                {navLinks.map((link, i) => (
-                  <m.div variants={itemVariants} key={i}>
-                    <NavLink
-                      to={link.path}
-                      onClick={() => setOpen(false)}
-                      className={({ isActive }) =>
-                        `block border-b border-assent/15 py-3 text-lg font-medium ${
-                          isActive
-                            ? "text-secondary-assent dark:text-assent"
-                            : "text-primary-text dark:text-white/70"
-                        }`
-                      }
-                    >
-                      {link.name}
-                    </NavLink>
-                  </m.div>
-                ))}
-                <m.Link
-                  to="/contact-us"
-                  variants={itemVariants}
-                  onClick={() => {
-                    setOpen(false);
-                  }}
-                  className="mt-6 w-full rounded-sm bg-assent py-3 font-bold text-primary"
-                >
-                  Get in touch
-                </m.Link>
-              </m.div>
-            )}
-          </>
+                Get in touch
+              </m.Link>
+            </m.div>
+          )}
         </nav>
       </div>
 
-      {/* Spacer */}
       {isFixed && <div className="h-20" />}
     </div>
   );
