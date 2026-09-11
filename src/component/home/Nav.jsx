@@ -91,8 +91,12 @@ const Nav = ({ theme, setTheme }) => {
         </div>
       </div>
 
-      <div className={isFixed ? "fixed top-0 left-0 z-50 w-full" : "relative z-50"}>
-        <div className={`absolute inset-0 ${isFixed ? "" : "bg-background-secondary"}`} />
+      <div
+        className={isFixed ? "fixed top-0 left-0 z-50 w-full" : "relative z-50"}
+      >
+        <div
+          className={`absolute inset-0 ${isFixed ? "" : "bg-background-secondary"}`}
+        />
 
         <m.div
           className={`absolute inset-0 backdrop-blur-sm shadow-md ${
@@ -168,13 +172,17 @@ const Nav = ({ theme, setTheme }) => {
                 {open ? (
                   <X
                     className={
-                      isFixed ? "text-primary-text dark:text-white" : "text-white"
+                      isFixed
+                        ? "text-primary-text dark:text-white"
+                        : "text-white"
                     }
                   />
                 ) : (
                   <MenuIcon
                     className={
-                      isFixed ? "text-primary-text dark:text-white" : "text-white"
+                      isFixed
+                        ? "text-primary-text dark:text-white"
+                        : "text-white"
                     }
                   />
                 )}
