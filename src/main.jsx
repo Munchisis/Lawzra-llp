@@ -8,10 +8,9 @@ import * as Sentry from "@sentry/react";
 
 Sentry.init({
   dsn: "https://cf6da27be1242abe7c024f4edb1840d0@o4511746293039104.ingest.us.sentry.io/4512022465740800",
-  dataCollection: {
-    // userInfo: false,
-    // httpBodies: []
-  },
+  integrations: [Sentry.browserTracingIntegration()],
+  tracesSampleRate: 1.0,
+  tracePropagationTargets: ["localhost", /^https:\/\/lawzra\.com\/api/],
 });
 
 createRoot(document.getElementById("root")).render(
