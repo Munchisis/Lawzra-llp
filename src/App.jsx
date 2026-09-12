@@ -7,6 +7,7 @@ import LoadingBar from "./component/LoadingBar";
 import ScrollToTop from "./component/ScrollToTop";
 import WhatsAppButton from "./component/WhatsAppButton";
 import ScrollToTopOnNavigate from "./component/ScrollToTopOnNavigate";
+import ChunkErrorBoundary from "./component/ChunkErrorBoundary";
 import CookieConsent from "./component/cookieConsent";
 import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "react-hot-toast";
@@ -64,6 +65,7 @@ const App = () => {
           <Nav theme={theme} setTheme={setTheme} />
 
           {/* Suspense fallback component watches client-side route transitions fluidly */}
+          <ChunkErrorBoundary>
           <Suspense
             fallback={
               <div className="h-screen flex items-center justify-center bg-[#FAF8F3] text-sm tracking-widest text-secondary-assent uppercase dark:bg-[#101826]">
@@ -107,6 +109,7 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          </ChunkErrorBoundary>
 
           <Footer />
           <CookieConsent />
