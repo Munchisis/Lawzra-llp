@@ -48,7 +48,7 @@ export const partnerInfo = [
     name: "Emuchay Chigozie Kelechi",
     title: "IT & Corporate Consultant",
     position: "Senior Partner",
-    linkedin: "https://www.linkedin.com",
+    linkedin: "www.linkedin.com/in/chigozie-emuchay-64039960",
     email: "chigozie@lawzra.com",
     shortDesc: [
       "Specializing in Corporate Law and Commercial Transactions, Emuchay provides meticulous legal research and practical solutions to complex challenges.",

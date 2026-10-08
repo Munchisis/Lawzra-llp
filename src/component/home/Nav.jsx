@@ -86,7 +86,7 @@ const Nav = ({ theme, setTheme }) => {
           </a>
 
           <span className="hidden items-center gap-1 text-white/70 lg:flex">
-            <MapPin size={13} /> Lekki Phase 1, Lagos State
+            <MapPin size={13} /> 28/30 Macarthy street, Onikan, Lagos State, Nigeria
           </span>
         </div>
       </div>

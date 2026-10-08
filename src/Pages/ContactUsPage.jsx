@@ -144,13 +144,13 @@ const ContactUsPage = () => {
               Umuahia
             </h3>
             <p className="mb-4 h-12 text-sm">
-              23 Umuahia Road, Umuahia, Abia State
+              23 Azikiwe Road, Umuahia, Abia State
             </p>
 
             <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Umuahia Address"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.282277354315!2d7.490965307056033!3d5.525071033944038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042dcc55fcfb9d3%3A0x895808b4da555136!2s23%20Ikot%20Ekpene%20-%20Umuahia%20Rd%2C%20Umu%20Obasi%2C%20Umuahia%20440236%2C%20Abia!5e0!3m2!1sen!2sng!4v1772536857376!5m2!1sen!2sng"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.2723595321113!2d7.49375820413653!3d5.526550094430441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1042dcc5c751f3ef%3A0xbc3bdd3b4fb96a97!2s23%20Azikiwe%20Rd%2C%20School%20Rd%2C%20Umu%20Obasi%2C%20Umuahia%20440236%2C%20Abia!5e0!3m2!1sen!2sng!4v1791477012284!5m2!1sen!2sng"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
@@ -168,11 +168,13 @@ const ContactUsPage = () => {
             <h3 className="font-display mx-auto mb-5 w-1/2 border-b border-assent/30 pb-2 uppercase tracking-widest text-[#101826] dark:text-white">
               Lagos
             </h3>
-            <p className="mb-4 h-12 text-sm">456 Victoria Island, Lagos</p>
+            <p className="mb-4 h-12 text-sm">
+              28/30 Macarthy street, Onikan, Lagos State
+            </p>
             <div className="overflow-hidden rounded-sm border border-assent/20 dark:border-white/10">
               <iframe
                 title="Lagos Address"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5649008489004!2d3.4064220202624313!3d6.449863207461226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b302639d0f9%3A0xee176cf139947aaf!2s23%20Obalende%20Rd%2C%20Ikoyi%2C%20Lagos%20106104%2C%20Lagos!5e0!3m2!1sen!2sng!4v1772548996488!5m2!1sen!2sng"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5924956045847!2d3.402712311019321!3d6.446334593518108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2465f4714d%3A0x308724f557994751!2s28%2F30%20Macarthy%20Street%2C%20Lagos%20Island%2C%20Lagos%20102273%2C%20Lagos!5e0!3m2!1sen!2sng!4v1791476814938!5m2!1sen!2sng"
                 width="100%"
                 height="350"
                 style={{ border: 0 }}
@@ -244,7 +246,7 @@ const ContactUsPage = () => {
               Head office
             </h4>
             <p className="text-sm text-primary-text dark:text-white/60">
-              No 23 Obalende, Lekki Phase 1, Lagos State
+              28/30 Macarthy street, Onikan, Lagos State, Nigeria
             </p>
           </div>
 
@@ -252,7 +254,7 @@ const ContactUsPage = () => {
             {/* Social icons with hover animation */}
             {[
               {
-                href: "https://x.com",
+                href: "https://x.com/LawzraLLP",
                 icon: <TwitterIcon />,
                 label: "Lawzra LLP on X",
               },
@@ -262,7 +264,7 @@ const ContactUsPage = () => {
                 label: "Lawzra LLP on GitHub",
               },
               {
-                href: "https://linkedin.com",
+                href: "https://linkedin.com/company/lawzra-llp/about",
                 icon: <LinkedinIcon />,
                 label: "Lawzra LLP on LinkedIn",
               },
